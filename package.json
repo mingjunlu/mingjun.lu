@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write \"**/**.{cjs,js,jsx,mjs,ts,tsx}\" --ignore-path .gitignore"
   },
   "dependencies": {
     "@types/node": "20.3.1",
