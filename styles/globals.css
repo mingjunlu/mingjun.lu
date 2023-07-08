@@ -1,3 +1,12 @@
+:root {
+  --color-black: #1E1E1E;
+  --color-dark-gray: #282828;
+  --color-gray: #979797;
+  --color-french-gray: #BBBBBB;
+  --color-light-gray: #EAEDF3;
+  --color-white: #FCFCFC;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -14,6 +23,8 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   font-family: "PingFang TC", "Heiti TC", "Microsoft JhengHei", "Microsoft YaHei", sans-serif;
+  color: var(--color-dark-gray);
+  background-color: var(--color-white);
 }
 
 img, picture, video, canvas, svg {
