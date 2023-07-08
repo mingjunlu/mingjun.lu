@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { Fragment } from 'react';
 import styled, { css } from 'styled-components';
 import Logo from '../../components/Logo';
+import { mediaQueries as queries } from '../../constants';
 import { isEmpty } from '../../lib/array';
 import {
   PostWithoutContent,
@@ -125,6 +126,11 @@ const Container = styled.main`
   @supports (min-height: 100dvh) {
     min-height: 100dvh;
   }
+  @media ${queries.tabletAndWider} {
+    padding: 60px;
+    max-width: 754px;
+    margin: 0 auto;
+  }
 `;
 const Navbar = styled.header`
   display: flex;
@@ -144,16 +150,29 @@ const LogoLink = styled(NavLink)`
   flex: 0 0 auto;
   padding: 6px 10px;
 
+  @media ${queries.tabletAndWider} {
+    padding: 2px 10px;
+  }
+
   > ${Logo.Container} {
     width: 26px;
     height: 60px;
     color: var(--color-dark-gray);
+
+    @media ${queries.tabletAndWider} {
+      width: 29px;
+      height: 70px;
+    }
   }
 `;
 const Nav = styled.nav`
   flex: 1 1 150px;
   margin-left: 28px;
   overflow-x: auto;
+
+  @media ${queries.tabletAndWider} {
+    margin-left: 54px;
+  }
 `;
 const NavList = styled.ul`
   display: flex;
@@ -185,6 +204,11 @@ const Main = styled.section`
   flex-direction: column;
   gap: 30px;
   padding: 42px 0;
+
+  @media ${queries.tabletAndWider} {
+    padding: 54px 0;
+    margin: 0 auto;
+  }
 `;
 const Article = styled.article`
   display: flex;
@@ -199,6 +223,20 @@ const Article = styled.article`
     border-bottom: none;
   }
 
+  @media (min-resolution: 2dppx) {
+    border-width: 0.5px;
+  }
+  @media ${queries.tabletAndWider} {
+    position: relative;
+    gap: 10px;
+    min-height: 128px;
+    padding-bottom: 36px;
+
+    &:has(figure) {
+      padding-right: 154px;
+    }
+  }
+
   > ${NavLink} {
     align-self: center;
     display: inline-block;
@@ -209,16 +247,34 @@ const Article = styled.article`
     font-weight: 500;
     text-decoration: none;
     color: var(--color-dark-gray);
+
+    @media ${queries.tabletAndWider} {
+      display: none;
+    }
   }
 `;
 const ArticleTitle = styled.h2`
   line-height: 1.4;
   font-weight: 600;
   text-align: left;
+
+  @media ${queries.tabletAndWider} {
+    margin-top: 4px;
+  }
 `;
 const ImageWrapper = styled.figure`
   position: relative;
   aspect-ratio: 16 / 9;
+
+  @media ${queries.tabletAndWider} {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 128px;
+    height: 128px;
+    aspect-ratio: 1 / 1;
+  }
 
   > img {
     object-fit: cover;
@@ -232,6 +288,13 @@ const ArticleMetadata = styled.aside`
   font-size: 14px;
   line-height: calc(16 / 14);
   color: var(--color-gray);
+
+  @media ${queries.tabletAndWider} {
+    order: -1;
+    gap: 16px;
+    font-size: 16px;
+    line-height: 1;
+  }
 `;
 const MetadataSegment = styled.div`
   display: flex;
@@ -245,14 +308,29 @@ const MetadataSegment = styled.div`
     border-right: none;
   }
 
+  @media (min-resolution: 2dppx) {
+    border-width: 0.5px;
+  }
+  @media ${queries.tabletAndWider} {
+    padding-right: 16px;
+  }
+
   > .fa-calendar {
     width: 13px;
     height: 13px;
+
+    @media ${queries.tabletAndWider} {
+      transform: translateY(-1px);
+    }
   }
   > .fa-tag {
     width: 14px;
     height: 14px;
     transform: translateY(0.5px);
+
+    @media ${queries.tabletAndWider} {
+      transform: none;
+    }
   }
 `;
 const Summary = styled.p`
