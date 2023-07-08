@@ -9,13 +9,13 @@ import { Fragment } from 'react';
 import styled, { css } from 'styled-components';
 import Logo from '../../components/Logo';
 import { mediaQueries as queries } from '../../constants';
-import { isEmpty } from '../../lib/array';
+import { isEmpty } from '../../utils/array';
 import {
   PostWithoutContent,
   formatDate,
   getPosts,
   sortByPublicationTime,
-} from '../../lib/post';
+} from '../../utils/post';
 
 const inter = Inter({ subsets: ['latin'] });
 
