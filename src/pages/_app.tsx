@@ -1,7 +1,7 @@
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { AppProps } from 'next/app';
-import '../styles/globals.css';
+import 'src/styles/globals.css';
 
 config.autoAddCss = false;
 

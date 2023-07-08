@@ -7,15 +7,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Fragment } from 'react';
 import styled, { css } from 'styled-components';
-import Logo from '../../components/Logo';
-import { mediaQueries as queries } from '../../constants';
-import { isEmpty } from '../../utils/array';
+import Logo from 'src/components/Logo';
+import { mediaQueries as queries } from 'src/constants';
+import { isEmpty } from 'src/utils/array';
 import {
   PostWithoutContent,
   formatDate,
   getPosts,
   sortByPublicationTime,
-} from '../../utils/post';
+} from 'src/utils/post';
 
 const inter = Inter({ subsets: ['latin'] });
 
