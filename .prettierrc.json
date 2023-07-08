@@ -1,6 +1,5 @@
 {
   "importOrder": [
-    "^@/(.*)$",
     "^[./]"
   ],
   "importOrderSortSpecifiers": true,
