@@ -1,5 +1,7 @@
 {
   "importOrder": [
+    "^public/(.*)$",
+    "^src/(.*)$",
     "^[./]"
   ],
   "importOrderSortSpecifiers": true,
