@@ -7,7 +7,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Fragment } from 'react';
 import styled, { css } from 'styled-components';
-import Logo from 'src/components/Logo';
+import LogoSvg from 'public/logo.svg';
 import { mediaQueries as queries } from 'src/constants';
 import { isEmpty } from 'src/utils/array';
 import {
@@ -39,7 +39,7 @@ export default function Blog(props: BlogProps) {
       <Container>
         <Navbar>
           <LogoLink href="/">
-            <Logo />
+            <LogoSvg />
           </LogoLink>
           <Nav>
             <NavList>
@@ -154,7 +154,7 @@ const LogoLink = styled(NavLink)`
     padding: 2px 10px;
   }
 
-  > ${Logo.Container} {
+  > svg {
     width: 26px;
     height: 60px;
     color: var(--color-dark-gray);
