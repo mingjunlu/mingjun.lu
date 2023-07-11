@@ -1,7 +1,18 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+
+const { execSync } = require('child_process');
+
+const commitHash = execSync('git log -1 --pretty=format:%h')
+  .toString()
+  .trim();
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   compiler: {
     styledComponents: true,
+  },
+  env: {
+    NEXT_PUBLIC_COMMIT_HASH: commitHash,
   },
   images: {
     remotePatterns: [
