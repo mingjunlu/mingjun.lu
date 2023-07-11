@@ -7,6 +7,8 @@ import Document, {
 } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
+const commitHash = process.env.NEXT_PUBLIC_COMMIT_HASH;
+
 export default class CustomDocument extends Document {
   static async getInitialProps(context: DocumentContext) {
     const sheet = new ServerStyleSheet();
@@ -34,7 +36,26 @@ export default class CustomDocument extends Document {
   render() {
     return (
       <Html lang="zh-Hant-TW">
-        <Head />
+        <Head>
+          <link
+            rel="icon"
+            sizes="any"
+            href={`/favicon.ico?v=${commitHash}`}
+          />
+          <link
+            rel="icon"
+            type="image/svg+xml"
+            href={`/favicon.svg?v=${commitHash}`}
+          />
+          <link
+            rel="apple-touch-icon"
+            href={`/apple-touch-icon.png?v=${commitHash}`}
+          />
+          <link
+            rel="manifest"
+            href={`/manifest.webmanifest?v=${commitHash}`}
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />
