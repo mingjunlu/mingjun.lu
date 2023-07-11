@@ -9,10 +9,6 @@ export default function Custom500() {
     <>
       <Head>
         <title>Something Went Wrong | Ming-jun Lu</title>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1"
-        />
       </Head>
       <Layout.ErrorScreen>
         <ImageWrapper>

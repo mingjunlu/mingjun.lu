@@ -9,10 +9,6 @@ export default function About() {
     <>
       <Head>
         <title>About | Ming-jun Lu</title>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1"
-        />
       </Head>
       <Layout.ErrorScreen>
         <ImageWrapper>

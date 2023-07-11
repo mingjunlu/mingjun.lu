@@ -9,10 +9,6 @@ export default function Custom404() {
     <>
       <Head>
         <title>Page Not Found | Ming-jun Lu</title>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1"
-        />
       </Head>
       <Layout.ErrorScreen>
         <ImageWrapper>
