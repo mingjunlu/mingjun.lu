@@ -5,7 +5,9 @@ import { mediaQueries as queries } from 'src/constants';
 import { PostWithoutContent } from 'src/utils/post';
 import PostMetadata from './post-metadata';
 
-type SummarizedPostProps = PostWithoutContent;
+type SummarizedPostProps = PostWithoutContent & {
+  shouldPreloadImage?: boolean;
+};
 
 export default function SummarizedPost(props: SummarizedPostProps) {
   const {
@@ -15,6 +17,7 @@ export default function SummarizedPost(props: SummarizedPostProps) {
     tags,
     summary = '',
     featuredImage = '',
+    shouldPreloadImage = false,
   } = props;
 
   return (
@@ -24,7 +27,12 @@ export default function SummarizedPost(props: SummarizedPostProps) {
       </Title>
       {!!featuredImage && (
         <ImageWrapper>
-          <Image fill src={featuredImage} alt="Article thumbnail" />
+          <Image
+            fill
+            priority={shouldPreloadImage}
+            src={featuredImage}
+            alt="Article thumbnail"
+          />
         </ImageWrapper>
       )}
       <PostMetadata publishedAt={publishedAt} tags={tags} />

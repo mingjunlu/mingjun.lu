@@ -6,6 +6,7 @@ import { mediaQueries as queries } from 'src/constants';
 import {
   PostWithoutContent,
   getPosts,
+  isLcp,
   sortByPublicationTime,
 } from 'src/utils/post';
 import SummarizedPost from './summarized-post';
@@ -17,6 +18,10 @@ type BlogProps = {
 export default function Blog(props: BlogProps) {
   const { posts } = props;
 
+  const indexOfFirstImage = posts.findIndex(
+    (post) => !!post.featuredImage
+  );
+
   return (
     <>
       <Head>
@@ -25,7 +30,7 @@ export default function Blog(props: BlogProps) {
       <Container>
         <Header />
         <Main>
-          {posts.map((post) => (
+          {posts.map((post, index) => (
             <SummarizedPost
               key={post.id}
               id={post.id}
@@ -35,6 +40,7 @@ export default function Blog(props: BlogProps) {
               tags={post.tags}
               summary={post.summary}
               featuredImage={post.featuredImage}
+              shouldPreloadImage={isLcp(index, indexOfFirstImage)}
             />
           ))}
         </Main>

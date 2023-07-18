@@ -71,3 +71,19 @@ export function formatDate(date: Date | string) {
     dateStyle: 'medium',
   });
 }
+
+export function isLcp(
+  index: number,
+  indexOfFirstImage: number
+): boolean {
+  // No need to preload if there are no images
+  if (indexOfFirstImage < 0) {
+    return false;
+  }
+  // Preload the first two ones if any of them has an image
+  if (indexOfFirstImage < 2) {
+    return index < 2;
+  }
+  // Preload first three ones at most
+  return index < 3;
+}
