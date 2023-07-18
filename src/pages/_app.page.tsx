@@ -1,5 +1,6 @@
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import { Analytics } from '@vercel/analytics/react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import 'src/styles/globals.css';
@@ -18,6 +19,7 @@ export default function CustomApp(props: AppProps) {
         />
       </Head>
       <Component {...pageProps} />
+      <Analytics />
     </>
   );
 }
