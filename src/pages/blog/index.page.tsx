@@ -30,6 +30,7 @@ export default function Blog(props: BlogProps) {
       <Container>
         <Header />
         <Main>
+          <VisuallyHiddenHeading>Blog Posts</VisuallyHiddenHeading>
           {posts.map((post, index) => (
             <SummarizedPost
               key={post.id}
@@ -87,4 +88,15 @@ const Main = styled.section`
     padding: 54px 0;
     margin: 0 auto;
   }
+`;
+const VisuallyHiddenHeading = styled.h1`
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
 `;
