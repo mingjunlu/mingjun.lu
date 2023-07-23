@@ -1,7 +1,7 @@
 import { GetStaticPropsResult } from 'next';
-import Head from 'next/head';
 import styled from 'styled-components';
-import { Header } from 'src/components';
+import { Header, Metadata } from 'src/components';
+import { site } from 'src/constants';
 import { mediaQueries as queries } from 'src/constants';
 import {
   PostWithoutContent,
@@ -24,9 +24,11 @@ export default function Blog(props: BlogProps) {
 
   return (
     <>
-      <Head>
-        <title>Blog | Ming-jun Lu</title>
-      </Head>
+      <Metadata
+        title="Blog"
+        description="Ming-jun 的部落格，用淺顯易懂的方式記錄所學與應用。"
+        url={`${site.url}/blog`}
+      />
       <Container>
         <Header />
         <Main>
