@@ -58,6 +58,36 @@ export async function getPosts(): Promise<PostWithoutContent[]> {
   });
 }
 
+export async function getPostBySlug(slug: string): Promise<Post> {
+  const posts = await getPosts();
+  const foundPost = posts.find((post) => post.slug === slug);
+  if (!foundPost) {
+    throw new Error(`Post not found (slug: ${slug})`);
+  }
+  const noteContent = await getNoteContentById(foundPost.id);
+  const matterFile = matter(noteContent);
+  const frontMatter: FrontMatter = matterFile.data;
+  if (!frontMatter.title) {
+    throw new Error('Invalid title');
+  }
+  if (!frontMatter.publishedAt) {
+    throw new Error('Invalid publication time');
+  }
+  if (!frontMatter.slug) {
+    throw new Error('Invalid slug');
+  }
+  return {
+    id: foundPost.id,
+    title: frontMatter.title,
+    content: matterFile.content,
+    publishedAt: frontMatter.publishedAt,
+    slug: frontMatter.slug,
+    tags: frontMatter.tags || [],
+    summary: frontMatter.summary || '',
+    featuredImage: frontMatter.featuredImage || '',
+  };
+}
+
 export function sortByPublicationTime<
   Type extends { publishedAt: string }
 >(a: Type, b: Type): number {
