@@ -43,6 +43,7 @@ export default function Blog(props: BlogProps) {
               tags={post.tags}
               summary={post.summary}
               featuredImage={post.featuredImage}
+              readingTime={post.readingTime}
               shouldPreloadImage={isLcp(index, indexOfFirstImage)}
             />
           ))}

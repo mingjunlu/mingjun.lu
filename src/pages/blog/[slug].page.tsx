@@ -42,6 +42,7 @@ export default function BlogPost(props: BlogPostProps) {
     tags,
     summary,
     featuredImage = '',
+    readingTime,
   } = props;
 
   return (
@@ -55,7 +56,11 @@ export default function BlogPost(props: BlogPostProps) {
       <Container>
         <Header />
         <Main>
-          <PostMetadata publishedAt={publishedAt} tags={tags} />
+          <PostMetadata
+            publishedAt={publishedAt}
+            tags={tags}
+            readingTime={readingTime}
+          />
           {!!featuredImage && (
             <ImageWrapper>
               <Image fill priority src={featuredImage} alt="" />

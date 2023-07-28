@@ -17,6 +17,7 @@ export default function SummarizedPost(props: SummarizedPostProps) {
     tags,
     summary = '',
     featuredImage = '',
+    readingTime,
     shouldPreloadImage = false,
   } = props;
 
@@ -35,7 +36,11 @@ export default function SummarizedPost(props: SummarizedPostProps) {
           />
         </ImageWrapper>
       )}
-      <PostMetadata publishedAt={publishedAt} tags={tags} />
+      <PostMetadata
+        publishedAt={publishedAt}
+        tags={tags}
+        readingTime={readingTime}
+      />
       {!!summary && <Summary>{summary}</Summary>}
       <NavLink href={`/blog/${slug}`}>閱讀全文</NavLink>
     </Container>

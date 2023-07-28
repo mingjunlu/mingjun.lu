@@ -1,4 +1,7 @@
 import matter from 'gray-matter';
+import { fromMarkdown } from 'mdast-util-from-markdown';
+import { toString } from 'mdast-util-to-string';
+import readingTime from 'reading-time';
 import { getNoteContentById, getNotes, isBlogNote } from './note';
 
 export type Post = {
@@ -10,6 +13,7 @@ export type Post = {
   tags: string[];
   summary?: string;
   featuredImage?: string;
+  readingTime: number;
 };
 export type PostWithoutContent = Omit<Post, 'content'>;
 type FrontMatter = Partial<
@@ -54,6 +58,7 @@ export async function getPosts(): Promise<PostWithoutContent[]> {
       tags: frontMatter.tags || [],
       summary: frontMatter.summary || '',
       featuredImage: frontMatter.featuredImage || '',
+      readingTime: getReadingTime(note.content),
     };
   });
 }
@@ -85,6 +90,7 @@ export async function getPostBySlug(slug: string): Promise<Post> {
     tags: frontMatter.tags || [],
     summary: frontMatter.summary || '',
     featuredImage: frontMatter.featuredImage || '',
+    readingTime: getReadingTime(noteContent),
   };
 }
 
@@ -100,6 +106,13 @@ export function formatDate(date: Date | string) {
   return new Date(date).toLocaleDateString('en-US', {
     dateStyle: 'medium',
   });
+}
+
+export function getReadingTime(text: string): number {
+  const stats = readingTime(toString(fromMarkdown(text)), {
+    wordsPerMinute: 250,
+  });
+  return stats.minutes;
 }
 
 export function isLcp(

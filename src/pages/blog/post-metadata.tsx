@@ -1,13 +1,20 @@
-import { faCalendar, faTag } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCalendar,
+  faClock,
+  faTag,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 import { mediaQueries as queries } from 'src/constants';
 import { Post, formatDate } from 'src/utils/post';
 
-type PostMetadataProps = Pick<Post, 'publishedAt' | 'tags'>;
+type PostMetadataProps = Pick<
+  Post,
+  'publishedAt' | 'tags' | 'readingTime'
+>;
 
 export default function PostMetadata(props: PostMetadataProps) {
-  const { publishedAt, tags } = props;
+  const { publishedAt, readingTime, tags } = props;
 
   const publicationDate = formatDate(publishedAt);
   const firstTag = tags.at(0);
@@ -17,6 +24,10 @@ export default function PostMetadata(props: PostMetadataProps) {
       <Segment>
         <FontAwesomeIcon icon={faCalendar} />
         <time dateTime={publishedAt}>{publicationDate}</time>
+      </Segment>
+      <Segment>
+        <FontAwesomeIcon icon={faClock} />
+        <span>{`${readingTime} min`}</span>
       </Segment>
       {!!firstTag && (
         <Segment>
@@ -43,6 +54,7 @@ const Container = styled.aside`
   }
 `;
 const Segment = styled.div`
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -50,8 +62,15 @@ const Segment = styled.div`
   border-right: 1px solid var(--color-french-gray);
 
   &:last-child {
+    flex: 0 1 auto;
     padding-right: 0;
     border-right: none;
+
+    > span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 
   @media (min-resolution: 2dppx) {
@@ -64,17 +83,25 @@ const Segment = styled.div`
   > .fa-calendar {
     width: 13px;
     height: 13px;
+    transform: translateY(-0.5px);
 
     @media ${queries.tabletAndWider} {
       transform: translateY(-1px);
     }
   }
-  > .fa-tag {
+  > .fa-clock {
     width: 14px;
     height: 14px;
+    transform: translateY(-0.5px);
+  }
+  > .fa-tag {
+    width: 15px;
+    height: 15px;
     transform: translateY(0.5px);
 
     @media ${queries.tabletAndWider} {
+      width: 16px;
+      height: 16px;
       transform: none;
     }
   }
