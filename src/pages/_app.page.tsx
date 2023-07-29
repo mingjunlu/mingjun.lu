@@ -3,7 +3,8 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import { Analytics } from '@vercel/analytics/react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import 'src/styles/globals.css';
+import 'src/styles/reset.css';
+import '../styles/globals.css';
 
 config.autoAddCss = false;
 
