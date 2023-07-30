@@ -48,6 +48,8 @@ const Container = styled.aside`
     props.theme.colorMode === 'dark'
       ? 'var(--color-regent-gray)'
       : 'var(--color-gray)'};
+  transition: color var(--transition-ease-in-out-250),
+    background-color var(--transition-ease-in-out-250);
 
   @media ${queries.tabletAndWider} {
     order: -1;

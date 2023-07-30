@@ -77,6 +77,8 @@ const Nav = styled.nav`
     props.theme.colorMode === 'dark'
       ? 'var(--color-regent-gray)'
       : 'var(--color-gray)'};
+  transition: color var(--transition-ease-in-out-250),
+    background-color var(--transition-ease-in-out-250);
 
   @media ${queries.tabletAndWider} {
     margin-left: 54px;
@@ -105,6 +107,8 @@ const NavListItem = styled.li<{ isActive?: boolean }>`
         color: ${props.theme.colorMode === 'dark'
           ? 'var(--color-light-gray)'
           : 'var(--color-dark-gray)'};
+        transition: color var(--transition-ease-in-out-250),
+          background-color var(--transition-ease-in-out-250);
       `};
   }
 `;

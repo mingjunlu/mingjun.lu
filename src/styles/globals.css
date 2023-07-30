@@ -9,6 +9,19 @@
   --color-white: #FCFCFC;
   --color-foreground: var(--color-dark-gray);
   --color-background: var(--color-white);
+
+  --transition-ease-in-150: 150ms ease-in;
+  --transition-ease-in-200: 200ms ease-in;
+  --transition-ease-in-250: 250ms ease-in;
+  --transition-ease-in-300: 300ms ease-in;
+  --transition-ease-out-150: 150ms ease-out;
+  --transition-ease-out-200: 200ms ease-out;
+  --transition-ease-out-250: 250ms ease-out;
+  --transition-ease-out-300: 300ms ease-out;
+  --transition-ease-in-out-150: 150ms ease-in-out;
+  --transition-ease-in-out-200: 200ms ease-in-out;
+  --transition-ease-in-out-250: 250ms ease-in-out;
+  --transition-ease-in-out-300: 300ms ease-in-out;
 }
 
 :root[data-theme="dark"] {
@@ -25,6 +38,9 @@ body {
     sans-serif;
   color: var(--color-foreground);
   background-color: var(--color-background);
+  transition:
+    color var(--transition-ease-in-out-250),
+    background-color var(--transition-ease-in-out-250);
 }
 
 #__next {
