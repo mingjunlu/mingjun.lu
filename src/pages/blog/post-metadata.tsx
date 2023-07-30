@@ -44,7 +44,10 @@ const Container = styled.aside`
   gap: 12px;
   font-size: 14px;
   line-height: calc(16 / 14);
-  color: var(--color-gray);
+  color: ${(props) =>
+    props.theme.colorMode === 'dark'
+      ? 'var(--color-regent-gray)'
+      : 'var(--color-gray)'};
 
   @media ${queries.tabletAndWider} {
     order: -1;
@@ -59,7 +62,7 @@ const Segment = styled.div`
   align-items: center;
   gap: 8px;
   padding-right: 12px;
-  border-right: 1px solid var(--color-french-gray);
+  border-right: 1px solid;
 
   &:last-child {
     flex: 0 1 auto;

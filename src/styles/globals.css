@@ -1,10 +1,19 @@
 :root {
   --color-black: #1E1E1E;
   --color-dark-gray: #282828;
+  --color-arsenic-gray: #3D4452;
   --color-gray: #979797;
+  --color-regent-gray: #8690A5;
   --color-french-gray: #BBBBBB;
   --color-light-gray: #EAEDF3;
   --color-white: #FCFCFC;
+  --color-foreground: var(--color-dark-gray);
+  --color-background: var(--color-white);
+}
+
+:root[data-theme="dark"] {
+  --color-foreground: var(--color-white);
+  --color-background: var(--color-arsenic-gray);
 }
 
 body {
@@ -14,8 +23,8 @@ body {
     "Microsoft JhengHei",
     "Microsoft YaHei",
     sans-serif;
-  color: var(--color-dark-gray);
-  background-color: var(--color-white);
+  color: var(--color-foreground);
+  background-color: var(--color-background);
 }
 
 #__next {

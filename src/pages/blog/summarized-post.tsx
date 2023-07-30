@@ -79,11 +79,11 @@ const Container = styled.article`
     display: inline-block;
     padding: 4px 16px;
     margin-top: 4px;
-    border: 1px solid var(--color-dark-gray);
+    border: 1px solid;
     border-radius: 6px;
     font-weight: 500;
     text-decoration: none;
-    color: var(--color-dark-gray);
+    color: inherit;
 
     @media ${queries.tabletAndWider} {
       display: none;

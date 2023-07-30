@@ -72,6 +72,7 @@ const InlineCode = styled(Base)`
   display: inline-block;
   line-height: initial;
   padding: 2px 6px;
+  color: var(--color-dark-gray);
   background-color: var(--color-light-gray);
   word-break: break-word;
 `;
