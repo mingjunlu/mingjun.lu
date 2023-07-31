@@ -1,5 +1,5 @@
 import { ComponentProps } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export default function Quote(props: ComponentProps<'blockquote'>) {
   const { children } = props;
@@ -9,15 +9,14 @@ export default function Quote(props: ComponentProps<'blockquote'>) {
 
 const Container = styled.blockquote`
   padding: 16px 30px;
-  border-left: 4px solid var(--color-dark-gray);
-  background-color: var(--color-light-gray);
+  border-left: 4px solid var(--color-quote-foreground);
+  color: var(--color-quote-foreground);
+  background-color: var(--color-quote-background);
   transition: background-color var(--transition-ease-in-out-250),
     border-color var(--transition-ease-in-out-250);
 
-  ${(props) =>
-    props.theme.colorMode === 'dark' &&
-    css`
-      border-color: var(--color-light-gray);
-      background-color: var(--color-dark-gray);
-    `}
+  code {
+    color: var(--color-quote-background);
+    background-color: var(--color-quote-foreground);
+  }
 `;

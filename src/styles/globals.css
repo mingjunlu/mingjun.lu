@@ -9,6 +9,10 @@
   --color-white: #FCFCFC;
   --color-foreground: var(--color-dark-gray);
   --color-background: var(--color-white);
+  --color-header-foreground: var(--color-gray);
+  --color-post-metadata-foreground: var(--color-gray);
+  --color-quote-foreground: var(--color-dark-gray);
+  --color-quote-background: var(--color-light-gray);
 
   --transition-ease-in-150: 150ms ease-in;
   --transition-ease-in-200: 200ms ease-in;
@@ -27,6 +31,10 @@
 :root[data-theme="dark"] {
   --color-foreground: var(--color-white);
   --color-background: var(--color-arsenic-gray);
+  --color-header-foreground: var(--color-regent-gray);
+  --color-post-metadata-foreground: var(--color-regent-gray);
+  --color-quote-foreground: var(--color-light-gray);
+  --color-quote-background: var(--color-dark-gray);
 }
 
 body {
@@ -45,4 +53,18 @@ body {
 
 #__next {
   isolation: isolate;
+}
+
+:root[data-theme="dark"] .sun-icon {
+  display: none;
+}
+:root[data-theme="dark"] [src*="under-construction.png"] {
+  display: none;
+}
+
+:root[data-theme="light"] .moon-icon {
+  display: none;
+}
+:root[data-theme="light"] [src*="under-construction-dark.png"] {
+  display: none;
 }

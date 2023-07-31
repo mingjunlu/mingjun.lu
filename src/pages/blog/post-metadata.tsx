@@ -44,12 +44,7 @@ const Container = styled.aside`
   gap: 12px;
   font-size: 14px;
   line-height: calc(16 / 14);
-  color: ${(props) =>
-    props.theme.colorMode === 'dark'
-      ? 'var(--color-regent-gray)'
-      : 'var(--color-gray)'};
-  transition: color var(--transition-ease-in-out-250),
-    background-color var(--transition-ease-in-out-250);
+  color: var(--color-post-metadata-foreground);
 
   @media ${queries.tabletAndWider} {
     order: -1;

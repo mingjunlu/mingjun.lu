@@ -36,11 +36,9 @@ export default function Header() {
         </NavList>
       </Nav>
       <ToggleButton onClick={toggleColorMode}>
-        {isDarkMode ? (
-          <MoonSvg className="moon-icon" />
-        ) : (
-          <SunSvg className="sun-icon" />
-        )}
+        {/* Presence controlled by CSS display property */}
+        <MoonSvg className="moon-icon" />
+        <SunSvg className="sun-icon" />
       </ToggleButton>
     </Container>
   );
@@ -73,12 +71,7 @@ const Nav = styled.nav`
   flex: 1 1 150px;
   margin-left: 28px;
   overflow-x: auto;
-  color: ${(props) =>
-    props.theme.colorMode === 'dark'
-      ? 'var(--color-regent-gray)'
-      : 'var(--color-gray)'};
-  transition: color var(--transition-ease-in-out-250),
-    background-color var(--transition-ease-in-out-250);
+  color: var(--color-header-foreground);
 
   @media ${queries.tabletAndWider} {
     margin-left: 54px;
@@ -98,17 +91,15 @@ const NavListItem = styled.li<{ isActive?: boolean }>`
     font-size: 20px;
     padding: 6px 10px;
     color: inherit;
+    transition: color var(--transition-ease-in-out-250),
+      background-color var(--transition-ease-in-out-250);
 
     ${(props) =>
       !!props.isActive &&
       css`
         font-weight: 600;
         text-decoration: underline;
-        color: ${props.theme.colorMode === 'dark'
-          ? 'var(--color-light-gray)'
-          : 'var(--color-dark-gray)'};
-        transition: color var(--transition-ease-in-out-250),
-          background-color var(--transition-ease-in-out-250);
+        color: var(--color-foreground);
       `};
   }
 `;

@@ -1,28 +1,28 @@
 import Image from 'next/image';
-import styled, { useTheme } from 'styled-components';
+import styled from 'styled-components';
 import { Header, Metadata } from 'src/components';
 import { mediaQueries as queries } from 'src/constants';
 import { site } from 'src/constants';
 
 export default function About() {
-  const { colorMode } = useTheme();
-
-  const isDarkMode = colorMode === 'dark';
-  const imageSource = isDarkMode
-    ? '/under-construction-dark.png'
-    : '/under-construction.png';
-
   return (
     <>
       <Metadata title="About" url={`${site.url}/about`} />
       <Container>
         <Header />
         <Main>
-          <ImageWrapper>
+          <ImageWrapper className="under-construction-light-wrapper">
+            {/* Presence controlled by CSS display property */}
             <Image
               fill
               priority
-              src={imageSource}
+              src="/under-construction-dark.png"
+              alt="Under construction"
+            />
+            <Image
+              fill
+              priority
+              src="/under-construction.png"
               alt="Under construction"
             />
           </ImageWrapper>
