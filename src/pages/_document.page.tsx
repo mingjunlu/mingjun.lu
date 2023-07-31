@@ -5,7 +5,9 @@ import Document, {
   Main,
   NextScript,
 } from 'next/document';
+import Script from 'next/script';
 import { ServerStyleSheet } from 'styled-components';
+import { applyThemeOnFirstLoad } from 'src/utils/theme';
 
 const commitHash = process.env.NEXT_PUBLIC_COMMIT_HASH;
 
@@ -55,6 +57,14 @@ export default class CustomDocument extends Document {
             rel="manifest"
             href={`/manifest.webmanifest?v=${commitHash}`}
           />
+          <Script
+            strategy="beforeInteractive"
+            id="apply-theme-on-first-load"
+          >
+            {minifyJavaScript(
+              `(${applyThemeOnFirstLoad.toString()})();`
+            )}
+          </Script>
         </Head>
         <body>
           <Main />
@@ -63,4 +73,20 @@ export default class CustomDocument extends Document {
       </Html>
     );
   }
+}
+
+function minifyJavaScript(snippet: string): string {
+  // See: https://chat.openai.com/share/9e677c6b-daa6-4dde-b989-f9901758300e
+  return (
+    snippet
+      // Remove comments (single-line and multi-line)
+      .replace(/\/\/.*|\/\*[\s\S]*?\*\//g, '')
+      // Remove line breaks and multiple whitespaces
+      .replace(/\s+/g, ' ')
+      // Remove whitespaces around symbols
+      .replace(
+        /\s*([{}()[\].,;:+\-*/%&|^!=<>?~]|==|===|!=|!==|\+=|-=|\*=|\/=|%==|&&|\|\||<<|>>|>>>)\s*/g,
+        '$1'
+      )
+  );
 }
