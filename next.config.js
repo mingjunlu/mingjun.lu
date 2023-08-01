@@ -14,6 +14,9 @@ const nextConfig = {
   env: {
     NEXT_PUBLIC_COMMIT_HASH: commitHash,
   },
+  experimental: {
+    scrollRestoration: true,
+  },
   images: {
     remotePatterns: [
       {
