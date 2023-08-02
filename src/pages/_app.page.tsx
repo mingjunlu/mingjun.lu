@@ -1,6 +1,6 @@
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics, AnalyticsProps } from '@vercel/analytics/react';
 import Cookies from 'js-cookie';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
@@ -23,6 +23,13 @@ export default function CustomApp(props: AppProps) {
       setColorMode,
     };
   }, [colorMode]);
+
+  const handleBeforeSend: AnalyticsProps['beforeSend'] = (event) => {
+    if (event.url.includes('.vercel.app')) {
+      return null;
+    }
+    return event;
+  };
 
   useEffect(() => {
     const root = document.documentElement;
@@ -53,7 +60,7 @@ export default function CustomApp(props: AppProps) {
       <ThemeProvider theme={theme}>
         <Component {...pageProps} />
       </ThemeProvider>
-      <Analytics />
+      <Analytics beforeSend={handleBeforeSend} />
     </>
   );
 }
