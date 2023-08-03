@@ -11,21 +11,26 @@ export default function About() {
       <Container>
         <Header />
         <Main>
-          <ImageWrapper className="under-construction-light-wrapper">
-            {/* Presence controlled by CSS display property */}
-            <Image
-              fill
-              priority
-              src="/under-construction-dark.png"
-              alt="Under construction"
-            />
-            <Image
-              fill
-              priority
-              src="/under-construction.png"
-              alt="Under construction"
-            />
-          </ImageWrapper>
+          <div>
+            <ImageWrapper className="under-construction-light-wrapper">
+              {/* Presence controlled by CSS display property */}
+              <Image
+                fill
+                priority
+                src="/under-construction-dark.png"
+                alt="Under construction"
+                className="under-construction-dark"
+              />
+              <Image
+                fill
+                priority
+                src="/under-construction.png"
+                alt="Under construction"
+                className="under-construction"
+              />
+            </ImageWrapper>
+            <Heading>Under Construction</Heading>
+          </div>
         </Main>
       </Container>
     </>
@@ -61,7 +66,7 @@ const Main = styled.section`
 const ImageWrapper = styled.figure`
   position: relative;
   width: min(100%, calc(336px / 1.6));
-  aspect-ratio: 336 /323;
+  aspect-ratio: 336 / 236;
 
   @media ${queries.tabletAndWider} {
     width: calc(336px / 1.4);
@@ -71,5 +76,35 @@ const ImageWrapper = styled.figure`
   }
   @media ${queries.desktopAndWider} {
     width: 336px;
+  }
+
+  > .under-construction-dark {
+    transform: translateX(-5px);
+  }
+`;
+const Heading = styled.h1`
+  font-size: 16px;
+  font-weight: normal;
+  line-height: initial;
+  margin-top: 20px;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+
+  @media ${queries.tabletAndWider} {
+    font-size: 18px;
+    margin-top: 24px;
+  }
+  @media ${queries.laptopAndWider} {
+    font-size: 20px;
+    margin-top: 36px;
+  }
+  @media ${queries.desktopAndWider} {
+    font-size: 24px;
+    margin-top: 48px;
+  }
+
+  &:after {
+    content: '...';
   }
 `;
