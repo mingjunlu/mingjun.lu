@@ -19,4 +19,7 @@ const Container = styled.blockquote`
     color: var(--color-quote-background);
     background-color: var(--color-quote-foreground);
   }
+  hr {
+    height: 24px;
+  }
 `;
