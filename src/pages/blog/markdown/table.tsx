@@ -4,10 +4,18 @@ import styled from 'styled-components';
 export default function Table(props: ComponentProps<'table'>) {
   const { children } = props;
 
-  return <Container>{children}</Container>;
+  return (
+    <Wrapper>
+      <Container>{children}</Container>
+    </Wrapper>
+  );
 }
 
+const Wrapper = styled.div`
+  overflow: auto;
+`;
 const Container = styled.table`
+  width: 100%;
   border-collapse: collapse;
 
   thead {
