@@ -1,11 +1,12 @@
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import { Analytics, AnalyticsProps } from '@vercel/analytics/react';
 import Cookies from 'js-cookie';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
+import Script from 'next/script';
 import { useEffect, useMemo, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
+import { site } from 'src/constants';
 import 'src/styles/reset.css';
 import '../styles/globals.css';
 
@@ -23,13 +24,11 @@ export default function CustomApp(props: AppProps) {
       setColorMode,
     };
   }, [colorMode]);
-
-  const handleBeforeSend: AnalyticsProps['beforeSend'] = (event) => {
-    if (event.url.includes('.vercel.app')) {
-      return null;
-    }
-    return event;
-  };
+  const isAnalyticsEnabled =
+    typeof window !== 'undefined' &&
+    typeof site.url !== 'undefined' &&
+    window.location.protocol === 'https:' &&
+    window.location.href.includes(site.url);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -60,7 +59,13 @@ export default function CustomApp(props: AppProps) {
       <ThemeProvider theme={theme}>
         <Component {...pageProps} />
       </ThemeProvider>
-      <Analytics beforeSend={handleBeforeSend} />
+      {isAnalyticsEnabled && (
+        <Script
+          async
+          data-token={process.env.NEXT_PUBLIC_BEAM_ANALYTICS_TOKEN}
+          src={process.env.NEXT_PUBLIC_BEAM_ANALYTICS_SCRIPT}
+        />
+      )}
     </>
   );
 }
