@@ -177,6 +177,7 @@ const Main = styled.article`
   padding: 42px 0;
 
   @media ${queries.tabletAndWider} {
+    gap: 40px;
     font-size: 18px;
     line-height: 1.8;
     padding: 54px 0;
@@ -186,9 +187,25 @@ const Main = styled.article`
 const Profile = styled.section`
   text-align: center;
 
+  @media ${queries.tabletAndWider} {
+    display: flex;
+    gap: 30px;
+    text-align: left;
+  }
+
   > img {
     margin: 0 auto;
     border-radius: 6px;
+
+    @media ${queries.tabletAndWider} {
+      flex: 0 0 auto;
+      margin: 0;
+    }
+  }
+  > div {
+    @media ${queries.tabletAndWider} {
+      flex: 1 1 auto;
+    }
   }
 `;
 const Greeting = styled.p`
@@ -196,6 +213,10 @@ const Greeting = styled.p`
   line-height: normal;
   font-weight: 600;
   margin-top: 16px;
+
+  @media ${queries.tabletAndWider} {
+    margin-top: 36px;
+  }
 `;
 const SocialLinkGroup = styled.ul`
   display: flex;
@@ -205,6 +226,12 @@ const SocialLinkGroup = styled.ul`
   padding: 0;
   margin: 30px 0 0 0;
   list-style-type: none;
+
+  @media ${queries.tabletAndWider} {
+    justify-content: flex-start;
+    gap: 40px;
+    margin-top: 20px;
+  }
 `;
 const SocialLink = styled(NavLink)`
   display: flex;
@@ -216,9 +243,18 @@ const SocialLink = styled(NavLink)`
     text-decoration: none;
   }
 
+  @media ${queries.tabletAndWider} {
+    gap: 12px;
+  }
+
   > svg {
     width: 20px;
     height: 20px;
+
+    @media ${queries.tabletAndWider} {
+      width: 30px;
+      height: 30px;
+    }
   }
   > span {
     text-decoration: underline;
