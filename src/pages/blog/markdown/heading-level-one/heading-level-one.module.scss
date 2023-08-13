@@ -1,0 +1,9 @@
+@import '../../../../styles/variables.module.scss';
+
+.container {
+  order: -1;
+
+  @media (min-width: $tablet-min-width) {
+    font-size: 2em;
+  }
+}

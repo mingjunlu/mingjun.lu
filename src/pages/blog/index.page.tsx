@@ -1,14 +1,17 @@
 import { GetStaticPropsResult } from 'next';
-import styled from 'styled-components';
-import { Header, Metadata } from 'src/components';
+import {
+  Header,
+  Metadata,
+  VisuallyHiddenHeading,
+} from 'src/components';
 import { site } from 'src/constants';
-import { mediaQueries as queries } from 'src/constants';
 import {
   PostWithoutContent,
   getPosts,
   isLcp,
   sortByPublicationTime,
 } from 'src/utils/post';
+import styles from './index.module.scss';
 import SummarizedPost from './summarized-post';
 
 type BlogProps = {
@@ -29,9 +32,9 @@ export default function Blog(props: BlogProps) {
         description="Ming-jun 的部落格，用淺顯易懂的方式記錄所學與應用。"
         url={`${site.url}/blog`}
       />
-      <Container>
+      <main className={styles.container}>
         <Header />
-        <Main>
+        <section className={styles.main}>
           <VisuallyHiddenHeading>Blog Posts</VisuallyHiddenHeading>
           {posts.map((post, index) => (
             <SummarizedPost
@@ -47,8 +50,8 @@ export default function Blog(props: BlogProps) {
               shouldPreloadImage={isLcp(index, indexOfFirstImage)}
             />
           ))}
-        </Main>
-      </Container>
+        </section>
+      </main>
     </>
   );
 }
@@ -64,42 +67,3 @@ export async function getStaticProps(): Promise<
     },
   };
 }
-
-const Container = styled.main`
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  padding: 18px 20px;
-
-  @supports (min-height: 100dvh) {
-    min-height: 100dvh;
-  }
-  @media ${queries.tabletAndWider} {
-    padding: 60px;
-    max-width: 754px;
-    margin: 0 auto;
-  }
-`;
-const Main = styled.section`
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  padding: 42px 0;
-
-  @media ${queries.tabletAndWider} {
-    padding: 54px 0;
-    margin: 0 auto;
-  }
-`;
-const VisuallyHiddenHeading = styled.h1`
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  border: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-`;

@@ -1,0 +1,17 @@
+@import '../styles/variables.module.scss';
+
+.imageWrapper {
+  position: relative;
+  width: min(100%, calc(601px / 2));
+  aspect-ratio: 601 / 373;
+
+  @media (min-width: $tablet-min-width) {
+    width: calc(601px / 1.5);
+  }
+  @media (min-width: $laptop-min-width) {
+    width: calc(601px / 1.25);
+  }
+  @media (min-width: $desktop-min-width) {
+    width: 601px;
+  }
+}

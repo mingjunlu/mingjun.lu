@@ -1,52 +1,25 @@
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import Cookies from 'js-cookie';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import Script from 'next/script';
-import { useEffect, useMemo, useState } from 'react';
-import { ThemeProvider } from 'styled-components';
 import { site } from 'src/constants';
+import { ThemeContext } from 'src/contexts';
+import { useTheme } from 'src/hooks';
 import 'src/styles/reset.css';
 import '../styles/globals.css';
 
 config.autoAddCss = false;
 
-export type ColorMode = 'light' | 'dark' | undefined;
-
 export default function CustomApp(props: AppProps) {
   const { Component, pageProps } = props;
-  const [colorMode, setColorMode] = useState<ColorMode>();
+  const theme = useTheme();
 
-  const theme = useMemo(() => {
-    return {
-      colorMode,
-      setColorMode,
-    };
-  }, [colorMode]);
   const isAnalyticsEnabled =
     typeof window !== 'undefined' &&
     typeof site.url !== 'undefined' &&
     window.location.protocol === 'https:' &&
     window.location.href.includes(site.url);
-
-  useEffect(() => {
-    const root = document.documentElement;
-    const isFirstLoad = colorMode === undefined;
-    if (isFirstLoad) {
-      const theme = root.getAttribute('data-theme');
-      if (isValidTheme(theme)) {
-        setColorMode(theme);
-      }
-    } else {
-      root.setAttribute('data-theme', colorMode);
-      Cookies.set('theme', colorMode, {
-        expires: 30, // Days
-        sameSite: 'strict',
-        secure: true,
-      });
-    }
-  }, [colorMode]);
 
   return (
     <>
@@ -56,9 +29,9 @@ export default function CustomApp(props: AppProps) {
           content="width=device-width, initial-scale=1"
         />
       </Head>
-      <ThemeProvider theme={theme}>
+      <ThemeContext.Provider value={theme}>
         <Component {...pageProps} />
-      </ThemeProvider>
+      </ThemeContext.Provider>
       {isAnalyticsEnabled && (
         <Script
           async
@@ -68,10 +41,4 @@ export default function CustomApp(props: AppProps) {
       )}
     </>
   );
-}
-
-function isValidTheme(
-  value: unknown
-): value is NonNullable<ColorMode> {
-  return value === 'light' || value === 'dark';
 }

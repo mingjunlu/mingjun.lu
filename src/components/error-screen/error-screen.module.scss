@@ -1,6 +1,4 @@
-import styled from 'styled-components';
-
-const ErrorScreen = styled.main`
+.container {
   display: grid;
   place-items: center;
   width: 100vw;
@@ -10,10 +8,4 @@ const ErrorScreen = styled.main`
   @supports (height: 100dvh) {
     height: 100dvh;
   }
-`;
-
-const Layout = {
-  ErrorScreen,
-};
-
-export default Layout;
+}
