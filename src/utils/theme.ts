@@ -1,4 +1,4 @@
-import { ColorMode } from 'src/pages/_app.page';
+import { ColorMode } from 'src/hooks/use-theme';
 
 export function applyThemeOnFirstLoad() {
   document.documentElement.setAttribute(

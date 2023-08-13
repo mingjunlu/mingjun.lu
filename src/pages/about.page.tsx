@@ -3,12 +3,17 @@ import {
   faGithub,
 } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import clsx from 'clsx';
 import { Inter } from 'next/font/google';
 import Image from 'next/image';
-import styled from 'styled-components';
-import { Header, Metadata, NavLink } from 'src/components';
-import { mediaQueries as queries } from 'src/constants';
+import {
+  Header,
+  Metadata,
+  NavLink,
+  VisuallyHiddenHeading,
+} from 'src/components';
 import { site } from 'src/constants';
+import styles from './about.module.scss';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,10 +21,10 @@ export default function About() {
   return (
     <>
       <Metadata title="About" url={`${site.url}/about`} />
-      <Container>
+      <main className={styles.container}>
         <Header />
-        <Main>
-          <Profile>
+        <article className={styles.main}>
+          <section className={styles.profile}>
             <Image
               priority
               src="/avatar.jpg"
@@ -28,34 +33,36 @@ export default function About() {
               height={120}
             />
             <div>
-              <Greeting className={inter.className}>
+              <p className={clsx(styles.greeting, inter.className)}>
                 {"Hi, I'm Ming-jun Lu."}
-              </Greeting>
-              <SocialLinkGroup>
+              </p>
+              <ul className={styles.socialLinkList}>
                 <li>
-                  <SocialLink
+                  <NavLink
                     href="https://github.com/mingjunlu"
                     target="_blank"
                     rel="noreferrer noopener"
+                    className={styles.socialLink}
                   >
                     <FontAwesomeIcon icon={faGithub} />
                     <span>GitHub</span>
-                  </SocialLink>
+                  </NavLink>
                 </li>
                 <li>
-                  <SocialLink
+                  <NavLink
                     href="https://www.facebook.com/mingchun.lu"
                     target="_blank"
                     rel="noreferrer noopener"
+                    className={styles.socialLink}
                   >
                     <FontAwesomeIcon icon={faFacebook} />
                     <span>Facebook</span>
-                  </SocialLink>
+                  </NavLink>
                 </li>
-              </SocialLinkGroup>
+              </ul>
             </div>
-          </Profile>
-          <Body>
+          </section>
+          <section className={styles.content}>
             <VisuallyHiddenHeading>關於我</VisuallyHiddenHeading>
             <p>
               2018 年 8 月開始自學 web 前端開發，自 2020 年 6 月起在
@@ -147,138 +154,9 @@ export default function About() {
               </NavLink>
               。
             </p>
-          </Body>
-        </Main>
-      </Container>
+          </section>
+        </article>
+      </main>
     </>
   );
 }
-
-const Container = styled.main`
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  padding: 18px 20px;
-
-  @supports (min-height: 100dvh) {
-    min-height: 100dvh;
-  }
-  @media ${queries.tabletAndWider} {
-    padding: 60px;
-    max-width: 754px;
-    margin: 0 auto;
-  }
-`;
-const Main = styled.article`
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  padding: 42px 0;
-
-  @media ${queries.tabletAndWider} {
-    gap: 40px;
-    font-size: 18px;
-    line-height: 1.8;
-    padding: 54px 0;
-    margin: 0 auto;
-  }
-`;
-const Profile = styled.section`
-  text-align: center;
-
-  @media ${queries.tabletAndWider} {
-    display: flex;
-    gap: 30px;
-    text-align: left;
-  }
-
-  > img {
-    margin: 0 auto;
-    border-radius: 6px;
-
-    @media ${queries.tabletAndWider} {
-      flex: 0 0 auto;
-      margin: 0;
-    }
-  }
-  > div {
-    @media ${queries.tabletAndWider} {
-      flex: 1 1 auto;
-    }
-  }
-`;
-const Greeting = styled.p`
-  font-size: 24px;
-  line-height: normal;
-  font-weight: 600;
-  margin-top: 16px;
-
-  @media ${queries.tabletAndWider} {
-    margin-top: 36px;
-  }
-`;
-const SocialLinkGroup = styled.ul`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  padding: 0;
-  margin: 30px 0 0 0;
-  list-style-type: none;
-
-  @media ${queries.tabletAndWider} {
-    justify-content: flex-start;
-    gap: 40px;
-    margin-top: 20px;
-  }
-`;
-const SocialLink = styled(NavLink)`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  line-height: initial;
-
-  &:hover {
-    text-decoration: none;
-  }
-
-  @media ${queries.tabletAndWider} {
-    gap: 12px;
-  }
-
-  > svg {
-    width: 20px;
-    height: 20px;
-
-    @media ${queries.tabletAndWider} {
-      width: 30px;
-      height: 30px;
-    }
-  }
-  > span {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-  }
-`;
-const Body = styled.section`
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-
-  ${NavLink} {
-    display: inline;
-    text-decoration: underline;
-  }
-`;
-const VisuallyHiddenHeading = styled.h1`
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  border: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-`;

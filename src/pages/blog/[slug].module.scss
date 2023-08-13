@@ -1,0 +1,56 @@
+@import '../../styles/variables.module.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 18px 20px;
+
+  @supports (min-height: 100dvh) {
+    min-height: 100dvh;
+  }
+  @media (min-width: $tablet-min-width) {
+    padding: 60px;
+    max-width: 754px;
+    margin: 0 auto;
+  }
+}
+.main {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 42px 0;
+
+  @media (min-width: $tablet-min-width) {
+    gap: 24px;
+    font-size: 18px;
+    line-height: 1.8;
+    width: 100%;
+    padding: 54px 0;
+    margin: 0 auto;
+
+    > aside {
+      order: 0;
+    }
+  }
+
+  /* prettier-ignore */
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.4;
+    font-weight: 600;
+  }
+  pre {
+    width: 100%;
+  }
+}
+.imageWrapper {
+  position: relative;
+  aspect-ratio: 16 / 9;
+
+  > img {
+    object-fit: cover;
+    border-radius: 6px;
+    background-color: var(--color-light-gray);
+  }
+}

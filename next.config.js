@@ -8,9 +8,6 @@ const commitHash = execSync('git log -1 --pretty=format:%h')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  compiler: {
-    styledComponents: true,
-  },
   env: {
     NEXT_PUBLIC_COMMIT_HASH: commitHash,
   },

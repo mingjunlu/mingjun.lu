@@ -1,3 +1,5 @@
+import clsx from 'clsx';
+import { ComponentProps } from 'react';
 import { CodeProps } from 'react-markdown/lib/ast-to-react';
 import bash from 'react-syntax-highlighter/dist/cjs/languages/prism/bash';
 import css from 'react-syntax-highlighter/dist/cjs/languages/prism/css';
@@ -10,7 +12,7 @@ import tsx from 'react-syntax-highlighter/dist/cjs/languages/prism/tsx';
 import typescript from 'react-syntax-highlighter/dist/cjs/languages/prism/typescript';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/cjs/prism-light';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
-import styled from 'styled-components';
+import styles from './code.module.scss';
 
 SyntaxHighlighter.registerLanguage('bash', bash);
 SyntaxHighlighter.registerLanguage('css', css);
@@ -45,15 +47,27 @@ export default function Code(props: CodeProps) {
   const shouldHighlightSyntax = !!matches;
 
   if (inline) {
-    return <InlineCode className={className}>{children}</InlineCode>;
+    return (
+      <code
+        className={clsx(styles.base, styles.inlineCode, className)}
+      >
+        {children}
+      </code>
+    );
   }
   if (!shouldHighlightSyntax) {
-    return <CodeBlock className={className}>{children}</CodeBlock>;
+    return (
+      <code
+        className={clsx(styles.base, styles.codeBlock, className)}
+      >
+        {children}
+      </code>
+    );
   }
   return (
     <SyntaxHighlighter
       language={matches.at(1)}
-      PreTag={CodeBlockWrapper}
+      PreTag={PreTag}
       style={highlighterStyle}
       customStyle={highlighterCustomStyle}
     >
@@ -62,25 +76,10 @@ export default function Code(props: CodeProps) {
   );
 }
 
-const Base = styled.code`
-  border-radius: 6px;
-  font-size: 0.8em;
-  font-family: ui-monospace, 'Cascadia Mono', 'Segoe UI Mono',
-    'Ubuntu Mono', 'Roboto Mono', Menlo, Monaco, Consolas, monospace;
-`;
-const InlineCode = styled(Base)`
-  display: inline-block;
-  line-height: initial;
-  padding: 2px 6px;
-  color: var(--color-dark-gray);
-  background-color: var(--color-light-gray);
-  word-break: break-word;
-`;
-const CodeBlock = styled(Base)`
-  display: block;
-  padding: 12px 20px;
-  overflow-x: auto;
-  color: var(--color-light-gray);
-  background-color: var(--color-black);
-`;
-const CodeBlockWrapper = styled(CodeBlock).attrs({ as: 'div' })``;
+function PreTag(props: ComponentProps<'pre'>) {
+  return (
+    <div className={clsx(styles.base, styles.codeBlock)}>
+      {props.children}
+    </div>
+  );
+}

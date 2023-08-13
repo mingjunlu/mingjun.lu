@@ -1,0 +1,9 @@
+$tablet-min-width: 550px;
+$laptop-min-width: 1100px;
+$desktop-min-width: 1500px;
+
+:export {
+  tabletMinWidth: $tablet-min-width;
+  laptopMinWidth: $laptop-min-width;
+  desktopMinWidth: $desktop-min-width;
+}

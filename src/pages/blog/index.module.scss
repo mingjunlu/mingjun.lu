@@ -1,0 +1,29 @@
+@import '../../styles/variables.module.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 18px 20px;
+
+  @supports (min-height: 100dvh) {
+    min-height: 100dvh;
+  }
+  @media (min-width: $tablet-min-width) {
+    padding: 60px;
+    max-width: 754px;
+    margin: 0 auto;
+  }
+}
+.main {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 42px 0;
+
+  @media (min-width: $tablet-min-width) {
+    padding: 54px 0;
+    margin: 0 auto;
+  }
+}

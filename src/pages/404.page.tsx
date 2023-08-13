@@ -1,8 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import styled from 'styled-components';
-import { mediaQueries as queries } from 'src/constants';
-import Layout from 'src/layouts';
+import { ErrorScreen } from 'src/components';
+import styles from './404.module.scss';
 
 export default function Custom404() {
   return (
@@ -10,32 +9,16 @@ export default function Custom404() {
       <Head>
         <title>Page Not Found | Ming-jun Lu</title>
       </Head>
-      <Layout.ErrorScreen>
-        <ImageWrapper>
+      <ErrorScreen>
+        <figure className={styles.imageWrapper}>
           <Image
             fill
             priority
             src="/error-404.png"
             alt="Page not found"
           />
-        </ImageWrapper>
-      </Layout.ErrorScreen>
+        </figure>
+      </ErrorScreen>
     </>
   );
 }
-
-const ImageWrapper = styled.figure`
-  position: relative;
-  width: min(100%, calc(612px / 2));
-  aspect-ratio: 612 / 373;
-
-  @media ${queries.tabletAndWider} {
-    width: calc(612px / 1.5);
-  }
-  @media ${queries.laptopAndWider} {
-    width: calc(612px / 1.25);
-  }
-  @media ${queries.desktopAndWider} {
-    width: 612px;
-  }
-`;
