@@ -1,4 +1,3 @@
-import matter from 'gray-matter';
 import { fromMarkdown } from 'mdast-util-from-markdown';
 import { toString } from 'mdast-util-to-string';
 import readingTime from 'reading-time';
@@ -38,6 +37,7 @@ export async function getPosts(): Promise<PostWithoutContent[]> {
       }));
     })
   );
+  const matter = (await import('gray-matter')).default;
   return notesWithContent.map((note) => {
     const matterFile = matter(note.content);
     const frontMatter: FrontMatter = matterFile.data;
@@ -70,6 +70,7 @@ export async function getPostBySlug(slug: string): Promise<Post> {
     throw new Error(`Post not found (slug: ${slug})`);
   }
   const noteContent = await getNoteContentById(foundPost.id);
+  const matter = (await import('gray-matter')).default;
   const matterFile = matter(noteContent);
   const frontMatter: FrontMatter = matterFile.data;
   if (!frontMatter.title) {
