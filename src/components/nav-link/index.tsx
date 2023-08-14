@@ -9,7 +9,11 @@ export default function NavLink(props: NavLinkProps) {
   const { children, className, ...rest } = props;
 
   return (
-    <Link className={clsx(styles.container, className)} {...rest}>
+    <Link
+      prefetch={false}
+      className={clsx(styles.container, className)}
+      {...rest}
+    >
       {children}
     </Link>
   );
