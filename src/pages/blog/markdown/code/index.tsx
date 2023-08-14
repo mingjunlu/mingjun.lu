@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { ComponentProps } from 'react';
 import { CodeProps } from 'react-markdown/lib/ast-to-react';
+import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import bash from 'react-syntax-highlighter/dist/cjs/languages/prism/bash';
 import css from 'react-syntax-highlighter/dist/cjs/languages/prism/css';
 import javascript from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript';
@@ -10,7 +11,6 @@ import python from 'react-syntax-highlighter/dist/cjs/languages/prism/python';
 import sass from 'react-syntax-highlighter/dist/cjs/languages/prism/sass';
 import tsx from 'react-syntax-highlighter/dist/cjs/languages/prism/tsx';
 import typescript from 'react-syntax-highlighter/dist/cjs/languages/prism/typescript';
-import SyntaxHighlighter from 'react-syntax-highlighter/dist/cjs/prism-light';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import styles from './code.module.scss';
 
