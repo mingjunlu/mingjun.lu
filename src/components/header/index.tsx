@@ -24,7 +24,7 @@ export default function Header() {
 
   return (
     <header className={clsx(styles.container, inter.className)}>
-      <NavLink href="/" className={styles.logoLink}>
+      <NavLink href="/" aria-label="Home" className={styles.logoLink}>
         <LogoSvg />
       </NavLink>
       <nav className={styles.nav}>
@@ -51,6 +51,9 @@ export default function Header() {
       </nav>
       <button
         type="button"
+        role="switch"
+        aria-label="開啟深色模式"
+        aria-checked={isDarkMode}
         onClick={toggleColorMode}
         className={styles.toggleButton}
       >
