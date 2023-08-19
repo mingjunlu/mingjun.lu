@@ -1,9 +1,5 @@
 import { GetStaticPropsResult } from 'next';
-import {
-  Header,
-  Metadata,
-  VisuallyHiddenHeading,
-} from 'src/components';
+import { Metadata, VisuallyHiddenHeading } from 'src/components';
 import { site } from 'src/constants';
 import {
   PostWithoutContent,
@@ -33,24 +29,21 @@ export default function Blog(props: BlogProps) {
         url={`${site.url}/blog`}
       />
       <main className={styles.container}>
-        <Header />
-        <section className={styles.main}>
-          <VisuallyHiddenHeading>Blog Posts</VisuallyHiddenHeading>
-          {posts.map((post, index) => (
-            <SummarizedPost
-              key={post.id}
-              id={post.id}
-              title={post.title}
-              publishedAt={post.publishedAt}
-              slug={post.slug}
-              tags={post.tags}
-              summary={post.summary}
-              featuredImage={post.featuredImage}
-              readingTime={post.readingTime}
-              shouldPreloadImage={isLcp(index, indexOfFirstImage)}
-            />
-          ))}
-        </section>
+        <VisuallyHiddenHeading>Blog Posts</VisuallyHiddenHeading>
+        {posts.map((post, index) => (
+          <SummarizedPost
+            key={post.id}
+            id={post.id}
+            title={post.title}
+            publishedAt={post.publishedAt}
+            slug={post.slug}
+            tags={post.tags}
+            summary={post.summary}
+            featuredImage={post.featuredImage}
+            readingTime={post.readingTime}
+            shouldPreloadImage={isLcp(index, indexOfFirstImage)}
+          />
+        ))}
       </main>
     </>
   );

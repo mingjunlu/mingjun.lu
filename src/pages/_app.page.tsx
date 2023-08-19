@@ -3,6 +3,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import Script from 'next/script';
+import { Layout } from 'src/components';
 import { site } from 'src/constants';
 import { ThemeContext } from 'src/contexts';
 import { useTheme } from 'src/hooks';
@@ -30,7 +31,9 @@ export default function CustomApp(props: AppProps) {
         />
       </Head>
       <ThemeContext.Provider value={theme}>
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </ThemeContext.Provider>
       {isAnalyticsEnabled && (
         <Script
