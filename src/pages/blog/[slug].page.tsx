@@ -7,7 +7,7 @@ import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
 import { PluggableList } from 'react-markdown/lib/react-markdown';
 import remarkGfm from 'remark-gfm';
-import { Header, Metadata } from 'src/components';
+import { Metadata } from 'src/components';
 import { site } from 'src/constants';
 import { Post, getPostBySlug, getPosts } from 'src/utils/post';
 import styles from './[slug].module.scss';
@@ -52,27 +52,24 @@ export default function BlogPost(props: BlogPostProps) {
         image={featuredImage}
         url={`${site.url}/blog/${slug}`}
       />
-      <main className={styles.container}>
-        <Header />
-        <article className={styles.main}>
-          <PostMetadata
-            publishedAt={publishedAt}
-            tags={tags}
-            readingTime={readingTime}
-          />
-          {!!featuredImage && (
-            <figure className={styles.imageWrapper}>
-              <Image fill priority src={featuredImage} alt="" />
-            </figure>
-          )}
-          <ReactMarkdown
-            remarkPlugins={remarkPlugins}
-            components={markdownComponents}
-          >
-            {content.trim()}
-          </ReactMarkdown>
-        </article>
-      </main>
+      <article className={styles.container}>
+        <PostMetadata
+          publishedAt={publishedAt}
+          tags={tags}
+          readingTime={readingTime}
+        />
+        {!!featuredImage && (
+          <figure className={styles.imageWrapper}>
+            <Image fill priority src={featuredImage} alt="" />
+          </figure>
+        )}
+        <ReactMarkdown
+          remarkPlugins={remarkPlugins}
+          components={markdownComponents}
+        >
+          {content.trim()}
+        </ReactMarkdown>
+      </article>
     </>
   );
 }
