@@ -64,9 +64,6 @@ body {
 :root[data-theme="dark"] [class*="_svg__window"] {
   fill: var(--color-black);
 }
-:root[data-theme="dark"] [src*="under-construction.png"] {
-  display: none;
-}
 
 :root[data-theme="light"] .moon-icon,
 :root[data-theme="light"] [class*="_svg__moon-icon"],
@@ -75,9 +72,6 @@ body {
 }
 :root[data-theme="light"] [class*="_svg__window"] {
   fill: var(--color-papaya-whip);
-}
-:root[data-theme="light"] [src*="under-construction-dark.png"] {
-  display: none;
 }
 
 @supports (font: -apple-system-body) and (-webkit-appearance: none) {
