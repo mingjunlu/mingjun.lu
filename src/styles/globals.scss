@@ -29,15 +29,6 @@
   --transition-ease-in-out-300: 300ms ease-in-out;
 }
 
-:root[data-theme="dark"] {
-  --color-foreground: var(--color-white);
-  --color-background: var(--color-arsenic-gray);
-  --color-header-foreground: var(--color-regent-gray);
-  --color-post-metadata-foreground: var(--color-regent-gray);
-  --color-quote-foreground: var(--color-light-gray);
-  --color-quote-background: var(--color-dark-gray);
-}
-
 body {
   font-family:
     "PingFang TC",
@@ -56,26 +47,36 @@ body {
   isolation: isolate;
 }
 
-:root[data-theme="dark"] .sun-icon,
-:root[data-theme="dark"] [class*="_svg__sun-icon"],
-:root[data-theme="dark"] [class*="_svg__cloud-icon"] {
-  display: none;
-}
-:root[data-theme="dark"] [class*="_svg__window"] {
-  fill: var(--color-black);
-}
-
-:root[data-theme="light"] .moon-icon,
-:root[data-theme="light"] [class*="_svg__moon-icon"],
-:root[data-theme="light"] [class*="_svg__star-icon"] {
-  display: none;
-}
-:root[data-theme="light"] [class*="_svg__window"] {
-  fill: var(--color-papaya-whip);
-}
-
 @supports (font: -apple-system-body) and (-webkit-appearance: none) {
   img[loading="lazy"] {
     clip-path: inset(0.6px);
+  }
+}
+
+:root[data-theme="dark"] {
+  --color-foreground: var(--color-white);
+  --color-background: var(--color-arsenic-gray);
+  --color-header-foreground: var(--color-regent-gray);
+  --color-post-metadata-foreground: var(--color-regent-gray);
+  --color-quote-foreground: var(--color-light-gray);
+  --color-quote-background: var(--color-dark-gray);
+
+  .sun-icon,
+  [class*="_svg__sun-icon"],
+  [class*="_svg__cloud-icon"] {
+    display: none;
+  }
+  [class*="_svg__window"] {
+    fill: var(--color-black);
+  }
+}
+:root[data-theme="light"] {
+  .moon-icon,
+  [class*="_svg__moon-icon"],
+  [class*="_svg__star-icon"] {
+    display: none;
+  }
+  [class*="_svg__window"] {
+    fill: var(--color-papaya-whip);
   }
 }
