@@ -7,6 +7,7 @@
   --color-french-gray: #BBBBBB;
   --color-light-gray: #EAEDF3;
   --color-white: #FCFCFC;
+  --color-papaya-whip: #FFEECC;
   --color-foreground: var(--color-dark-gray);
   --color-background: var(--color-white);
   --color-header-foreground: var(--color-gray);
@@ -55,15 +56,25 @@ body {
   isolation: isolate;
 }
 
-:root[data-theme="dark"] .sun-icon {
+:root[data-theme="dark"] .sun-icon,
+:root[data-theme="dark"] [class*="_svg__sun-icon"],
+:root[data-theme="dark"] [class*="_svg__cloud-icon"] {
   display: none;
+}
+:root[data-theme="dark"] [class*="_svg__window"] {
+  fill: var(--color-black);
 }
 :root[data-theme="dark"] [src*="under-construction.png"] {
   display: none;
 }
 
-:root[data-theme="light"] .moon-icon {
+:root[data-theme="light"] .moon-icon,
+:root[data-theme="light"] [class*="_svg__moon-icon"],
+:root[data-theme="light"] [class*="_svg__star-icon"] {
   display: none;
+}
+:root[data-theme="light"] [class*="_svg__window"] {
+  fill: var(--color-papaya-whip);
 }
 :root[data-theme="light"] [src*="under-construction-dark.png"] {
   display: none;

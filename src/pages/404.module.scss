@@ -1,17 +1,16 @@
 @import '../styles/variables.module.scss';
 
 .imageWrapper {
-  position: relative;
-  width: min(100%, calc(612px / 2));
-  aspect-ratio: 612 / 373;
+  width: min(100%, calc(620px / 2));
+  aspect-ratio: 620 / 390;
 
   @media (min-width: $tablet-min-width) {
-    width: calc(612px / 1.5);
+    width: calc(620px / 1.5);
   }
   @media (min-width: $laptop-min-width) {
-    width: calc(612px / 1.25);
+    width: calc(620px / 1.25);
   }
   @media (min-width: $desktop-min-width) {
-    width: 612px;
+    width: 620px;
   }
 }
