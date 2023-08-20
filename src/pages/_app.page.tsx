@@ -7,8 +7,8 @@ import { Layout } from 'src/components';
 import { site } from 'src/constants';
 import { ThemeContext } from 'src/contexts';
 import { useTheme } from 'src/hooks';
-import 'src/styles/reset.css';
-import '../styles/globals.css';
+import 'src/styles/reset.scss';
+import '../styles/globals.scss';
 
 config.autoAddCss = false;
 
