@@ -1,13 +1,8 @@
 import { Note } from '@hackmd/api/dist/type';
 
 export function getNotes(): Promise<Note[]> {
-  const url = `${process.env.HACKMD_API_ENDPOINT}/notes`;
-  const options = {
-    headers: {
-      Authorization: `Bearer ${process.env.HACKMD_API_TOKEN}`,
-    },
-  };
-  return fetch(url, options).then((response) => response.json());
+  const url = `${process.env.NOTES_URL}/raw`;
+  return fetch(url).then((response) => response.json());
 }
 
 export function getNoteContentById(id: string): Promise<string> {
