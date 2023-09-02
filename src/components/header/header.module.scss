@@ -7,20 +7,19 @@
 .logoLink {
   flex: 0 0 auto;
   padding: 6px 10px;
-  color: inherit;
+  transition: color var(--transition-ease-in-out-250);
 
   @media (min-width: $tablet-min-width) {
     padding: 2px 10px;
   }
+}
+.logo {
+  width: 26px;
+  height: 60px;
 
-  > svg {
-    width: 26px;
-    height: 60px;
-
-    @media (min-width: $tablet-min-width) {
-      width: 29px;
-      height: 70px;
-    }
+  @media (min-width: $tablet-min-width) {
+    width: 29px;
+    height: 70px;
   }
 }
 .nav {
@@ -41,38 +40,8 @@
   margin: 0;
   list-style-type: none;
 }
-.navListItem {
-  > a {
-    display: block;
-    font-size: 20px;
-    padding: 6px 10px;
-    color: inherit;
-    transition: color var(--transition-ease-in-out-250),
-      background-color var(--transition-ease-in-out-250);
-  }
-}
-.navListItemActive {
-  > a {
-    font-weight: 600;
-    text-decoration: underline;
-    color: var(--color-foreground);
-  }
-}
-.toggleButton {
-  all: unset;
-  display: inline-grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  cursor: pointer;
-
-  > :global(.moon-icon) {
-    width: 18px;
-    height: 18px;
-    transform: translateX(2px);
-  }
-  > :global(.sun-icon) {
-    width: 24px;
-    height: 24px;
-  }
+.navLink {
+  font-size: 20px;
+  padding: 6px 10px;
+  transition: color var(--transition-ease-in-out-250);
 }

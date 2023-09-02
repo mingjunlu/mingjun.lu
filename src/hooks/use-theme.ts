@@ -1,40 +1,43 @@
+'use client';
+
 import Cookies from 'js-cookie';
 import { useEffect, useMemo, useState } from 'react';
-
-export type ColorMode = 'light' | 'dark' | undefined;
+import { Theme, isDarkMode, isValidTheme } from 'src/utils/theme';
 
 export default function useTheme() {
-  const [colorMode, setColorMode] = useState<ColorMode>();
-  const theme = useMemo(() => {
-    return {
-      colorMode,
-      setColorMode,
-    };
-  }, [colorMode]);
+  const [themeValue, setThemeValue] = useState<Theme>();
 
-  useEffect(() => {
-    const root = document.documentElement;
-    const isFirstLoad = colorMode === undefined;
-    if (isFirstLoad) {
-      const theme = root.getAttribute('data-theme');
-      if (isValidTheme(theme)) {
-        setColorMode(theme);
-      }
-    } else {
-      root.setAttribute('data-theme', colorMode);
-      Cookies.set('theme', colorMode, {
+  const valueToReturn = useMemo(() => {
+    const synchronizeTheme = (theme: Theme) => {
+      document.documentElement.setAttribute('data-theme', theme);
+      Cookies.set('theme', theme, {
         expires: 30, // Days
         sameSite: 'strict',
-        secure: true,
+        secure: process.env.NODE_ENV === 'production',
       });
-    }
-  }, [colorMode]);
+    };
+    return {
+      theme: themeValue,
+      isDarkMode: isDarkMode(themeValue),
+      setTheme(theme: Theme) {
+        setThemeValue(theme);
+        synchronizeTheme(theme);
+      },
+      toggleTheme() {
+        if (!isValidTheme(themeValue)) {
+          return;
+        }
+        const newTheme = isDarkMode(themeValue) ? 'light' : 'dark';
+        setThemeValue(newTheme);
+        synchronizeTheme(newTheme);
+      },
+    };
+  }, [themeValue]);
 
-  return theme;
-}
+  useEffect(() => {
+    const value = document.documentElement.getAttribute('data-theme');
+    setThemeValue(isValidTheme(value) ? value : 'light');
+  }, []);
 
-function isValidTheme(
-  value: unknown
-): value is NonNullable<ColorMode> {
-  return value === 'light' || value === 'dark';
+  return valueToReturn;
 }

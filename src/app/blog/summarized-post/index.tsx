@@ -1,6 +1,6 @@
 import Image from 'next/image';
+import PostMetadata from 'src/app/blog/post-metadata';
 import { NavLink } from 'src/components';
-import PostMetadata from 'src/pages/blog/post-metadata';
 import { PostWithoutContent } from 'src/utils/post';
 import styles from './summarized-post.module.scss';
 

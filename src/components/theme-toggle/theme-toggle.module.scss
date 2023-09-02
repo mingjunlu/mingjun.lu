@@ -1,0 +1,17 @@
+.container {
+  all: unset;
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+}
+.moonIcon {
+  width: 18px;
+  height: 18px;
+  transform: translateX(2px);
+}
+.sunIcon {
+  width: 24px;
+  height: 24px;
+}
