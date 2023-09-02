@@ -1,19 +1,5 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-
-const { execSync } = require('child_process');
-
-const commitHash = execSync('git log -1 --pretty=format:%h')
-  .toString()
-  .trim();
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  env: {
-    NEXT_PUBLIC_COMMIT_HASH: commitHash,
-  },
-  experimental: {
-    scrollRestoration: true,
-  },
   images: {
     remotePatterns: [
       {
@@ -24,7 +10,6 @@ const nextConfig = {
       },
     ],
   },
-  pageExtensions: ['page.tsx', 'page.ts', 'page.jsx', 'page.js'],
   reactStrictMode: true,
   async redirects() {
     return [
@@ -47,8 +32,10 @@ const nextConfig = {
       },
       {
         test: /\.svg$/i,
-        issuer: /\.[jt]sx?$/,
-        resourceQuery: { not: /url/ },
+        issuer: fileLoaderRule.issuer,
+        resourceQuery: {
+          not: [...fileLoaderRule.resourceQuery.not, /url/],
+        },
         use: ['@svgr/webpack'],
       }
     );

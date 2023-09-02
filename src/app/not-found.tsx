@@ -1,15 +1,12 @@
+import { Metadata } from 'next';
 import PageNotFoundSvg from 'public/error-404.svg';
-import {
-  ErrorScreen,
-  Metadata,
-  VisuallyHiddenHeading,
-} from 'src/components';
-import styles from './404.module.scss';
+import { ErrorScreen, VisuallyHiddenHeading } from 'src/components';
+import { site } from 'src/constants';
+import styles from './not-found.module.scss';
 
-export default function Custom404() {
+export default function NotFound() {
   return (
     <>
-      <Metadata title="Page Not Found" />
       <ErrorScreen>
         <figure className={styles.imageWrapper}>
           <PageNotFoundSvg />
@@ -22,4 +19,10 @@ export default function Custom404() {
       </ErrorScreen>
     </>
   );
+}
+
+export function generateMetadata(): Metadata {
+  return {
+    title: `Page Not Found | ${site.name}`,
+  };
 }

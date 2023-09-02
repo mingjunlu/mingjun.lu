@@ -4,13 +4,10 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
+import { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Image from 'next/image';
-import {
-  Metadata,
-  NavLink,
-  VisuallyHiddenHeading,
-} from 'src/components';
+import { NavLink, VisuallyHiddenHeading } from 'src/components';
 import { site } from 'src/constants';
 import styles from './about.module.scss';
 
@@ -19,7 +16,6 @@ const inter = Inter({ subsets: ['latin'] });
 export default function About() {
   return (
     <>
-      <Metadata title="About" url={`${site.url}/about`} />
       <article className={styles.container}>
         <VisuallyHiddenHeading>關於我</VisuallyHiddenHeading>
         <section className={styles.profile}>
@@ -155,4 +151,15 @@ export default function About() {
       </article>
     </>
   );
+}
+
+export function generateMetadata(): Metadata {
+  const title = `About | ${site.name}`;
+  return {
+    title,
+    openGraph: {
+      url: '/about',
+      title,
+    },
+  };
 }

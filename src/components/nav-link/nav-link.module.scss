@@ -7,4 +7,9 @@
   &:hover {
     text-decoration: underline;
   }
+  &:global(.active) {
+    font-weight: 600;
+    text-decoration: underline;
+    color: var(--color-foreground);
+  }
 }
