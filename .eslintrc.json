@@ -3,6 +3,7 @@
     "next/core-web-vitals",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/stylistic",
     "prettier"
   ],
   "parser": "@typescript-eslint/parser",
@@ -11,7 +12,6 @@
   ],
   "root": true,
   "rules": {
-    "@typescript-eslint/no-explicit-any": "error",
-    "@typescript-eslint/no-unused-vars": "error"
+    "@typescript-eslint/consistent-type-definitions": ["error", "type"]
   }
 }
