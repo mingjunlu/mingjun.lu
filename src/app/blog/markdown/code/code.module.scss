@@ -19,3 +19,14 @@
   color: var(--color-light-gray);
   background-color: var(--color-black);
 }
+.highlighter {
+  pre {
+    border-radius: 6px;
+  }
+  code {
+    min-width: auto !important; // Override inline styles
+  }
+}
+.highlightedCodeBlock {
+  overflow-x: auto;
+}
