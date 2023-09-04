@@ -41,7 +41,12 @@ export default function SummarizedPost(props: SummarizedPostProps) {
         readingTime={readingTime}
       />
       {!!summary && <p className={styles.summary}>{summary}</p>}
-      <NavLink href={`/blog/${slug}`}>閱讀全文</NavLink>
+      <NavLink
+        href={`/blog/${slug}`}
+        aria-label={`閱讀全文：${title}`}
+      >
+        閱讀全文
+      </NavLink>
     </article>
   );
 }
