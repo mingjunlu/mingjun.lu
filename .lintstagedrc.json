@@ -1,6 +1,6 @@
 {
   "*.{cjs,js,jsx,mjs,ts,tsx}": [
     "eslint",
-    "yarn format"
+    "pnpm run format"
   ]
 }
