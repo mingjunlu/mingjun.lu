@@ -38,29 +38,31 @@ export async function getPosts(): Promise<PostWithoutContent[]> {
     })
   );
   const matter = (await import('gray-matter')).default;
-  return notesWithContent.map((note) => {
-    const matterFile = matter(note.content);
-    const frontMatter: FrontMatter = matterFile.data;
-    if (!frontMatter.title) {
-      throw new Error('Invalid title');
-    }
-    if (!frontMatter.publishedAt) {
-      throw new Error('Invalid publication time');
-    }
-    if (!frontMatter.slug) {
-      throw new Error('Invalid slug');
-    }
-    return {
-      id: note.id,
-      title: frontMatter.title,
-      publishedAt: frontMatter.publishedAt,
-      slug: frontMatter.slug,
-      tags: frontMatter.tags || [],
-      summary: frontMatter.summary || '',
-      featuredImage: frontMatter.featuredImage || '',
-      readingTime: getReadingTime(note.content),
-    };
-  });
+  return notesWithContent
+    .map((note) => {
+      const matterFile = matter(note.content);
+      const frontMatter: FrontMatter = matterFile.data;
+      if (!frontMatter.title) {
+        throw new Error('Invalid title');
+      }
+      if (!frontMatter.publishedAt) {
+        throw new Error('Invalid publication time');
+      }
+      if (!frontMatter.slug) {
+        throw new Error('Invalid slug');
+      }
+      return {
+        id: note.id,
+        title: frontMatter.title,
+        publishedAt: frontMatter.publishedAt,
+        slug: frontMatter.slug,
+        tags: frontMatter.tags || [],
+        summary: frontMatter.summary || '',
+        featuredImage: frontMatter.featuredImage || '',
+        readingTime: getReadingTime(note.content),
+      };
+    })
+    .sort(sortByPublicationTime);
 }
 
 export async function getPostBySlug(slug: string): Promise<Post> {

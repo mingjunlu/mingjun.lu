@@ -1,17 +1,12 @@
 import { Metadata } from 'next';
 import { VisuallyHiddenHeading } from 'src/components';
 import { site } from 'src/constants';
-import {
-  getPosts,
-  isLcp,
-  sortByPublicationTime,
-} from 'src/utils/post';
+import { getPosts, isLcp } from 'src/utils/post';
 import styles from './blog.module.scss';
 import SummarizedPost from './summarized-post';
 
 export default async function Blog() {
   const posts = await getPosts();
-  const sortedPosts = [...posts].sort(sortByPublicationTime);
   const indexOfFirstImage = posts.findIndex(
     (post) => !!post.featuredImage
   );
@@ -20,7 +15,7 @@ export default async function Blog() {
     <>
       <main className={styles.container}>
         <VisuallyHiddenHeading>文章列表</VisuallyHiddenHeading>
-        {sortedPosts.map((post, index) => (
+        {posts.map((post, index) => (
           <SummarizedPost
             key={post.id}
             id={post.id}
