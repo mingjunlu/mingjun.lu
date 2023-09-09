@@ -65,6 +65,21 @@ export async function getPosts(): Promise<PostWithoutContent[]> {
     .sort(sortByPublicationTime);
 }
 
+export async function getAdjacentPosts(id: string): Promise<{
+  previous?: PostWithoutContent;
+  next?: PostWithoutContent;
+}> {
+  const posts = await getPosts();
+  const index = posts.findIndex((post) => post.id === id);
+  const previousPost: PostWithoutContent | undefined =
+    posts[index + 1];
+  const nextPost: PostWithoutContent | undefined = posts[index - 1];
+  return {
+    previous: previousPost,
+    next: nextPost,
+  };
+}
+
 export async function getPostBySlug(slug: string): Promise<Post> {
   const posts = await getPosts();
   const foundPost = posts.find((post) => post.slug === slug);

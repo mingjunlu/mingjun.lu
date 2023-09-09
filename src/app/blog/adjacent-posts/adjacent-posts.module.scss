@@ -1,0 +1,56 @@
+@import '../../../styles/variables.module.scss';
+
+.container {
+  padding: 16px 0 42px 0;
+
+  @media (min-width: $tablet-min-width) {
+    font-size: 18px;
+    padding: 24px 0 36px 0;
+  }
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 0;
+  list-style-type: none;
+
+  @media (min-width: $tablet-min-width) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+.listItem {
+  &:nth-child(1) {
+    margin-right: auto;
+  }
+  &:nth-child(2) {
+    margin-left: auto;
+  }
+  &:empty {
+    display: none;
+  }
+
+  @media (min-width: $tablet-min-width) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+.previous {
+  &::before {
+    content: '← ';
+  }
+}
+.next {
+  &::after {
+    content: ' →';
+  }
+}
