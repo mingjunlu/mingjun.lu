@@ -5,6 +5,7 @@ import { PluggableList } from 'react-markdown/lib/react-markdown';
 import remarkGfm from 'remark-gfm';
 import { site } from 'src/constants';
 import { getPostBySlug, getPosts } from 'src/utils/post';
+import AdjacentPosts from '../adjacent-posts';
 import Markdown from '../markdown';
 import PostMetadata from '../post-metadata';
 import styles from './post.module.scss';
@@ -52,6 +53,7 @@ export default async function BlogPost(props: BlogPostProps) {
           {post.content.trim()}
         </ReactMarkdown>
       </article>
+      <AdjacentPosts currentId={post.id} />
     </>
   );
 }
