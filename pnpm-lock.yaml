@@ -49,7 +49,7 @@ dependencies:
     version: 18.2.0(react@18.2.0)
   react-markdown:
     specifier: 8.0.7
-    version: 8.0.7(@types/react@18.2.27)(react@18.2.0)
+    version: 8.0.7(@types/react@18.2.28)(react@18.2.0)
   reading-time:
     specifier: 2.0.0-1
     version: 2.0.0-1
@@ -74,8 +74,8 @@ devDependencies:
     specifier: 20.8.4
     version: 20.8.4
   '@types/react':
-    specifier: 18.2.27
-    version: 18.2.27
+    specifier: 18.2.28
+    version: 18.2.28
   '@types/react-dom':
     specifier: 18.2.12
     version: 18.2.12
@@ -1968,11 +1968,11 @@ packages:
   /@types/react-dom@18.2.12:
     resolution: {integrity: sha512-QWZuiA/7J/hPIGocXreCRbx7wyoeet9ooxfbSA+zbIWqyQEE7GMtRn4A37BdYyksnN+/NDnWgfxZH9UVGDw1hg==}
     dependencies:
-      '@types/react': 18.2.27
+      '@types/react': 18.2.28
     dev: true
 
-  /@types/react@18.2.27:
-    resolution: {integrity: sha512-Wfv7B7FZiR2r3MIqbAlXoY1+tXm4bOqfz4oRr+nyXdBqapDBZ0l/IGcSlAfvxIHEEJjkPU0MYAc/BlFPOcrgLw==}
+  /@types/react@18.2.28:
+    resolution: {integrity: sha512-ad4aa/RaaJS3hyGz0BGegdnSRXQBkd1CCYDCdNjBPg90UUpLgo+WlJqb9fMYUxtehmzF3PJaTWqRZjko6BRzBg==}
     dependencies:
       '@types/prop-types': 15.7.8
       '@types/scheduler': 0.16.4
@@ -4883,7 +4883,7 @@ packages:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
     dev: false
 
-  /react-markdown@8.0.7(@types/react@18.2.27)(react@18.2.0):
+  /react-markdown@8.0.7(@types/react@18.2.28)(react@18.2.0):
     resolution: {integrity: sha512-bvWbzG4MtOU62XqBx3Xx+zB2raaFFsq4mYiAzfjXJMEz2sixgeAfraA3tvzULF02ZdOMUOKTBFFaZJDDrq+BJQ==}
     peerDependencies:
       '@types/react': '>=16'
@@ -4891,7 +4891,7 @@ packages:
     dependencies:
       '@types/hast': 2.3.5
       '@types/prop-types': 15.7.8
-      '@types/react': 18.2.27
+      '@types/react': 18.2.28
       '@types/unist': 2.0.7
       comma-separated-tokens: 2.0.3
       hast-util-whitespace: 2.0.1
