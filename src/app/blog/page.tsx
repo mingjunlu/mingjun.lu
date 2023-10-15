@@ -8,7 +8,7 @@ import SummarizedPost from './summarized-post';
 export default async function Blog() {
   const posts = await getPosts();
   const indexOfFirstImage = posts.findIndex(
-    (post) => !!post.featuredImage
+    (post) => !!post.featuredImage,
   );
 
   return (

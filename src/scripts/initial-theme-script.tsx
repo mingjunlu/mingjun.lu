@@ -8,7 +8,7 @@ export default function InitialThemeScript() {
           `document.documentElement.setAttribute(
             'data-theme',
             (${getInitialTheme.toString()})()
-          )`
+          )`,
         ),
       }}
     />
@@ -28,7 +28,7 @@ function getInitialTheme() {
     }
   }
   const mediaQueryList = window.matchMedia(
-    '(prefers-color-scheme: dark)'
+    '(prefers-color-scheme: dark)',
   );
   if (typeof mediaQueryList.matches === 'boolean') {
     return mediaQueryList.matches ? 'dark' : 'light'; // System-preferred theme
@@ -46,7 +46,7 @@ function minifyJavaScript(snippet: string): string {
       // Remove whitespaces around symbols
       .replace(
         /\s*([{}()[\].,;:+\-*/%&|^!=<>?~]|==|===|!=|!==|\+=|-=|\*=|\/=|%==|&&|\|\||<<|>>|>>>)\s*/g,
-        '$1'
+        '$1',
       )
   );
 }
