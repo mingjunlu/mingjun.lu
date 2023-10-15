@@ -45,7 +45,7 @@
     "husky": "8.0.3",
     "lint-staged": "14.0.1",
     "prettier": "2.8.8",
-    "sass": "1.69.2",
+    "sass": "1.69.3",
     "typescript": "5.2.2"
   }
 }
