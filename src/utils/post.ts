@@ -35,7 +35,7 @@ export async function getPosts(): Promise<PostWithoutContent[]> {
         ...note,
         content,
       }));
-    })
+    }),
   );
   const matter = (await import('gray-matter')).default;
   return notesWithContent
@@ -113,7 +113,7 @@ export async function getPostBySlug(slug: string): Promise<Post> {
 }
 
 export function sortByPublicationTime<
-  Type extends { publishedAt: string }
+  Type extends { publishedAt: string },
 >(a: Type, b: Type): number {
   const timestampA = new Date(a.publishedAt).getTime();
   const timestampB = new Date(b.publishedAt).getTime();
@@ -135,7 +135,7 @@ export function getReadingTime(text: string): number {
 
 export function isLcp(
   index: number,
-  indexOfFirstImage: number
+  indexOfFirstImage: number,
 ): boolean {
   // No need to preload if there are no images
   if (indexOfFirstImage < 0) {

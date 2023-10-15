@@ -16,7 +16,7 @@ export default function NavLink(props: NavLinkProps) {
   const combinedClassName = clsx(
     styles.container,
     isActive && 'active',
-    className
+    className,
   );
 
   return (

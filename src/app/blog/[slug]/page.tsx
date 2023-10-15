@@ -65,7 +65,7 @@ export async function generateStaticParams() {
   }));
 }
 export async function generateMetadata(
-  props: BlogPostProps
+  props: BlogPostProps,
 ): Promise<Metadata> {
   const { params } = props;
   const post = await getPostBySlug(params.slug);

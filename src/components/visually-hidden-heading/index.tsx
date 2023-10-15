@@ -5,7 +5,7 @@ import styles from './visually-hidden-heading.module.scss';
 type VisuallyHiddenHeadingProps = ComponentProps<'h1'>;
 
 export default function VisuallyHiddenHeading(
-  props: VisuallyHiddenHeadingProps
+  props: VisuallyHiddenHeadingProps,
 ) {
   const { children, className, ...rest } = props;
 

@@ -7,7 +7,7 @@ type AdjacentPostsProps = {
 };
 
 export default async function AdjacentPosts(
-  props: AdjacentPostsProps
+  props: AdjacentPostsProps,
 ) {
   const { currentId } = props;
   const { previous, next } = await getAdjacentPosts(currentId);
