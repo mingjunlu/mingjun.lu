@@ -47,5 +47,10 @@
     "prettier": "3.0.3",
     "sass": "1.69.3",
     "typescript": "5.2.2"
+  },
+  "pnpm": {
+    "overrides": {
+      "@babel/traverse": ">=7.23.2"
+    }
   }
 }
