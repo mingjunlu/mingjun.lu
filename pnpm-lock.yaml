@@ -71,8 +71,8 @@ devDependencies:
     specifier: 4.2.0
     version: 4.2.0(prettier@3.0.3)
   '@types/js-cookie':
-    specifier: 3.0.4
-    version: 3.0.4
+    specifier: 3.0.5
+    version: 3.0.5
   '@types/node':
     specifier: 20.8.6
     version: 20.8.6
@@ -1914,8 +1914,8 @@ packages:
       '@types/unist': 2.0.7
     dev: false
 
-  /@types/js-cookie@3.0.4:
-    resolution: {integrity: sha512-vMMnFF+H5KYqdd/myCzq6wLDlPpteJK+jGFgBus3Da7lw+YsDmx2C8feGTzY2M3Fo823yON+HC2CL240j4OV+w==}
+  /@types/js-cookie@3.0.5:
+    resolution: {integrity: sha512-dtLshqoiGRDHbHueIT9sjkd2F4tW1qPSX2xKAQK8p1e6pM+Z913GM1shv7dOqqasEMYbC5zEaClJomQe8OtQLA==}
     dev: true
 
   /@types/json-schema@7.0.13:
