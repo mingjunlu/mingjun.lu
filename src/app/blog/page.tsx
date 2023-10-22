@@ -45,6 +45,7 @@ export function generateMetadata(): Metadata {
       url: '/blog',
       title,
       description,
+      images: [{ url: '/opengraph-image.png' }],
     },
   };
 }

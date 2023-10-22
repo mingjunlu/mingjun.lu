@@ -79,7 +79,7 @@ export async function generateMetadata(
       description: post.summary,
       images: post.featuredImage
         ? [{ url: post.featuredImage }]
-        : undefined,
+        : [{ url: '/opengraph-image.png' }],
     },
   };
 }

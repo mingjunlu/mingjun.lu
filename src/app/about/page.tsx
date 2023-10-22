@@ -160,6 +160,7 @@ export function generateMetadata(): Metadata {
     openGraph: {
       url: '/about',
       title,
+      images: [{ url: '/opengraph-image.png' }],
     },
   };
 }
