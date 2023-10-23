@@ -4,9 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  '@babel/traverse': '>=7.23.2'
-
 dependencies:
   '@fortawesome/fontawesome-svg-core':
     specifier: 6.4.2
