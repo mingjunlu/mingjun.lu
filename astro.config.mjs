@@ -27,7 +27,7 @@ export default defineConfig({
       iconDir: 'src/assets/icons',
       include: {
         'fa6-brands': ['linkedin', 'square-github'],
-        'fa6-solid': ['calendar', 'clock', 'tag'],
+        'fa6-solid': ['calendar', 'clock', 'eye', 'tag'],
       },
     }),
   ],
