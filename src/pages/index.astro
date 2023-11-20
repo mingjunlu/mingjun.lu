@@ -1,3 +1,4 @@
-<script>
-  window.location.replace('/blog');
-</script>
+---
+Astro.response.status = 307;
+return Astro.redirect('/blog');
+---
