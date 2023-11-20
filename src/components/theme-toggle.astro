@@ -61,7 +61,7 @@ import { Icon } from 'astro-icon/components';
     switchButton?.setAttribute('aria-checked', isDarkMode(newTheme).toString());
     Cookies.set('theme', newTheme, {
       ...themeCookieOptions,
-      expires: 30, // Days
+      expires: 180, // Days
     });
   }
   function getTheme() {
