@@ -1,0 +1,253 @@
+---
+import { Icon } from 'astro-icon/components';
+import { SEO as Metadata } from 'astro-seo';
+import type { Props as MetadataProps } from 'astro-seo';
+import { Image } from 'astro:assets';
+import avatarImage from 'src/assets/images/avatar.webp';
+import Link from 'src/components/link.astro';
+import { siteName } from 'src/constants/site';
+import SiteLayout from 'src/layouts/site-layout.astro';
+
+const metadataProps: MetadataProps = {
+  title: 'About',
+  titleTemplate: `%s | ${siteName}`,
+  description: '熱愛梗圖和 emoji 的前端工程師。',
+  openGraph: {
+    basic: {
+      title: `About | ${siteName}`,
+      type: 'website',
+      image: new URL('/opengraph-image.png', Astro.url).toString(),
+      url: Astro.url.href,
+    },
+  },
+};
+---
+
+<SiteLayout>
+  <Metadata slot="head" {...metadataProps} />
+  <main>
+    <div class="profile">
+      <Image src={avatarImage} alt="Avatar" width="120" height="120" />
+      <div>
+        <h1>Hi, I'm Ming-jun Lu.</h1>
+        <ul class="social-link-list">
+          <li>
+            <Link
+              href="https://github.com/mingjunlu"
+              target="_blank"
+              rel="noreferrer noopener"
+              class="social-link"
+            >
+              <Icon name="fa6-brands:square-github" />
+              <span>GitHub</span>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="https://www.linkedin.com/in/mingjunlu"
+              target="_blank"
+              rel="noreferrer noopener"
+              class="social-link"
+            >
+              <Icon name="fa6-brands:linkedin" />
+              <span>LinkedIn</span>
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="content">
+      <p>
+        2018 年 8 月開始自學 web 前端開發，2020 年 6
+        月起擔任前端工程師至今。關於我的轉職經歷可以參考：
+        <Link href="/blog/how-i-became-a-front-end-web-developer-in-2020">
+          2020 非本科轉職前端工程師心得
+        </Link>
+         。
+      </p>
+      <p>我喜歡和別人分享學到的東西。例如：</p>
+      <ul>
+        <li>
+          <Link href="/blog/how-to-ask-for-help">
+            讓人一看就想回覆的誠懇提問術
+          </Link>
+        </li>
+        <li>
+          <Link href="/blog/lazy-loading-images-with-intersection-observer">
+            Lazy Loading 延遲載入圖片
+          </Link>
+        </li>
+        <li>
+          <Link href="/blog/image-optimization-using-webp">
+            使用 WebP 格式減少圖片載入時間
+          </Link>
+        </li>
+        <li>
+          <Link href="/blog/window-onscroll-vs-document-body-onscroll">
+            你的 onscroll 不是你的 onscroll
+          </Link>
+        </li>
+      </ul>
+      <p>對於跟生活有關的應用，我充滿熱忱。像是我寫了：</p>
+      <ul>
+        <li>
+          <Link
+            href="https://github.com/mingjunlu/findmasks-frontend"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            口罩地圖
+          </Link>
+        </li>
+        <li>
+          <Link href="/blog/monitor-laptop-battery-with-python">
+            讓 Python 自動提醒你幫電腦充電
+          </Link>
+        </li>
+      </ul>
+      <p>如果你是初學者的話，可以參考這幾篇文章：</p>
+      <ul>
+        <li>
+          <Link href="/blog/build-a-navbar-with-html-and-css-part-1">
+            用 HTML 與 CSS 製作簡易導覽列（上）
+          </Link>
+        </li>
+        <li>
+          <Link href="/blog/build-a-navbar-with-html-and-css-part-2">
+            用 HTML 與 CSS 製作簡易導覽列（中）
+          </Link>
+        </li>
+        <li>
+          <Link href="/blog/build-a-navbar-with-html-and-css-part-3">
+            用 HTML 與 CSS 製作簡易導覽列（下）
+          </Link>
+        </li>
+        <li>
+          <Link href="/blog/why-use-functions-in-python">
+            Python 初學疑惑：為什麼要用函式？
+          </Link>
+        </li>
+        <li>
+          <Link href="/blog/why-use-functions-in-python">
+            Python 初學疑惑：For 迴圈怎麼用？
+          </Link>
+        </li>
+      </ul>
+      <p>
+        想聯繫我的話，歡迎透過
+        <Link href="mailto:coders.ersatz-0a@icloud.com">email</Link>
+         。
+      </p>
+    </div>
+  </main>
+</SiteLayout>
+
+<style lang="scss">
+  @import '../styles/variables.scss';
+
+  main {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 42px 0;
+
+    @media (min-width: $tablet-min-width) {
+      gap: 40px;
+      font-size: 18px;
+      line-height: 1.8;
+      padding: 54px 0;
+      margin: 0 auto;
+    }
+  }
+  .profile {
+    text-align: center;
+
+    @media (min-width: $tablet-min-width) {
+      display: flex;
+      gap: 30px;
+      text-align: left;
+    }
+
+    > img {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto;
+      border-radius: 6px;
+      background-color: var(--color-light-gray);
+
+      @media (min-width: $tablet-min-width) {
+        flex: 0 0 auto;
+        margin: 0;
+      }
+    }
+    > div {
+      @media (min-width: $tablet-min-width) {
+        flex: 1 1 auto;
+      }
+    }
+  }
+  h1 {
+    font-family: 'Inter Variable';
+    font-size: 24px;
+    line-height: normal;
+    font-weight: 600;
+    margin-top: 16px;
+
+    @media (min-width: $tablet-min-width) {
+      margin-top: 36px;
+    }
+  }
+  .social-link-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 0;
+    margin: 30px 0 0 0;
+    list-style-type: none;
+
+    @media (min-width: $tablet-min-width) {
+      justify-content: flex-start;
+      gap: 40px;
+      margin-top: 20px;
+    }
+  }
+  .social-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    line-height: initial;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    @media (min-width: $tablet-min-width) {
+      gap: 12px;
+    }
+
+    > svg {
+      width: 20px;
+      height: 20px;
+
+      @media (min-width: $tablet-min-width) {
+        width: 30px;
+        height: 30px;
+      }
+    }
+    > span {
+      text-decoration: underline;
+    }
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    a {
+      display: inline;
+      text-decoration: underline;
+    }
+  }
+</style>

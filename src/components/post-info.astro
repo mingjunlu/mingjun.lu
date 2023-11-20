@@ -1,0 +1,108 @@
+---
+import { Icon } from 'astro-icon/components';
+
+function formatDate(date: Date | string): string {
+  return new Date(date).toLocaleDateString('en-US', {
+    dateStyle: 'medium',
+  });
+}
+
+type Props = {
+  publishedAt: string;
+  readingTime: number;
+  tags: string[];
+};
+
+const { publishedAt, readingTime, tags } = Astro.props;
+const firstTag = tags.at(0);
+---
+
+<aside>
+  <div class="segment">
+    <Icon name="fa6-solid:calendar" class="calendar-icon" />
+    <time datetime={publishedAt}>{formatDate(publishedAt)}</time>
+  </div>
+  <div class="segment">
+    <Icon name="fa6-solid:clock" class="clock-icon" />
+    <span>{`${readingTime} min`}</span>
+  </div>
+  {
+    !!firstTag && (
+      <div class="segment">
+        <Icon name="fa6-solid:tag" class="tag-icon" />
+        <span>{firstTag}</span>
+      </div>
+    )
+  }
+</aside>
+
+<style lang="scss">
+  @import '../styles/variables.scss';
+
+  aside {
+    display: flex;
+    gap: 12px;
+    font-size: 14px;
+    line-height: calc(16 / 14);
+    color: var(--color-post-metadata-foreground);
+
+    @media (min-width: $tablet-min-width) {
+      gap: 16px;
+      font-size: 16px;
+      line-height: 1;
+    }
+  }
+  .segment {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-right: 12px;
+    border-right: 1px solid;
+
+    &:last-child {
+      flex: 0 1 auto;
+      padding-right: 0;
+      border-right: none;
+
+      > span {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    @media (min-resolution: 2dppx) {
+      border-width: 0.5px;
+    }
+    @media (min-width: $tablet-min-width) {
+      padding-right: 16px;
+    }
+
+    .calendar-icon {
+      width: 13px;
+      height: 13px;
+      transform: translateY(-0.5px);
+
+      @media (min-width: $tablet-min-width) {
+        transform: translateY(-1px);
+      }
+    }
+    .clock-icon {
+      width: 14px;
+      height: 14px;
+      transform: translateY(-0.5px);
+    }
+    .tag-icon {
+      width: 15px;
+      height: 15px;
+      transform: translateY(0.5px);
+
+      @media (min-width: $tablet-min-width) {
+        width: 16px;
+        height: 16px;
+        transform: none;
+      }
+    }
+  }
+</style>
