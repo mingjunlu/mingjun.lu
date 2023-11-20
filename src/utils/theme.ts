@@ -1,9 +1,7 @@
-export type Theme = 'light' | 'dark';
-
-export function isValidTheme(value: unknown): value is Theme {
+export function isValidTheme(value: unknown): value is 'light' | 'dark' {
   return value === 'light' || value === 'dark';
 }
 
-export function isDarkMode(theme: unknown) {
+export function isDarkMode(theme: unknown): theme is 'dark' {
   return theme === 'dark';
 }

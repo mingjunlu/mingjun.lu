@@ -1,0 +1,164 @@
+---
+import { SEO as Metadata } from 'astro-seo';
+import type { Props as MetadataProps } from 'astro-seo';
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import Link from 'src/components/link.astro';
+import PostInfo from 'src/components/post-info.astro';
+import VisuallyHidden from 'src/components/visually-hidden.astro';
+import { siteName } from 'src/constants/site';
+import SiteLayout from 'src/layouts/site-layout.astro';
+import { sortByPublicationTime, getReadingTime } from 'src/utils/post';
+
+const postEntries = await getCollection('posts');
+const sortedPostEntries = [...postEntries].sort(sortByPublicationTime);
+const metadataProps: MetadataProps = {
+  title: 'Blog',
+  titleTemplate: `%s | ${siteName}`,
+  description: 'Ming-jun 的部落格，用淺顯易懂的方式記錄所學與應用。',
+  openGraph: {
+    basic: {
+      title: `Blog | ${siteName}`,
+      type: 'website',
+      image: new URL('/opengraph-image.png', Astro.url).toString(),
+      url: Astro.url.href,
+    },
+  },
+};
+---
+
+<SiteLayout>
+  <Metadata slot="head" {...metadataProps} />
+  <main>
+    <VisuallyHidden as="h1">Blog Posts</VisuallyHidden>
+    {
+      sortedPostEntries.map((entry) => {
+        const { image, publishedAt, summary, tags, title } = entry.data;
+        return (
+          <article>
+            <h2>
+              <Link href={`/blog/${entry.slug}`}>{title}</Link>
+            </h2>
+            <PostInfo
+              publishedAt={publishedAt}
+              readingTime={getReadingTime(entry.body)}
+              tags={tags}
+            />
+            {!!image && (
+              <picture>
+                <Image src={image.src} alt={image.alt} />
+              </picture>
+            )}
+            {!!summary && <p>{summary}</p>}
+            <Link
+              href={`/blog/${entry.slug}`}
+              aria-label={`閱讀全文：${title}`}
+            >
+              閱讀全文
+            </Link>
+          </article>
+        );
+      })
+    }
+  </main>
+</SiteLayout>
+
+<style lang="scss">
+  @import '../../styles/variables.scss';
+
+  main {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 42px 0;
+
+    @media (min-width: $tablet-min-width) {
+      padding: 54px 0;
+      margin: 0 auto;
+    }
+  }
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--color-french-gray);
+    text-align: center;
+
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    @media (min-resolution: 2dppx) {
+      border-width: 0.5px;
+    }
+    @media (min-width: $tablet-min-width) {
+      position: relative;
+      gap: 10px;
+      min-height: 128px;
+      padding-bottom: 36px;
+
+      &:has(picture) {
+        padding-right: 154px;
+      }
+      :global(aside) {
+        order: -1;
+      }
+    }
+
+    > a {
+      align-self: center;
+      display: inline-block;
+      padding: 4px 16px;
+      margin-top: 4px;
+      border: 1px solid;
+      border-radius: 6px;
+      font-weight: 500;
+      text-decoration: none;
+      color: inherit;
+
+      @media (min-width: $tablet-min-width) {
+        display: none;
+      }
+    }
+  }
+  h2 {
+    line-height: 1.4;
+    font-weight: 600;
+    text-align: left;
+
+    @media (min-width: $tablet-min-width) {
+      margin-top: 4px;
+    }
+  }
+  picture {
+    aspect-ratio: 16 / 9;
+    border-radius: 6px;
+
+    @media (min-width: $tablet-min-width) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 128px;
+      aspect-ratio: 1 / 1;
+    }
+
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: inherit;
+      background-color: var(--color-light-gray);
+    }
+  }
+  p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-align: left;
+  }
+</style>

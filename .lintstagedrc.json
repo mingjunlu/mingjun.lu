@@ -1,6 +1,6 @@
 {
-  "*.{cjs,js,jsx,mjs,ts,tsx}": [
-    "eslint",
+  "*.{astro,cjs,js,jsx,ts,tsx}": [
+    "pnpm run lint",
     "pnpm run format"
   ]
 }

@@ -1,0 +1,70 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<button
+  type="button"
+  role="switch"
+  aria-checked={undefined}
+  aria-label="開啟深色模式"
+  class="theme-toggle"
+>
+  <!-- Presence controlled by CSS -->
+  <Icon name="moon" class="moon-icon" />
+  <Icon name="sun" class="sun-icon" />
+</button>
+
+<style lang="scss">
+  button {
+    all: unset;
+    display: inline-grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+  }
+  .moon-icon {
+    width: 18px;
+    height: 18px;
+    transform: translateX(2px);
+  }
+  .sun-icon {
+    width: 24px;
+    height: 24px;
+  }
+</style>
+
+<script>
+  import Cookies from 'js-cookie';
+  import { isDarkMode, isValidTheme } from 'src/utils/theme';
+
+  const switchButton = document.querySelector('.theme-toggle');
+  if (switchButton) {
+    const theme = getTheme();
+    if (isValidTheme(theme)) {
+      switchButton.setAttribute('aria-checked', isDarkMode(theme).toString());
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      switchButton.setAttribute('aria-checked', 'false');
+    }
+    switchButton.addEventListener('click', toggleTheme);
+  }
+
+  function toggleTheme() {
+    const theme = getTheme();
+    if (!isValidTheme(theme)) {
+      return;
+    }
+    const newTheme = isDarkMode(theme) ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    switchButton?.setAttribute('aria-checked', isDarkMode(newTheme).toString());
+    Cookies.set('theme', newTheme, {
+      expires: 30, // Days
+      sameSite: 'strict',
+      secure: import.meta.env.PROD,
+    });
+  }
+  function getTheme() {
+    return document.documentElement.getAttribute('data-theme');
+  }
+</script>
