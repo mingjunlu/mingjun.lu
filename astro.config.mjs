@@ -1,3 +1,4 @@
+import vercelServerless from '@astrojs/vercel/serverless';
 import icon from 'astro-icon';
 import { defineConfig } from 'astro/config';
 import { loadEnv } from 'vite';
@@ -12,14 +13,9 @@ const { PUBLIC_SITE_URL } = loadEnv(
 );
 
 export default defineConfig({
-  redirects: {
-    '/': {
-      status: 302,
-      destination: '/blog',
-    },
-  },
   site: PUBLIC_SITE_URL,
-  output: 'static',
+  output: 'server',
+  adapter: vercelServerless(),
   integrations: [
     icon({
       iconDir: 'src/assets/icons',
