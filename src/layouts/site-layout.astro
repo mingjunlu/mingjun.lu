@@ -7,16 +7,23 @@ import Header from 'src/components/header.astro';
 import { defaultTheme } from 'src/constants/theme';
 import { isValidTheme } from 'src/utils/theme';
 
+function getCommitHash() {
+  return (
+    process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 7) ??
+    execSync('git log -1 --pretty=format:%h').toString().trim()
+  );
+}
 function getInitialTheme() {
   const preferredTheme = Astro.cookies.get('theme')?.value;
   return isValidTheme(preferredTheme) ? preferredTheme : defaultTheme;
 }
+function isAnalyticsEnabled() {
+  const isProduction = import.meta.env.PROD;
+  const isVercelDomain = Astro.url.hostname.includes('.vercel.app');
+  return isProduction && !isVercelDomain;
+}
 
-const version =
-  process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 7) ??
-  execSync('git log -1 --pretty=format:%h').toString().trim();
-const isVercelDomain = Astro.url.hostname.includes('.vercel.app');
-const isAnalyticsEnabled = import.meta.env.PROD && !isVercelDomain;
+const version = getCommitHash();
 const theme = getInitialTheme();
 ---
 
@@ -30,7 +37,7 @@ const theme = getInitialTheme();
     <link rel="apple-touch-icon" href={`/apple-touch-icon.png?v=${version}`} />
     <link rel="manifest" href={`/manifest.webmanifest?v=${version}`} />
     {
-      isAnalyticsEnabled && (
+      isAnalyticsEnabled() && (
         <script
           is:inline
           async
