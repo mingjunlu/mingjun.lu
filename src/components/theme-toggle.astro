@@ -36,6 +36,7 @@ import { Icon } from 'astro-icon/components';
 
 <script>
   import Cookies from 'js-cookie';
+  import { defaultTheme, themeCookieOptions } from 'src/constants/theme';
   import { isDarkMode, isValidTheme } from 'src/utils/theme';
 
   const switchButton = document.querySelector('.theme-toggle');
@@ -44,7 +45,7 @@ import { Icon } from 'astro-icon/components';
     if (isValidTheme(theme)) {
       switchButton.setAttribute('aria-checked', isDarkMode(theme).toString());
     } else {
-      document.documentElement.setAttribute('data-theme', 'light');
+      document.documentElement.setAttribute('data-theme', defaultTheme);
       switchButton.setAttribute('aria-checked', 'false');
     }
     switchButton.addEventListener('click', toggleTheme);
@@ -59,9 +60,8 @@ import { Icon } from 'astro-icon/components';
     document.documentElement.setAttribute('data-theme', newTheme);
     switchButton?.setAttribute('aria-checked', isDarkMode(newTheme).toString());
     Cookies.set('theme', newTheme, {
+      ...themeCookieOptions,
       expires: 30, // Days
-      sameSite: 'strict',
-      secure: import.meta.env.PROD,
     });
   }
   function getTheme() {
