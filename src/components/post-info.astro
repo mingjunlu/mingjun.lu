@@ -1,20 +1,30 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { increasePostViewBySlug } from 'src/utils/post';
 
 function formatDate(date: Date | string): string {
   return new Date(date).toLocaleDateString('en-US', {
     dateStyle: 'medium',
   });
 }
+function formatViewCount(count: number): string {
+  const formatter = new Intl.NumberFormat('en-US', {
+    notation: 'compact',
+  });
+  return formatter.format(count);
+}
 
 type Props = {
   publishedAt: string;
   readingTime: number;
+  viewCount?: number;
   tags: string[];
 };
 
+const { slug } = Astro.params;
 const { publishedAt, readingTime, tags } = Astro.props;
 const firstTag = tags.at(0);
+const viewCount = Astro.props.viewCount ?? (await increasePostViewBySlug(slug));
 ---
 
 <aside>
@@ -25,6 +35,10 @@ const firstTag = tags.at(0);
   <div class="segment">
     <Icon name="fa6-solid:clock" class="clock-icon" />
     <span>{`${readingTime} min`}</span>
+  </div>
+  <div class="segment">
+    <Icon name="fa6-solid:eye" class="eye-icon" />
+    <span>{formatViewCount(viewCount)}</span>
   </div>
   {
     !!firstTag && (
@@ -57,13 +71,20 @@ const firstTag = tags.at(0);
     display: flex;
     align-items: center;
     gap: 8px;
-    padding-right: 12px;
-    border-right: 1px solid;
+    padding-left: 12px;
+    border-left: 1px solid;
 
+    &:first-child {
+      padding-left: 0;
+      border-left: none;
+    }
     &:last-child {
+      display: none;
       flex: 0 1 auto;
-      padding-right: 0;
-      border-right: none;
+
+      @media (min-width: $tablet-min-width) {
+        display: flex;
+      }
 
       > span {
         white-space: nowrap;
@@ -76,9 +97,12 @@ const firstTag = tags.at(0);
       border-width: 0.5px;
     }
     @media (min-width: $tablet-min-width) {
-      padding-right: 16px;
+      padding-left: 16px;
     }
 
+    svg {
+      flex: 0 0 auto;
+    }
     .calendar-icon {
       width: 13px;
       height: 13px;
@@ -92,6 +116,10 @@ const firstTag = tags.at(0);
       width: 14px;
       height: 14px;
       transform: translateY(-0.5px);
+    }
+    .eye-icon {
+      width: 16px;
+      height: 16px;
     }
     .tag-icon {
       width: 15px;
