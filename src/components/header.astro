@@ -1,0 +1,78 @@
+---
+import { Icon } from 'astro-icon/components';
+import Link from 'src/components/link.astro';
+import ThemeToggle from 'src/components/theme-toggle.astro';
+
+const { pathname } = Astro.url;
+---
+
+<header>
+  <Link href="/" aria-label="Home" class="logo-link">
+    <Icon name="logo" class="logo" />
+  </Link>
+  <nav>
+    <ul>
+      <li>
+        <Link href="/about" isActive={pathname.startsWith('/about')}>
+          About
+        </Link>
+      </li>
+      <li>
+        <Link href="/blog" isActive={pathname.startsWith('/blog')}>Blog</Link>
+      </li>
+    </ul>
+  </nav>
+  <ThemeToggle />
+</header>
+
+<style lang="scss">
+  @import '../styles/variables.scss';
+
+  header {
+    display: flex;
+    align-items: center;
+    font-family: 'Inter Variable';
+  }
+  .logo-link {
+    flex: 0 0 auto;
+    padding: 6px 10px;
+
+    @media (min-width: $tablet-min-width) {
+      padding: 2px 10px;
+    }
+  }
+  .logo {
+    width: 26px;
+    height: 60px;
+
+    @media (min-width: $tablet-min-width) {
+      width: 29px;
+      height: 70px;
+    }
+  }
+  nav {
+    flex: 1 1 150px;
+    margin-left: 28px;
+    overflow-x: auto;
+    color: var(--color-header-foreground);
+
+    @media (min-width: $tablet-min-width) {
+      margin-left: 54px;
+    }
+  }
+  ul {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+  li {
+    > a {
+      font-size: 20px;
+      padding: 6px 10px;
+      transition: color var(--transition-ease-in-out-250);
+    }
+  }
+</style>

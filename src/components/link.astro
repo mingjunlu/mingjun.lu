@@ -1,0 +1,31 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+type Props = HTMLAttributes<'a'> & {
+  isActive?: boolean;
+};
+
+const { isActive, class: className, ...rest } = Astro.props;
+---
+
+<a class:list={[{ active: isActive }, className]} {...rest}>
+  <slot />
+</a>
+
+<style lang="scss">
+  a {
+    display: inline-block;
+    text-decoration: none;
+    text-underline-offset: 6px;
+    color: inherit;
+
+    &:hover {
+      text-decoration: underline;
+    }
+    &:global(.active) {
+      font-weight: 600;
+      text-decoration: underline;
+      color: var(--color-foreground);
+    }
+  }
+</style>

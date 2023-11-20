@@ -1,0 +1,57 @@
+---
+import { Icon } from 'astro-icon/components';
+import { SEO as Metadata } from 'astro-seo';
+import type { Props as MetadataProps } from 'astro-seo';
+import VisuallyHidden from 'src/components/visually-hidden.astro';
+import { siteName } from 'src/constants/site';
+import ErrorLayout from 'src/layouts/error-layout.astro';
+import SiteLayout from 'src/layouts/site-layout.astro';
+
+const metadataProps: MetadataProps = {
+  title: 'Page Not Found',
+  titleTemplate: `%s | ${siteName}`,
+  openGraph: {
+    basic: {
+      title: `Page Not Found | ${siteName}`,
+      type: 'website',
+      image: new URL('/opengraph-image.png', Astro.url).toString(),
+      url: Astro.url.href,
+    },
+  },
+};
+---
+
+<SiteLayout>
+  <Metadata slot="head" {...metadataProps} />
+  <ErrorLayout>
+    <figure>
+      <Icon name="page-not-found" />
+      <figcaption>
+        <VisuallyHidden as="h1">Page Not Found</VisuallyHidden>
+      </figcaption>
+    </figure>
+  </ErrorLayout>
+</SiteLayout>
+
+<style lang="scss">
+  @import '../styles/variables.scss';
+
+  figure {
+    width: min(100%, calc(620px / 2));
+    aspect-ratio: 620 / 390;
+
+    @media (min-width: $tablet-min-width) {
+      width: calc(620px / 1.5);
+    }
+    @media (min-width: $laptop-min-width) {
+      width: calc(620px / 1.25);
+    }
+    @media (min-width: $desktop-min-width) {
+      width: 620px;
+    }
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+</style>

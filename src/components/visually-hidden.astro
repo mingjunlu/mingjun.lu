@@ -1,0 +1,28 @@
+---
+import type { HTMLTag } from 'astro/types';
+
+type Props = {
+  as?: HTMLTag;
+  class?: string;
+};
+
+const { as: Element = 'div', class: className }: Props = Astro.props;
+---
+
+<Element class:list={['visually-hidden', className]}>
+  <slot />
+</Element>
+
+<style>
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+</style>

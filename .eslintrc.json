@@ -1,17 +1,23 @@
 {
   "extends": [
-    "next/core-web-vitals",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/stylistic",
-    "prettier"
+    "plugin:astro/recommended",
+    "plugin:astro/jsx-a11y-recommended"
   ],
   "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "@typescript-eslint"
+  "plugins": ["@typescript-eslint"],
+  "overrides": [
+    {
+      "files": ["*.astro"],
+      "parser": "astro-eslint-parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser",
+        "extraFileExtensions": [".astro"]
+      }
+    }
   ],
-  "root": true,
   "rules": {
-    "@typescript-eslint/consistent-type-definitions": ["error", "type"]
+    "@typescript-eslint/triple-slash-reference": "off"
   }
 }
