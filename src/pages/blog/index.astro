@@ -8,10 +8,17 @@ import PostInfo from 'src/components/post-info.astro';
 import VisuallyHidden from 'src/components/visually-hidden.astro';
 import { siteName } from 'src/constants/site';
 import SiteLayout from 'src/layouts/site-layout.astro';
-import { sortByPublicationTime, getReadingTime } from 'src/utils/post';
+import {
+  getPostViews,
+  getReadingTime,
+  sortByPublicationTime,
+} from 'src/utils/post';
 
 const postEntries = await getCollection('posts');
 const sortedPostEntries = [...postEntries].sort(sortByPublicationTime);
+const viewCounts = await getPostViews(
+  sortedPostEntries.map((entry) => entry.slug),
+);
 const metadataProps: MetadataProps = {
   title: 'Blog',
   titleTemplate: `%s | ${siteName}`,
@@ -32,8 +39,9 @@ const metadataProps: MetadataProps = {
   <main>
     <VisuallyHidden as="h1">Blog Posts</VisuallyHidden>
     {
-      sortedPostEntries.map((entry) => {
+      sortedPostEntries.map((entry, index) => {
         const { image, publishedAt, summary, tags, title } = entry.data;
+        const viewCount = viewCounts.at(index) ?? 0;
         return (
           <article>
             <h2>
@@ -42,6 +50,7 @@ const metadataProps: MetadataProps = {
             <PostInfo
               publishedAt={publishedAt}
               readingTime={getReadingTime(entry.body)}
+              viewCount={viewCount}
               tags={tags}
             />
             {!!image && (
