@@ -10,35 +10,25 @@ import { siteName } from 'src/constants/site';
 import SiteLayout from 'src/layouts/site-layout.astro';
 import { getReadingTime, sortByPublicationTime } from 'src/utils/post';
 
-export async function getStaticPaths() {
-  const postEntries = await getCollection('posts');
-  return [...postEntries]
-    .sort(sortByPublicationTime)
-    .map((entry, index, array) => {
-      const prevPost = array[index + 1];
-      const nextPost = array[index - 1];
-      return {
-        params: {
-          slug: entry.slug,
-        },
-        props: {
-          entry,
-          prev: prevPost && {
-            slug: prevPost.slug,
-            title: prevPost.data.title,
-          },
-          next: nextPost && {
-            slug: nextPost.slug,
-            title: nextPost.data.title,
-          },
-        },
-      };
-    });
+const postEntries = await getCollection('posts');
+const sortedPostEntries = [...postEntries].sort(sortByPublicationTime);
+const indexOfPostEntry = sortedPostEntries.findIndex((entry) => entry.slug);
+const postEntry = sortedPostEntries.at(indexOfPostEntry);
+if (!postEntry) {
+  return Astro.redirect('/404');
 }
-
-const { entry, prev, next } = Astro.props;
-const { Content } = await entry.render();
-const { image, publishedAt, summary, tags, title } = entry.data;
+const { Content } = await postEntry.render();
+const { image, publishedAt, summary, tags, title } = postEntry.data;
+const prevPost = sortedPostEntries[indexOfPostEntry + 1];
+const nextPost = sortedPostEntries[indexOfPostEntry - 1];
+const prev = prevPost && {
+  slug: prevPost.slug,
+  title: prevPost.data.title,
+};
+const next = nextPost && {
+  slug: nextPost.slug,
+  title: nextPost.data.title,
+};
 const metadataProps: MetadataProps = {
   title,
   titleTemplate: `%s | ${siteName}`,
@@ -61,7 +51,7 @@ const metadataProps: MetadataProps = {
   <article>
     <PostInfo
       publishedAt={publishedAt}
-      readingTime={getReadingTime(entry.body)}
+      readingTime={getReadingTime(postEntry.body)}
       tags={tags}
     />
     {

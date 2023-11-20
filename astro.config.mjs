@@ -1,3 +1,4 @@
+import vercel from '@astrojs/vercel/serverless';
 import icon from 'astro-icon';
 import { defineConfig } from 'astro/config';
 import { loadEnv } from 'vite';
@@ -19,7 +20,8 @@ export default defineConfig({
     },
   },
   site: PUBLIC_SITE_URL,
-  output: 'static',
+  output: 'server',
+  adapter: vercel(),
   integrations: [
     icon({
       iconDir: 'src/assets/icons',
