@@ -3,6 +3,7 @@ import { Icon } from 'astro-icon/components';
 ---
 
 <button
+  disabled
   type="button"
   role="switch"
   aria-checked={undefined}
@@ -21,7 +22,14 @@ import { Icon } from 'astro-icon/components';
     place-items: center;
     width: 44px;
     height: 44px;
+    transition: filter var(--transition-ease-in-150);
+    filter: grayscale(0);
     cursor: pointer;
+
+    &:disabled {
+      filter: grayscale(1);
+      cursor: not-allowed;
+    }
   }
   .moon-icon {
     width: 18px;
@@ -49,6 +57,7 @@ import { Icon } from 'astro-icon/components';
       switchButton.setAttribute('aria-checked', 'false');
     }
     switchButton.addEventListener('click', toggleTheme);
+    switchButton.removeAttribute('disabled');
   }
 
   function toggleTheme() {
