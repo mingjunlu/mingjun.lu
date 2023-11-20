@@ -1,25 +1,27 @@
 ---
+import { getCollection } from 'astro:content';
 import Link from 'src/components/link.astro';
+import { sortByPublicationTime } from 'src/utils/post';
 
-type AdjacentPost = {
-  slug: string;
-  title: string;
-};
 type Props = {
-  prev?: AdjacentPost;
-  next?: AdjacentPost;
+  slug: string;
 };
 
-const { prev, next } = Astro.props;
+const { slug } = Astro.props;
+const postEntries = await getCollection('posts');
+const sortedPostEntries = postEntries.sort(sortByPublicationTime);
+const indexOfPost = sortedPostEntries.findIndex((entry) => entry.slug === slug);
+const prev = sortedPostEntries[indexOfPost + 1];
+const next = sortedPostEntries[indexOfPost - 1];
 ---
 
 <nav>
   <ul>
     <li>
-      {!!prev && <Link href={`/blog/${prev.slug}`}>{prev.title}</Link>}
+      {!!prev && <Link href={`/blog/${prev.slug}`}>{prev.data.title}</Link>}
     </li>
     <li>
-      {!!next && <Link href={`/blog/${next.slug}`}>{next.title}</Link>}
+      {!!next && <Link href={`/blog/${next.slug}`}>{next.data.title}</Link>}
     </li>
   </ul>
 </nav>

@@ -2,33 +2,21 @@
 import { SEO as Metadata } from 'astro-seo';
 import type { Props as MetadataProps } from 'astro-seo';
 import { Image, getImage } from 'astro:assets';
-import { getCollection } from 'astro:content';
+import { getEntry } from 'astro:content';
 import sanitizeHtml from 'sanitize-html';
 import AdjacentPosts from 'src/components/adjacent-posts.astro';
 import PostInfo from 'src/components/post-info.astro';
 import { siteName } from 'src/constants/site';
 import SiteLayout from 'src/layouts/site-layout.astro';
-import { getReadingTime, sortByPublicationTime } from 'src/utils/post';
+import { getReadingTime } from 'src/utils/post';
 
-const postEntries = await getCollection('posts');
-const sortedPostEntries = [...postEntries].sort(sortByPublicationTime);
-const indexOfPostEntry = sortedPostEntries.findIndex((entry) => entry.slug);
-const postEntry = sortedPostEntries.at(indexOfPostEntry);
+const { slug = '' } = Astro.params;
+const postEntry = await getEntry('posts', slug);
 if (!postEntry) {
   return Astro.redirect('/404');
 }
 const { Content } = await postEntry.render();
 const { image, publishedAt, summary, tags, title } = postEntry.data;
-const prevPost = sortedPostEntries[indexOfPostEntry + 1];
-const nextPost = sortedPostEntries[indexOfPostEntry - 1];
-const prev = prevPost && {
-  slug: prevPost.slug,
-  title: prevPost.data.title,
-};
-const next = nextPost && {
-  slug: nextPost.slug,
-  title: nextPost.data.title,
-};
 const metadataProps: MetadataProps = {
   title,
   titleTemplate: `%s | ${siteName}`,
@@ -68,7 +56,7 @@ const metadataProps: MetadataProps = {
     }
     <Content />
   </article>
-  <AdjacentPosts prev={prev} next={next} />
+  <AdjacentPosts slug={postEntry.slug} />
 </SiteLayout>
 
 <style lang="scss">
