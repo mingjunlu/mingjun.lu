@@ -1,0 +1,82 @@
+---
+import Link from 'src/components/link.astro';
+
+type AdjacentPost = {
+  slug: string;
+  title: string;
+};
+type Props = {
+  prev?: AdjacentPost;
+  next?: AdjacentPost;
+};
+
+const { prev, next } = Astro.props;
+---
+
+<nav>
+  <ul>
+    <li>
+      {!!prev && <Link href={`/blog/${prev.slug}`}>{prev.title}</Link>}
+    </li>
+    <li>
+      {!!next && <Link href={`/blog/${next.slug}`}>{next.title}</Link>}
+    </li>
+  </ul>
+</nav>
+
+<style lang="scss">
+  @import '../styles/variables.scss';
+
+  nav {
+    padding: 16px 0 42px 0;
+
+    @media (min-width: $tablet-min-width) {
+      font-size: 18px;
+      padding: 24px 0 36px 0;
+    }
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 0;
+    list-style-type: none;
+
+    @media (min-width: $tablet-min-width) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+  li {
+    &:empty {
+      display: none;
+    }
+    &:first-child {
+      margin-right: auto;
+
+      > a {
+        &::before {
+          content: '← ';
+        }
+      }
+    }
+    &:last-child {
+      margin-left: auto;
+
+      > a {
+        &::after {
+          content: ' →';
+        }
+      }
+    }
+
+    @media (min-width: $tablet-min-width) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+</style>

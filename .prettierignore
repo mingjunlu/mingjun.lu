@@ -1,0 +1,2 @@
+# Temporarily ignore Astro components containing <html>. See: https://github.com/withastro/compiler/issues/585
+src/layouts/site-layout.astro
