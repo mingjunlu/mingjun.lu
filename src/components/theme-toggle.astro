@@ -47,13 +47,15 @@ import { Icon } from 'astro-icon/components';
   import { defaultTheme, themeCookieOptions } from 'src/constants/theme';
   import { isDarkMode, isValidTheme } from 'src/utils/theme';
 
+  const { documentElement } = document;
   const switchButton = document.querySelector('.theme-toggle');
+
   if (switchButton) {
     const theme = getTheme();
     if (isValidTheme(theme)) {
       switchButton.setAttribute('aria-checked', isDarkMode(theme).toString());
     } else {
-      document.documentElement.setAttribute('data-theme', defaultTheme);
+      documentElement.setAttribute('data-theme', defaultTheme);
       switchButton.setAttribute('aria-checked', 'false');
     }
     switchButton.addEventListener('click', toggleTheme);
@@ -67,17 +69,17 @@ import { Icon } from 'astro-icon/components';
     }
     const themeColor = {
       light: window
-        .getComputedStyle(document.documentElement)
+        .getComputedStyle(documentElement)
         .getPropertyValue('--color-white'),
       dark: window
-        .getComputedStyle(document.documentElement)
+        .getComputedStyle(documentElement)
         .getPropertyValue('--color-arsenic-gray'),
     };
     const newTheme = isDarkMode(theme) ? 'light' : 'dark';
     document
       .querySelector('meta[name="theme-color"]')
       ?.setAttribute('content', themeColor[newTheme]);
-    document.documentElement.setAttribute('data-theme', newTheme);
+    documentElement.setAttribute('data-theme', newTheme);
     switchButton?.setAttribute('aria-checked', isDarkMode(newTheme).toString());
     Cookies.set('theme', newTheme, {
       ...themeCookieOptions,
@@ -85,6 +87,6 @@ import { Icon } from 'astro-icon/components';
     });
   }
   function getTheme() {
-    return document.documentElement.getAttribute('data-theme');
+    return documentElement.getAttribute('data-theme');
   }
 </script>
