@@ -31,7 +31,7 @@
     "@astrojs/check": "^0.3.1",
     "@trivago/prettier-plugin-sort-imports": "^4.2.1",
     "@types/js-cookie": "^3.0.6",
-    "@types/sanitize-html": "^2.9.4",
+    "@types/sanitize-html": "^2.9.5",
     "@typescript-eslint/eslint-plugin": "^6.10.0",
     "@typescript-eslint/parser": "^6.10.0",
     "eslint": "^8.53.0",
