@@ -1,17 +1,11 @@
 ---
 import { Icon } from 'astro-icon/components';
-import { increasePostViewBySlug } from 'src/utils/post';
+import PostViewCounter from 'src/components/post-view-counter.astro';
 
 function formatDate(date: Date | string): string {
   return new Date(date).toLocaleDateString('en-US', {
     dateStyle: 'medium',
   });
-}
-function formatViewCount(count: number): string {
-  const formatter = new Intl.NumberFormat('en-US', {
-    notation: 'compact',
-  });
-  return formatter.format(count);
 }
 
 type Props = {
@@ -21,33 +15,31 @@ type Props = {
   tags: string[];
 };
 
-const { slug } = Astro.params;
-const { publishedAt, readingTime, tags } = Astro.props;
+const { publishedAt, readingTime, viewCount, tags } = Astro.props;
 const firstTag = tags.at(0);
-const viewCount = Astro.props.viewCount ?? (await increasePostViewBySlug(slug));
 ---
 
-<aside>
-  <div class="segment">
+<aside class="post-info">
+  <div class:list={['segment', 'publication-date']}>
     <Icon name="fa6-solid:calendar" class="calendar-icon" />
     <time datetime={publishedAt}>{formatDate(publishedAt)}</time>
   </div>
-  <div class="segment">
+  <div class:list={['segment', 'reading-time']}>
     <Icon name="fa6-solid:clock" class="clock-icon" />
     <span>{`${readingTime} min read`}</span>
   </div>
-  <div class="segment">
-    <Icon name="fa6-solid:eye" class="eye-icon" />
-    <span>{formatViewCount(viewCount)}</span>
-  </div>
   {
     !!firstTag && (
-      <div class="segment">
+      <div class:list={['segment', 'first-tag']}>
         <Icon name="fa6-solid:tag" class="tag-icon" />
         <span>{firstTag}</span>
       </div>
     )
   }
+  <div class:list={['segment', 'view-count']}>
+    <Icon name="fa6-solid:eye" class="eye-icon" />
+    <span><PostViewCounter viewCount={viewCount} /></span>
+  </div>
 </aside>
 
 <style lang="scss">
@@ -79,12 +71,7 @@ const viewCount = Astro.props.viewCount ?? (await increasePostViewBySlug(slug));
       border-left: none;
     }
     &:last-child {
-      display: none;
       flex: 0 1 auto;
-
-      @media (min-width: $tablet-min-width) {
-        display: flex;
-      }
 
       > span {
         white-space: nowrap;
@@ -131,6 +118,23 @@ const viewCount = Astro.props.viewCount ?? (await increasePostViewBySlug(slug));
         height: 16px;
         transform: none;
       }
+    }
+  }
+  .view-count {
+    > span {
+      &:empty {
+        &::before {
+          content: '⋯';
+        }
+      }
+    }
+  }
+  .first-tag {
+    display: none;
+    order: 1;
+
+    @media (min-width: $tablet-min-width) {
+      display: flex;
     }
   }
 </style>
