@@ -73,7 +73,7 @@ Lazy loading 常見的做法有三種：
 
 ### 成品預覽
 
-![](src/assets/images/lazy-loading-images-with-intersection-observer/demo.gif)
+<img loading="lazy" alt="" src="https://mingjunlu.github.io/lazy-loading-example/images/demo.gif" width="634" height="722" />
 
 這個網頁一口氣塞了 60 張貓貓圖片，如果沒有 lazy loading 的話，瀏覽器在連到頁面後就會拼了命似地把 60 張圖片全部下載回來，反之則可以先下載有在畫面中出現的圖片後就停住，等使用者滑到其他圖片時再繼續載入。
 
