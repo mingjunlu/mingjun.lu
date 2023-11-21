@@ -37,11 +37,6 @@ const metadataProps: MetadataProps = {
 <SiteLayout>
   <Metadata slot="head" {...metadataProps} />
   <article>
-    <PostInfo
-      publishedAt={publishedAt}
-      readingTime={getReadingTime(postEntry.body)}
-      tags={tags}
-    />
     {
       !!image && (
         <figure>
@@ -55,6 +50,11 @@ const metadataProps: MetadataProps = {
       )
     }
     <Content />
+    <PostInfo
+      publishedAt={publishedAt}
+      readingTime={getReadingTime(postEntry.body)}
+      tags={tags}
+    />
   </article>
   <AdjacentPosts slug={postEntry.slug} />
 </SiteLayout>
@@ -113,6 +113,9 @@ const metadataProps: MetadataProps = {
     }
 
     > :global(h1) {
+      order: -1;
+    }
+    > :global(.post-info) {
       order: -1;
     }
 
