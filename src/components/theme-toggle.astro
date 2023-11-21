@@ -65,7 +65,18 @@ import { Icon } from 'astro-icon/components';
     if (!isValidTheme(theme)) {
       return;
     }
+    const themeColor = {
+      light: window
+        .getComputedStyle(document.documentElement)
+        .getPropertyValue('--color-white'),
+      dark: window
+        .getComputedStyle(document.documentElement)
+        .getPropertyValue('--color-arsenic-gray'),
+    };
     const newTheme = isDarkMode(theme) ? 'light' : 'dark';
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute('content', themeColor[newTheme]);
     document.documentElement.setAttribute('data-theme', newTheme);
     switchButton?.setAttribute('aria-checked', isDarkMode(newTheme).toString());
     Cookies.set('theme', newTheme, {
