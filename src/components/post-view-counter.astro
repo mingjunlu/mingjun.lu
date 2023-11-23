@@ -1,5 +1,5 @@
 ---
-import { increasePostViewBySlug } from 'src/utils/post';
+import { increasePostView } from 'src/utils/post';
 
 function formatViewCount(count: number): string {
   const formatter = new Intl.NumberFormat('en-US', {
@@ -13,7 +13,7 @@ type Props = {
 };
 
 const { slug } = Astro.params;
-const viewCount = Astro.props.viewCount ?? (await increasePostViewBySlug(slug));
+const viewCount = Astro.props.viewCount ?? (await increasePostView(slug));
 ---
 
 <Fragment>
