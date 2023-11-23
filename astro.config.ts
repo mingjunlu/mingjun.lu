@@ -5,11 +5,9 @@ import { loadEnv } from 'vite';
 
 // Can’t use `import.meta.env` here. See: https://docs.astro.build/en/guides/configuring-astro/#environment-variables
 const { PUBLIC_SITE_URL } = loadEnv(
-  /* eslint-disable no-undef */
-  process.env.NODE_ENV,
+  process.env.NODE_ENV ?? 'development',
   process.cwd(),
   '',
-  /* eslint-enable no-undef */
 );
 
 export default defineConfig({
