@@ -13,7 +13,11 @@ const { PUBLIC_SITE_URL } = loadEnv(
 export default defineConfig({
   site: PUBLIC_SITE_URL,
   output: 'server',
-  adapter: vercelServerless(),
+  adapter: vercelServerless({
+    speedInsights: {
+      enabled: process.env.VERCEL_ENV === 'production',
+    },
+  }),
   integrations: [
     icon({
       iconDir: 'src/assets/icons',
