@@ -22,7 +22,7 @@ export async function increasePostView(slug?: string): Promise<number> {
   if (!slug) {
     return 0;
   }
-  const viewCount = await redis.incr(`views:${slug}`);
+  const viewCount = await redis.hincrby(`post:${slug}`, 'views', 1);
   return viewCount;
 }
 
@@ -30,8 +30,10 @@ export async function getPostViews(slugs: string[]): Promise<number[]> {
   if (slugs.length === 0) {
     return [];
   }
-  const viewCounts = await redis.mget<(number | null)[]>(
-    ...slugs.map((slug) => `views:${slug}`),
-  );
+  const pipeline = redis.pipeline();
+  slugs.forEach((slug) => {
+    pipeline.hget<number>(`post:${slug}`, 'views');
+  });
+  const viewCounts = await pipeline.exec<(number | null)[]>();
   return viewCounts.map((value) => value ?? 0);
 }
