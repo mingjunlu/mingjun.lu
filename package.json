@@ -15,7 +15,7 @@
   "dependencies": {
     "@astrojs/vercel": "^5.2.0",
     "@fontsource-variable/inter": "^5.0.15",
-    "@iconify-json/fa6-brands": "^1.1.15",
+    "@iconify-json/fa6-brands": "^1.1.16",
     "@iconify-json/fa6-solid": "^1.1.17",
     "@upstash/redis": "^1.25.1",
     "astro": "^3.6.3",
