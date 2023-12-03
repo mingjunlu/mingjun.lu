@@ -1,0 +1,20 @@
+---
+function isEnabled() {
+  const isProduction = import.meta.env.PROD;
+  const isVercelDomain = Astro.url.hostname.includes('.vercel.app');
+  return isProduction && !isVercelDomain;
+}
+---
+
+<Fragment>
+  {
+    isEnabled() && (
+      <script
+        is:inline
+        async
+        data-token={import.meta.env.PUBLIC_BEAM_ANALYTICS_TOKEN}
+        src={import.meta.env.PUBLIC_BEAM_ANALYTICS_SCRIPT}
+      />
+    )
+  }
+</Fragment>
