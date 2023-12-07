@@ -1,7 +1,8 @@
 import { fromMarkdown } from 'mdast-util-from-markdown';
 import { toString } from 'mdast-util-to-string';
 import readingTime from 'reading-time';
-import { redis } from 'src/instances/redis';
+import { rateLimiter, redis } from 'src/instances/redis';
+import { hash } from 'src/utils/crypto';
 
 export function sortByPublicationTime<
   Type extends { data: { publishedAt: string } },
@@ -18,8 +19,20 @@ export function getReadingTime(markdown: string): number {
   return Math.ceil(stats.minutes);
 }
 
-export async function increasePostView(slug?: string): Promise<number> {
+export async function increasePostView(
+  slug?: string,
+  identifier = '',
+): Promise<number> {
   if (!slug) {
+    return 0;
+  }
+  try {
+    const { success } = await rateLimiter.limit(await hash(identifier));
+    if (!success) {
+      return 0;
+    }
+  } catch (error) {
+    console.error(error);
     return 0;
   }
   try {
@@ -34,9 +47,21 @@ export async function increasePostView(slug?: string): Promise<number> {
   }
 }
 
-export async function getPostViews(slugs: string[]): Promise<number[]> {
+export async function getPostViews(
+  slugs: string[],
+  identifier = '',
+): Promise<number[]> {
   if (slugs.length === 0) {
     return [];
+  }
+  try {
+    const { success } = await rateLimiter.limit(await hash(identifier));
+    if (!success) {
+      return slugs.map(() => 0);
+    }
+  } catch (error) {
+    console.error(error);
+    return slugs.map(() => 0);
   }
   try {
     const cache = await redis.hmget<Record<string, number>>(

@@ -23,6 +23,7 @@ const postEntries = await getCollection('posts');
 const sortedPostEntries = [...postEntries].sort(sortByPublicationTime);
 const viewCounts = await getPostViews(
   sortedPostEntries.map((entry) => entry.slug),
+  Astro.clientAddress,
 );
 const metadataProps: MetadataProps = {
   title: 'Blog',
