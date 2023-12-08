@@ -15,6 +15,12 @@ const postEntry = await getEntry('posts', slug);
 if (!postEntry) {
   return Astro.redirect('/404');
 }
+
+Astro.response.headers.set(
+  'Cache-Control',
+  's-maxage=1, stale-while-revalidate=2591999',
+);
+
 const { Content } = await postEntry.render();
 const { image, publishedAt, summary, tags, title } = postEntry.data;
 const metadataProps: MetadataProps = {
