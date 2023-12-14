@@ -22,7 +22,7 @@ export default defineConfig({
   output: 'server',
   adapter: vercel({
     speedInsights: {
-      enabled: process.env.VERCEL_ENV === 'production',
+      enabled: false,
     },
   }),
   integrations: [
