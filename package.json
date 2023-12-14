@@ -13,7 +13,7 @@
     "format": "prettier --write \"**/**.{astro,cjs,js,jsx,ts,tsx}\" --plugin=prettier-plugin-astro"
   },
   "dependencies": {
-    "@astrojs/vercel": "^6.0.2",
+    "@astrojs/vercel": "^6.1.0",
     "@fontsource-variable/inter": "^5.0.16",
     "@iconify-json/fa6-brands": "^1.1.18",
     "@iconify-json/fa6-solid": "^1.1.20",
