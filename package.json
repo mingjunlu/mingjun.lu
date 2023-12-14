@@ -13,12 +13,12 @@
     "format": "prettier --write \"**/**.{astro,cjs,js,jsx,ts,tsx}\" --plugin=prettier-plugin-astro"
   },
   "dependencies": {
-    "@astrojs/vercel": "^5.2.0",
+    "@astrojs/vercel": "^6.0.2",
     "@fontsource-variable/inter": "^5.0.16",
     "@iconify-json/fa6-brands": "^1.1.18",
     "@iconify-json/fa6-solid": "^1.1.20",
     "@upstash/redis": "^1.25.2",
-    "astro": "^3.6.4",
+    "astro": "^4.0.4",
     "astro-icon": "1.0.0-next.2",
     "astro-seo": "^0.8.0",
     "js-cookie": "^3.0.5",
@@ -44,6 +44,6 @@
     "sass": "^1.69.5",
     "sharp": "^0.32.6",
     "typescript": "^5.3.3",
-    "vite": "^4.5.1"
+    "vite": "^5.0.8"
   }
 }
