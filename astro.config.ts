@@ -20,11 +20,7 @@ export default defineConfig({
   },
   site: PUBLIC_SITE_URL,
   output: 'server',
-  adapter: vercel({
-    speedInsights: {
-      enabled: process.env.VERCEL_ENV === 'production',
-    },
-  }),
+  adapter: vercel(),
   integrations: [
     icon({
       iconDir: 'src/assets/icons',

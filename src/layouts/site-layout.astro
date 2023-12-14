@@ -62,3 +62,16 @@ const theme = getInitialTheme();
     }
   }
 </style>
+
+<script>
+  import { injectSpeedInsights } from '@vercel/speed-insights';
+
+  const isProduction = import.meta.env.PROD;
+  const isVercelDomain = window.location.hostname.includes('.vercel.app');
+
+  if (isProduction && !isVercelDomain) {
+    injectSpeedInsights({
+      route: window.location.pathname,
+    });
+  }
+</script>
