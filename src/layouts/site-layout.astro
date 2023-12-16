@@ -4,9 +4,8 @@ import 'src/styles/globals.scss';
 import '@fontsource-variable/inter';
 import { execSync } from 'node:child_process';
 import Analytics from 'src/components/analytics.astro';
+import ThemeLoader from 'src/components/theme-loader.astro';
 import Header from 'src/components/header.astro';
-import { defaultTheme } from 'src/constants/theme';
-import { isValidTheme } from 'src/utils/theme';
 
 function getCommitHash() {
   return (
@@ -14,16 +13,11 @@ function getCommitHash() {
     execSync('git log -1 --pretty=format:%h').toString().trim()
   );
 }
-function getInitialTheme() {
-  const preferredTheme = Astro.cookies.get('theme')?.value;
-  return isValidTheme(preferredTheme) ? preferredTheme : defaultTheme;
-}
 
 const version = getCommitHash();
-const theme = getInitialTheme();
 ---
 
-<html lang="zh-Hant-TW" data-theme={theme}>
+<html lang="zh-Hant-TW">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -33,6 +27,7 @@ const theme = getInitialTheme();
     <link rel="icon" href={`/icon.svg?v=${version}`} type="image/svg+xml" />
     <link rel="apple-touch-icon" href={`/apple-touch-icon.png?v=${version}`} />
     <link rel="manifest" href={`/manifest.webmanifest?v=${version}`} />
+    <ThemeLoader />
     <Analytics />
   </head>
   <body>
