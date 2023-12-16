@@ -19,3 +19,9 @@ pnpm-debug.log*
 
 # OS-specific files
 .DS_Store
+
+# Test files
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

@@ -32,5 +32,8 @@ export default defineConfig({
   ],
   vite: {
     plugins: [mkcert()],
+    optimizeDeps: {
+      exclude: ['fsevents'],
+    },
   },
 });
