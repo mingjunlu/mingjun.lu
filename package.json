@@ -10,7 +10,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint \"src/**/*.{astro,cjs,js,jsx,ts,tsx}\"",
-    "format": "prettier --write \"**/**.{astro,cjs,js,jsx,ts,tsx}\" --plugin=prettier-plugin-astro"
+    "format": "prettier --write \"**/**.{astro,cjs,js,jsx,ts,tsx}\" --plugin=prettier-plugin-astro",
+    "test:e2e": "pnpm exec playwright test"
   },
   "dependencies": {
     "@astrojs/vercel": "^6.1.0",
