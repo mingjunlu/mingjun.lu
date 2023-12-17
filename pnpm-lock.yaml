@@ -7,7 +7,7 @@ settings:
 dependencies:
   '@astrojs/vercel':
     specifier: ^6.1.0
-    version: 6.1.0(astro@4.0.5)
+    version: 6.1.0(astro@4.0.6)
   '@fontsource-variable/inter':
     specifier: ^5.0.16
     version: 5.0.16
@@ -24,8 +24,8 @@ dependencies:
     specifier: ^1.0.2
     version: 1.0.2
   astro:
-    specifier: ^4.0.5
-    version: 4.0.5(@types/node@20.10.4)(sass@1.69.5)(typescript@5.3.3)
+    specifier: ^4.0.6
+    version: 4.0.6(@types/node@20.10.4)(sass@1.69.5)(typescript@5.3.3)
   astro-icon:
     specifier: 1.0.0-next.2
     version: 1.0.0-next.2
@@ -243,7 +243,7 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/vercel@6.1.0(astro@4.0.5):
+  /@astrojs/vercel@6.1.0(astro@4.0.6):
     resolution: {integrity: sha512-KcXRn8zjl48jIyBThz7QwLmqfnyqeYOcHUstvb/IVF6LErw//9FGDSG6p+o1bfv25IzbMW2PaYer4EwevSGmGw==}
     peerDependencies:
       astro: ^4.0.2
@@ -251,7 +251,7 @@ packages:
       '@astrojs/internal-helpers': 0.2.1
       '@vercel/analytics': 1.1.1
       '@vercel/nft': 0.24.4
-      astro: 4.0.5(@types/node@20.10.4)(sass@1.69.5)(typescript@5.3.3)
+      astro: 4.0.6(@types/node@20.10.4)(sass@1.69.5)(typescript@5.3.3)
       esbuild: 0.19.9
       fast-glob: 3.3.2
       set-cookie-parser: 2.6.0
@@ -1130,13 +1130,13 @@ packages:
     dependencies:
       '@babel/parser': 7.23.6
       '@babel/types': 7.23.6
-      '@types/babel__generator': 7.6.7
+      '@types/babel__generator': 7.6.8
       '@types/babel__template': 7.4.4
       '@types/babel__traverse': 7.20.4
     dev: false
 
-  /@types/babel__generator@7.6.7:
-    resolution: {integrity: sha512-6Sfsq+EaaLrw4RmdFWE9Onp63TOUue71AWb4Gpa6JxzgTYtimbM086WnYTy2U67AofR++QKCo08ZP6pwx8YFHQ==}
+  /@types/babel__generator@7.6.8:
+    resolution: {integrity: sha512-ASsj+tpEDsEiFr1arWrlN6V3mdfjRMZt6LtK/Vp/kreFLnr5QH5+DhvD5nINYZXzwJvXeGq+05iUXcAzVrqWtw==}
     dependencies:
       '@babel/types': 7.23.6
     dev: false
@@ -1702,8 +1702,8 @@ packages:
     resolution: {integrity: sha512-7gq6lhibCM8FuzZIJlbLLWP5EJ9KL2/4XqeFrAg9O6ZK2xMFxJ5ubKf+a0VJwwTu8W8Xr421CmpiXu6Hq7n/7Q==}
     dev: false
 
-  /astro@4.0.5(@types/node@20.10.4)(sass@1.69.5)(typescript@5.3.3):
-    resolution: {integrity: sha512-OTiTEiXYdXTkVJXNNKIWdYG1z2wpTST+92Qcldm36x91Pe4fKpLxeuRloy5cW175oHi8lvXytgG3Gl3VBP18RQ==}
+  /astro@4.0.6(@types/node@20.10.4)(sass@1.69.5)(typescript@5.3.3):
+    resolution: {integrity: sha512-P7CfFqWKzkJozzF6IoOC6qoI2ONndV8P3ULhGDgMiXPL7xVkWI5haTBSpyrcjBx643tVXspIRsSV/v+Cx+CjGw==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
     dependencies:
@@ -1928,7 +1928,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001570
-      electron-to-chromium: 1.4.612
+      electron-to-chromium: 1.4.614
       node-releases: 2.0.14
       update-browserslist-db: 1.0.13(browserslist@4.22.2)
     dev: false
@@ -2447,8 +2447,8 @@ packages:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: false
 
-  /electron-to-chromium@1.4.612:
-    resolution: {integrity: sha512-dM8BMtXtlH237ecSMnYdYuCkib2QHq0kpWfUnavjdYsyr/6OsAwg5ZGUfnQ9KD1Ga4QgB2sqXlB2NT8zy2GnVg==}
+  /electron-to-chromium@1.4.614:
+    resolution: {integrity: sha512-X4ze/9Sc3QWs6h92yerwqv7aB/uU8vCjZcrMjA8N9R1pjMFRe44dLsck5FzLilOYvcXuDn93B+bpGYyufc70gQ==}
     dev: false
 
   /emmet@2.4.6:
