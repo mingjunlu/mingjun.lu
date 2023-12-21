@@ -18,7 +18,7 @@
     "@fontsource-variable/inter": "^5.0.16",
     "@iconify-json/fa6-brands": "^1.1.18",
     "@iconify-json/fa6-solid": "^1.1.20",
-    "@upstash/redis": "^1.25.2",
+    "@upstash/redis": "^1.27.1",
     "@vercel/speed-insights": "^1.0.2",
     "astro": "^4.0.7",
     "astro-icon": "1.0.0-next.2",
