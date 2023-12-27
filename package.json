@@ -21,7 +21,7 @@
     "@upstash/redis": "^1.27.1",
     "@vercel/speed-insights": "^1.0.2",
     "astro": "^4.0.7",
-    "astro-icon": "1.0.0-next.2",
+    "astro-icon": "1.0.0",
     "astro-seo": "^0.8.0",
     "js-cookie": "^3.0.5",
     "mdast-util-from-markdown": "^2.0.0",
