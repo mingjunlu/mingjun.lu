@@ -20,7 +20,7 @@
     "@iconify-json/fa6-solid": "^1.1.20",
     "@upstash/redis": "^1.27.1",
     "@vercel/speed-insights": "^1.0.2",
-    "astro": "^4.0.7",
+    "astro": "^4.0.8",
     "astro-icon": "1.0.0",
     "astro-seo": "^0.8.0",
     "js-cookie": "^3.0.5",
