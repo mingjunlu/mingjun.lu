@@ -8,22 +8,25 @@ import PostInfo from 'src/components/post-info.astro';
 import VisuallyHidden from 'src/components/visually-hidden.astro';
 import { siteName } from 'src/constants/site';
 import SiteLayout from 'src/layouts/site-layout.astro';
+import { paginate } from 'src/utils/page';
 import {
   getPostViews,
   getReadingTime,
   sortByPublicationTime,
 } from 'src/utils/post';
 
-Astro.response.headers.set(
-  'Cache-Control',
-  's-maxage=1, stale-while-revalidate=2591999',
-);
-
+const pageNumber = Number(Astro.url.searchParams.get('page') ?? '1');
+if (!Number.isSafeInteger(pageNumber)) {
+  return Astro.redirect('/404');
+}
 const postEntries = await getCollection('posts');
 const sortedPostEntries = [...postEntries].sort(sortByPublicationTime);
-const viewCounts = await getPostViews(
-  sortedPostEntries.map((entry) => entry.slug),
-);
+const page = paginate(sortedPostEntries, { page: pageNumber, pageSize: 10 });
+const isOutOfRange = pageNumber < 1 || pageNumber > page.lastPage;
+if (isOutOfRange) {
+  return Astro.redirect('/404');
+}
+const viewCounts = await getPostViews(page.data.map((entry) => entry.slug));
 const metadataProps: MetadataProps = {
   title: 'Blog',
   titleTemplate: `%s | ${siteName}`,
@@ -37,6 +40,11 @@ const metadataProps: MetadataProps = {
     },
   },
 };
+
+Astro.response.headers.set(
+  'Cache-Control',
+  's-maxage=1, stale-while-revalidate=2591999',
+);
 ---
 
 <SiteLayout>
@@ -44,7 +52,7 @@ const metadataProps: MetadataProps = {
   <main>
     <VisuallyHidden as="h1">Blog Posts</VisuallyHidden>
     {
-      sortedPostEntries.map((entry, index) => {
+      page.data.map((entry, index) => {
         const { image, publishedAt, summary, tags, title } = entry.data;
         const viewCount = viewCounts.at(index) ?? 0;
         return (
