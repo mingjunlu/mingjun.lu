@@ -47,7 +47,7 @@ const metadataProps: MetadataProps = {
       !!image && (
         <figure>
           <picture>
-            <Image src={image.src} alt={image.alt} />
+            <Image loading="eager" src={image.src} alt={image.alt} />
           </picture>
           {!!image.credit && (
             <figcaption set:html={sanitizeHtml(image.credit)} />
