@@ -2,6 +2,7 @@
 import 'src/styles/reset.scss';
 import 'src/styles/globals.scss';
 import '@fontsource-variable/inter';
+import inter from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2';
 import { execSync } from 'node:child_process';
 import Analytics from 'src/components/analytics.astro';
 import ThemeLoader from 'src/components/theme-loader.astro';
@@ -27,6 +28,7 @@ const version = getCommitHash();
     <link rel="icon" href={`/icon.svg?v=${version}`} type="image/svg+xml" />
     <link rel="apple-touch-icon" href={`/apple-touch-icon.png?v=${version}`} />
     <link rel="manifest" href={`/manifest.webmanifest?v=${version}`} />
+    <link rel="preload" href={inter} as="font" type="font/woff2" crossorigin />
     <ThemeLoader />
     <Analytics />
   </head>
