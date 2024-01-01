@@ -29,7 +29,13 @@ const metadataProps: MetadataProps = {
   <Metadata slot="head" {...metadataProps} />
   <main>
     <div class="profile">
-      <Image src={avatarImage} alt="Avatar" width="120" height="120" />
+      <Image
+        loading="eager"
+        src={avatarImage}
+        alt="Avatar"
+        width="120"
+        height="120"
+      />
       <div>
         <h1>Hi, I'm Ming-jun Lu.</h1>
         <ul class="social-link-list">
