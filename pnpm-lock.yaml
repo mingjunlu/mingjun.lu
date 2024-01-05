@@ -42,7 +42,7 @@ devDependencies:
     version: 0.3.4(prettier-plugin-astro@0.12.3)(prettier@3.1.1)(typescript@5.3.3)
   '@astrojs/vercel':
     specifier: ^6.1.2
-    version: 6.1.2(astro@4.0.9)
+    version: 6.1.2(astro@4.1.0)
   '@iconify-json/fa6-brands':
     specifier: ^1.1.18
     version: 1.1.18
@@ -71,8 +71,8 @@ devDependencies:
     specifier: ^6.17.0
     version: 6.17.0(eslint@8.56.0)(typescript@5.3.3)
   astro:
-    specifier: ^4.0.9
-    version: 4.0.9(@types/node@20.10.6)(sass@1.69.7)(typescript@5.3.3)
+    specifier: ^4.1.0
+    version: 4.1.0(@types/node@20.10.6)(sass@1.69.7)(typescript@5.3.3)
   eslint:
     specifier: ^8.56.0
     version: 8.56.0
@@ -157,8 +157,8 @@ packages:
     resolution: {integrity: sha512-o/ObKgtMzl8SlpIdzaxFnt7SATKPxu4oIP/1NL+HDJRzxfJcAkOTAb/ZKMRyULbz4q+1t2/DAebs2Z1QairkZw==}
     dev: true
 
-  /@astrojs/compiler@2.3.4:
-    resolution: {integrity: sha512-33/YtWoBCE0cBUNy1kh78FCDXBoBANX87ShgATlAHECYbG2+buNTAgq4Xgz4t5NgnEHPN21GIBC2Mvvwisoutw==}
+  /@astrojs/compiler@2.4.0:
+    resolution: {integrity: sha512-LUN/iG8KcStfChHwTvCg/t91IQFQxguF3CkDLW3tdY2vBKZmOJy9MgtRl20ZGgPtgrykGCtnr4AellEm0bPuFg==}
     dev: true
 
   /@astrojs/internal-helpers@0.2.1:
@@ -177,7 +177,7 @@ packages:
       prettier-plugin-astro:
         optional: true
     dependencies:
-      '@astrojs/compiler': 2.3.4
+      '@astrojs/compiler': 2.4.0
       '@jridgewell/sourcemap-codec': 1.4.15
       '@volar/kit': 1.10.10(typescript@5.3.3)
       '@volar/language-core': 1.10.10
@@ -213,7 +213,7 @@ packages:
       remark-gfm: 4.0.0
       remark-parse: 11.0.0
       remark-rehype: 11.0.0
-      remark-smartypants: 2.0.0
+      remark-smartypants: 2.1.0
       shikiji: 0.6.13
       unified: 11.0.4
       unist-util-visit: 5.0.0
@@ -244,7 +244,7 @@ packages:
       - supports-color
     dev: true
 
-  /@astrojs/vercel@6.1.2(astro@4.0.9):
+  /@astrojs/vercel@6.1.2(astro@4.1.0):
     resolution: {integrity: sha512-8EAPIYNU4y5gReDfX3J7Nq/bl9zdqo8wIRrzedF9bUoeqr9YLQS+a59m9yseTA+poETbUjozIArEW8wexTWlaQ==}
     peerDependencies:
       astro: ^4.0.2
@@ -252,7 +252,7 @@ packages:
       '@astrojs/internal-helpers': 0.2.1
       '@vercel/analytics': 1.1.1
       '@vercel/nft': 0.24.4
-      astro: 4.0.9(@types/node@20.10.6)(sass@1.69.7)(typescript@5.3.3)
+      astro: 4.1.0(@types/node@20.10.6)(sass@1.69.7)(typescript@5.3.3)
       esbuild: 0.19.11
       fast-glob: 3.3.2
       set-cookie-parser: 2.6.0
@@ -1941,10 +1941,10 @@ packages:
     resolution: {integrity: sha512-k9ASvY8pa6qttM+fvNJCILxxjftfNg/ou5cjd25SVHsc7moplezGGM9fgMUyf24SRYt8ShO603oHRDn2KqwxMg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     dependencies:
-      '@astrojs/compiler': 2.3.4
+      '@astrojs/compiler': 2.4.0
       '@typescript-eslint/scope-manager': 5.62.0
       '@typescript-eslint/types': 5.62.0
-      astrojs-compiler-sync: 0.3.3(@astrojs/compiler@2.3.4)
+      astrojs-compiler-sync: 0.3.3(@astrojs/compiler@2.4.0)
       debug: 4.3.4
       eslint-visitor-keys: 3.4.3
       espree: 9.6.1
@@ -1967,12 +1967,12 @@ packages:
     resolution: {integrity: sha512-7gq6lhibCM8FuzZIJlbLLWP5EJ9KL2/4XqeFrAg9O6ZK2xMFxJ5ubKf+a0VJwwTu8W8Xr421CmpiXu6Hq7n/7Q==}
     dev: false
 
-  /astro@4.0.9(@types/node@20.10.6)(sass@1.69.7)(typescript@5.3.3):
-    resolution: {integrity: sha512-xQHapUGqdHQuaBDCYZxyVh5rvpgIUuulsEITl7bOQ6rRXwbQtoGc5gQ95dGV830PEpvyAGVhQ9pA8PIwfCMpeg==}
+  /astro@4.1.0(@types/node@20.10.6)(sass@1.69.7)(typescript@5.3.3):
+    resolution: {integrity: sha512-xbLWqvMn2JFyv7FpzHiXFn17bRS0P/b4cdEPXMMZOpBI9V8ZC33o6Xs+c59/pYSZpYiNd1HTg778XT5MhcpyKw==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
     dependencies:
-      '@astrojs/compiler': 2.3.4
+      '@astrojs/compiler': 2.4.0
       '@astrojs/internal-helpers': 0.2.1
       '@astrojs/markdown-remark': 4.0.1
       '@astrojs/telemetry': 3.0.4
@@ -1984,6 +1984,8 @@ packages:
       '@babel/types': 7.23.6
       '@types/babel__core': 7.20.5
       acorn: 8.11.3
+      aria-query: 5.3.0
+      axobject-query: 4.0.0
       boxen: 7.1.1
       chokidar: 3.5.3
       ci-info: 4.0.0
@@ -2025,7 +2027,7 @@ packages:
       shikiji: 0.6.13
       string-width: 7.0.0
       strip-ansi: 7.1.0
-      tsconfck: 3.0.0(typescript@5.3.3)
+      tsconfck: 3.0.1(typescript@5.3.3)
       unist-util-visit: 5.0.0
       vfile: 6.0.1
       vite: 5.0.10(@types/node@20.10.6)(sass@1.69.7)
@@ -2047,13 +2049,13 @@ packages:
       - typescript
     dev: true
 
-  /astrojs-compiler-sync@0.3.3(@astrojs/compiler@2.3.4):
+  /astrojs-compiler-sync@0.3.3(@astrojs/compiler@2.4.0):
     resolution: {integrity: sha512-LbhchWgsvjvRBb5n5ez8/Q/f9ZKViuox27VxMDOdTUm8MRv9U7phzOiLue5KluqTmC0z1LId4gY2SekvoDrkuw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       '@astrojs/compiler': '>=0.27.0'
     dependencies:
-      '@astrojs/compiler': 2.3.4
+      '@astrojs/compiler': 2.4.0
       synckit: 0.8.6
     dev: true
 
@@ -2093,6 +2095,12 @@ packages:
 
   /axobject-query@3.2.1:
     resolution: {integrity: sha512-jsyHu61e6N4Vbz/v18DHwWYKK0bSWLqn47eeDSKPB7m8tqMHF9YJ+mhIk2lVteyZrY8tnSj/jHOv4YiTCuCJgg==}
+    dependencies:
+      dequal: 2.0.3
+    dev: true
+
+  /axobject-query@4.0.0:
+    resolution: {integrity: sha512-+60uv1hiVFhHZeO+Lz0RYzsVHy5Wr1ayX0mwda9KPDVLNJgZ1T9Ny7VmFbLDzxsH0D87I86vgj3gFrjTJUYznw==}
     dependencies:
       dequal: 2.0.3
     dev: true
@@ -2205,8 +2213,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001572
-      electron-to-chromium: 1.4.617
+      caniuse-lite: 1.0.30001574
+      electron-to-chromium: 1.4.622
       node-releases: 2.0.14
       update-browserslist-db: 1.0.13(browserslist@4.22.2)
     dev: true
@@ -2254,8 +2262,8 @@ packages:
     engines: {node: '>=14.16'}
     dev: true
 
-  /caniuse-lite@1.0.30001572:
-    resolution: {integrity: sha512-1Pbh5FLmn5y4+QhNyJE9j3/7dK44dGB83/ZMjv/qJk86TvDbjk0LosiZo0i0WB0Vx607qMX9jYrn1VLHCkN4rw==}
+  /caniuse-lite@1.0.30001574:
+    resolution: {integrity: sha512-BtYEK4r/iHt/txm81KBudCUcTy7t+s9emrIaHqjYurQ10x71zJ5VQ9x1dYPcz/b+pKSp4y/v1xSI67A+LzpNyg==}
     dev: true
 
   /ccount@2.0.1:
@@ -2738,8 +2746,8 @@ packages:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: true
 
-  /electron-to-chromium@1.4.617:
-    resolution: {integrity: sha512-sYNE3QxcDS4ANW1k4S/wWYMXjCVcFSOX3Bg8jpuMFaXt/x8JCmp0R1Xe1ZXDX4WXnSRBf+GJ/3eGWicUuQq5cg==}
+  /electron-to-chromium@1.4.622:
+    resolution: {integrity: sha512-GZ47DEy0Gm2Z8RVG092CkFvX7SdotG57c4YZOe8W8qD4rOmk3plgeNmiLVRHP/Liqj1wRiY3uUUod9vb9hnxZA==}
     dev: true
 
   /emmet@2.4.6:
@@ -3101,7 +3109,7 @@ packages:
       human-signals: 4.3.1
       is-stream: 3.0.0
       merge-stream: 2.0.0
-      npm-run-path: 5.1.0
+      npm-run-path: 5.2.0
       onetime: 6.0.0
       signal-exit: 3.0.7
       strip-final-newline: 3.0.0
@@ -3116,7 +3124,7 @@ packages:
       human-signals: 5.0.0
       is-stream: 3.0.0
       merge-stream: 2.0.0
-      npm-run-path: 5.1.0
+      npm-run-path: 5.2.0
       onetime: 6.0.0
       signal-exit: 4.1.0
       strip-final-newline: 3.0.0
@@ -4821,8 +4829,8 @@ packages:
     dependencies:
       path-key: 3.1.1
 
-  /npm-run-path@5.1.0:
-    resolution: {integrity: sha512-sJOdmRGrY2sjNTRMbSvluQqg+8X7ZK61yvzBEIDhz4f8z1TZFYABsqjjCBd/0PUNE9M6QDgHJXQkGUEm7Q+l9Q==}
+  /npm-run-path@5.2.0:
+    resolution: {integrity: sha512-W4/tgAXFqFA0iL7fk0+uQ3g7wkL8xJmx3XdK0VGb4cHW//eZTtKGvFBBoRKVTpY7n6ze4NL9ly7rgXcHufqXKg==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
       path-key: 4.0.0
@@ -5357,13 +5365,13 @@ packages:
       vfile: 6.0.1
     dev: true
 
-  /remark-smartypants@2.0.0:
-    resolution: {integrity: sha512-Rc0VDmr/yhnMQIz8n2ACYXlfw/P/XZev884QU1I5u+5DgJls32o97Vc1RbK3pfumLsJomS2yy8eT4Fxj/2MDVA==}
+  /remark-smartypants@2.1.0:
+    resolution: {integrity: sha512-qoF6Vz3BjU2tP6OfZqHOvCU0ACmu/6jhGaINSQRI9mM7wCxNQTKB3JUAN4SVoN2ybElEDTxBIABRep7e569iJw==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
       retext: 8.1.0
       retext-smartypants: 5.2.0
-      unist-util-visit: 4.1.2
+      unist-util-visit: 5.0.0
     dev: true
 
   /remark-stringify@11.0.0:
@@ -6030,8 +6038,8 @@ packages:
       typescript: 5.3.3
     dev: true
 
-  /tsconfck@3.0.0(typescript@5.3.3):
-    resolution: {integrity: sha512-w3wnsIrJNi7avf4Zb0VjOoodoO0woEqGgZGQm+LHH9przdUI+XDKsWAXwxHA1DaRTjeuZNcregSzr7RaA8zG9A==}
+  /tsconfck@3.0.1(typescript@5.3.3):
+    resolution: {integrity: sha512-7ppiBlF3UEddCLeI1JRx5m2Ryq+xk4JrZuq4EuYXykipebaq1dV0Fhgr1hb7CkmHt32QSgOZlcqVLEtHBG4/mg==}
     engines: {node: ^18 || >=20}
     hasBin: true
     peerDependencies:
