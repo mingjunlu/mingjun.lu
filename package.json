@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.0.16",
-    "@upstash/redis": "^1.27.1",
+    "@upstash/redis": "^1.28.0",
     "@vercel/speed-insights": "^1.0.2",
     "astro-icon": "1.0.2",
     "astro-seo": "^0.8.0",
