@@ -42,7 +42,7 @@ devDependencies:
     version: 0.3.4(prettier-plugin-astro@0.12.3)(prettier@3.1.1)(typescript@5.3.3)
   '@astrojs/vercel':
     specifier: ^6.1.2
-    version: 6.1.2(astro@4.1.0)
+    version: 6.1.2(astro@4.1.1)
   '@iconify-json/fa6-brands':
     specifier: ^1.1.18
     version: 1.1.18
@@ -71,8 +71,8 @@ devDependencies:
     specifier: ^6.18.0
     version: 6.18.0(eslint@8.56.0)(typescript@5.3.3)
   astro:
-    specifier: ^4.1.0
-    version: 4.1.0(@types/node@20.10.6)(sass@1.69.7)(typescript@5.3.3)
+    specifier: ^4.1.1
+    version: 4.1.1(@types/node@20.10.6)(sass@1.69.7)(typescript@5.3.3)
   eslint:
     specifier: ^8.56.0
     version: 8.56.0
@@ -244,7 +244,7 @@ packages:
       - supports-color
     dev: true
 
-  /@astrojs/vercel@6.1.2(astro@4.1.0):
+  /@astrojs/vercel@6.1.2(astro@4.1.1):
     resolution: {integrity: sha512-8EAPIYNU4y5gReDfX3J7Nq/bl9zdqo8wIRrzedF9bUoeqr9YLQS+a59m9yseTA+poETbUjozIArEW8wexTWlaQ==}
     peerDependencies:
       astro: ^4.0.2
@@ -252,7 +252,7 @@ packages:
       '@astrojs/internal-helpers': 0.2.1
       '@vercel/analytics': 1.1.1
       '@vercel/nft': 0.24.4
-      astro: 4.1.0(@types/node@20.10.6)(sass@1.69.7)(typescript@5.3.3)
+      astro: 4.1.1(@types/node@20.10.6)(sass@1.69.7)(typescript@5.3.3)
       esbuild: 0.19.11
       fast-glob: 3.3.2
       set-cookie-parser: 2.6.0
@@ -1967,8 +1967,8 @@ packages:
     resolution: {integrity: sha512-7gq6lhibCM8FuzZIJlbLLWP5EJ9KL2/4XqeFrAg9O6ZK2xMFxJ5ubKf+a0VJwwTu8W8Xr421CmpiXu6Hq7n/7Q==}
     dev: false
 
-  /astro@4.1.0(@types/node@20.10.6)(sass@1.69.7)(typescript@5.3.3):
-    resolution: {integrity: sha512-xbLWqvMn2JFyv7FpzHiXFn17bRS0P/b4cdEPXMMZOpBI9V8ZC33o6Xs+c59/pYSZpYiNd1HTg778XT5MhcpyKw==}
+  /astro@4.1.1(@types/node@20.10.6)(sass@1.69.7)(typescript@5.3.3):
+    resolution: {integrity: sha512-p/S1Ns4+yVh2lEsFW9hkJNRbnPfFWZ+1Wv7DSR3mDnabgCs49T7EbvOy8YIlLo0gtPAjI+b+4OEKRsxtBay2aA==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
     dependencies:
@@ -2214,7 +2214,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001574
-      electron-to-chromium: 1.4.622
+      electron-to-chromium: 1.4.623
       node-releases: 2.0.14
       update-browserslist-db: 1.0.13(browserslist@4.22.2)
     dev: true
@@ -2746,8 +2746,8 @@ packages:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: true
 
-  /electron-to-chromium@1.4.622:
-    resolution: {integrity: sha512-GZ47DEy0Gm2Z8RVG092CkFvX7SdotG57c4YZOe8W8qD4rOmk3plgeNmiLVRHP/Liqj1wRiY3uUUod9vb9hnxZA==}
+  /electron-to-chromium@1.4.623:
+    resolution: {integrity: sha512-lKoz10iCYlP1WtRYdh5MvocQPWVRoI7ysp6qf18bmeBgR8abE6+I2CsfyNKztRDZvhdWc+krKT6wS7Neg8sw3A==}
     dev: true
 
   /emmet@2.4.6:
