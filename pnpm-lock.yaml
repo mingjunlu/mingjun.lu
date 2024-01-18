@@ -107,8 +107,8 @@ devDependencies:
     specifier: ^5.0.11
     version: 5.0.11(@types/node@20.11.0)(sass@1.70.0)
   vite-plugin-mkcert:
-    specifier: ^1.17.2
-    version: 1.17.2(vite@5.0.11)
+    specifier: ^1.17.3
+    version: 1.17.3(vite@5.0.11)
 
 packages:
 
@@ -1884,7 +1884,7 @@ packages:
   /axios@1.6.5(debug@4.3.4):
     resolution: {integrity: sha512-Ii012v05KEVuUoFWmMW/UQv9aRIc3ZwkWDcM+h5Il8izZCtRVpDUfwpoFf7eOtajT3QiGR4yDUx7lPqHJULgbg==}
     dependencies:
-      follow-redirects: 1.15.4(debug@4.3.4)
+      follow-redirects: 1.15.5(debug@4.3.4)
       form-data: 4.0.0
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
@@ -3002,8 +3002,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /follow-redirects@1.15.4(debug@4.3.4):
-    resolution: {integrity: sha512-Cr4D/5wlrb0z9dgERpUL3LrmPKVDsETIJhaCMeDfuFYcqa5bldGV6wBsAN6X/vxlXQtFBMrXdXxdL8CbDTGniw==}
+  /follow-redirects@1.15.5(debug@4.3.4):
+    resolution: {integrity: sha512-vSFWUON1B+yAw1VN4xMfxgn5fTUiaOzAJCKBwIIgT/+7CuGy9+r+5gITvP62j3RmaD5Ph65UaERdOSRGUzZtgw==}
     engines: {node: '>=4.0'}
     peerDependencies:
       debug: '*'
@@ -5992,9 +5992,9 @@ packages:
       vfile-message: 4.0.2
     dev: true
 
-  /vite-plugin-mkcert@1.17.2(vite@5.0.11):
-    resolution: {integrity: sha512-2lc+zKwPgnkx0xDPMgoeNPtXmjGrWqg/V99D9Ybib7Mrg0pHI0VaAwAw95xa0x4Tlg33/FNzqm0RnCTr4QCIgw==}
-    engines: {node: '>=20.0.0'}
+  /vite-plugin-mkcert@1.17.3(vite@5.0.11):
+    resolution: {integrity: sha512-C8iLz4Su4kEyJb1GdlGIMfKkYMqfH5qvhqVP1x/hrc+1mo9GOzqU88mevvP5epgoqawkhVpcQVQ+HTFXsRuC0g==}
+    engines: {node: '>=v16.7.0'}
     peerDependencies:
       vite: '>=3'
     dependencies:
