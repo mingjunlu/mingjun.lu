@@ -41,8 +41,8 @@ devDependencies:
     specifier: ^0.4.1
     version: 0.4.1(prettier-plugin-astro@0.12.3)(prettier@3.2.4)(typescript@5.3.3)
   '@astrojs/vercel':
-    specifier: ^6.1.4
-    version: 6.1.4(astro@4.2.1)
+    specifier: ^7.0.0
+    version: 7.0.0(astro@4.2.1)
   '@iconify-json/fa6-brands':
     specifier: ^1.1.18
     version: 1.1.18
@@ -244,13 +244,13 @@ packages:
       - supports-color
     dev: true
 
-  /@astrojs/vercel@6.1.4(astro@4.2.1):
-    resolution: {integrity: sha512-x+iugOR9TpAtqpvWzmxAkKi9TJQYAUVruzK1cimADi1ZeHr+e1z2wSCL1+phJmJetABjuM6XFcpPa3LPt+GA2w==}
+  /@astrojs/vercel@7.0.0(astro@4.2.1):
+    resolution: {integrity: sha512-wMES6lCmSAsHKLgGMlOAmnPEP2az3cPAQ3Ztu+Yu727SbddVDG7RzDb3NSVkwI06X5lvG0D1hlQdJvvVZQHW0w==}
     peerDependencies:
-      astro: ^4.0.2
+      astro: ^4.2.0
     dependencies:
       '@astrojs/internal-helpers': 0.2.1
-      '@vercel/analytics': 1.1.1
+      '@vercel/analytics': 1.1.2
       '@vercel/nft': 0.24.4
       astro: 4.2.1(@types/node@20.11.0)(sass@1.70.0)(typescript@5.3.3)
       esbuild: 0.19.11
@@ -1454,8 +1454,8 @@ packages:
       crypto-js: 4.2.0
     dev: false
 
-  /@vercel/analytics@1.1.1:
-    resolution: {integrity: sha512-+NqgNmSabg3IFfxYhrWCfB/H+RCUOCR5ExRudNG2+pcRehq628DJB5e1u1xqwpLtn4pAYii4D98w7kofORAGQA==}
+  /@vercel/analytics@1.1.2:
+    resolution: {integrity: sha512-CodhkLCQ/EHzjX8k+Qg+OzTBY0UadykrcfolfSOJVZZY/ZJM5nbhztm9KdbYvMfqKlasAr1+OYy0ThZnDA/MYA==}
     dependencies:
       server-only: 0.0.1
     dev: true
