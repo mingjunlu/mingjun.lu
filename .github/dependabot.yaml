@@ -1,0 +1,17 @@
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'daily'
+    commit-message:
+      prefix: '⬆️ '
+    groups:
+      typescript-eslint:
+        patterns:
+          - '@typescript-eslint/*'
+    ignore:
+      - dependency-name: 'sharp'
+      - dependency-name: '*'
+        update-types: ['version-update:semver-major']
+    open-pull-requests-limit: 1
