@@ -47,7 +47,7 @@
     "prettier": "^3.2.4",
     "prettier-plugin-astro": "^0.13.0",
     "sass": "^1.70.0",
-    "sharp": "^0.32.6",
+    "sharp": "^0.33.2",
     "typescript": "^5.3.3",
     "vite": "^5.0.12",
     "vite-plugin-mkcert": "^1.17.3"
