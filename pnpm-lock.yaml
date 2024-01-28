@@ -42,7 +42,7 @@ devDependencies:
     version: 0.4.1(prettier-plugin-astro@0.13.0)(prettier@3.2.4)(typescript@5.3.3)
   '@astrojs/vercel':
     specifier: ^7.0.1
-    version: 7.0.1(astro@4.2.4)
+    version: 7.0.1(astro@4.2.6)
   '@iconify-json/fa6-brands':
     specifier: ^1.1.18
     version: 1.1.18
@@ -71,8 +71,8 @@ devDependencies:
     specifier: ^6.19.0
     version: 6.19.0(eslint@8.56.0)(typescript@5.3.3)
   astro:
-    specifier: ^4.2.4
-    version: 4.2.4(@types/node@20.11.0)(sass@1.70.0)(typescript@5.3.3)
+    specifier: ^4.2.6
+    version: 4.2.6(@types/node@20.11.0)(sass@1.70.0)(typescript@5.3.3)
   eslint:
     specifier: ^8.56.0
     version: 8.56.0
@@ -244,7 +244,7 @@ packages:
       - supports-color
     dev: true
 
-  /@astrojs/vercel@7.0.1(astro@4.2.4):
+  /@astrojs/vercel@7.0.1(astro@4.2.6):
     resolution: {integrity: sha512-Y6txgjSDtv5Jgch1hL5aDQ9q7ggu2UFprkvxz5lj0SkoZAMpjyebw+Wz0jX+sDNIerVvZwv63VC08u1Avp9vTw==}
     peerDependencies:
       astro: ^4.2.0
@@ -252,7 +252,7 @@ packages:
       '@astrojs/internal-helpers': 0.2.1
       '@vercel/analytics': 1.1.2
       '@vercel/nft': 0.24.4
-      astro: 4.2.4(@types/node@20.11.0)(sass@1.70.0)(typescript@5.3.3)
+      astro: 4.2.6(@types/node@20.11.0)(sass@1.70.0)(typescript@5.3.3)
       esbuild: 0.19.12
       fast-glob: 3.3.2
       set-cookie-parser: 2.6.0
@@ -1785,8 +1785,8 @@ packages:
     resolution: {integrity: sha512-7gq6lhibCM8FuzZIJlbLLWP5EJ9KL2/4XqeFrAg9O6ZK2xMFxJ5ubKf+a0VJwwTu8W8Xr421CmpiXu6Hq7n/7Q==}
     dev: false
 
-  /astro@4.2.4(@types/node@20.11.0)(sass@1.70.0)(typescript@5.3.3):
-    resolution: {integrity: sha512-z1f52lXkHf71M5HSLKrd5G1PH5/Zfq4kMp0iUT7Na5VHcPDma/NYFPFPewDxqV6UPmyxupj3xuooFaN3j8zaow==}
+  /astro@4.2.6(@types/node@20.11.0)(sass@1.70.0)(typescript@5.3.3):
+    resolution: {integrity: sha512-k5i8pEI2r45JTkoE0I4JyhOH/dZFpjUA4AONbRd9Gr1LtnGOhKHDftiYOrRLUGx91q7BzoW3DOk+h4yZM4yC3g==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
     dependencies:
@@ -1810,6 +1810,7 @@ packages:
       clsx: 2.1.0
       common-ancestor-path: 1.0.1
       cookie: 0.6.0
+      cssesc: 3.0.0
       debug: 4.3.4
       deterministic-object-hash: 2.0.2
       devalue: 4.3.2
