@@ -5,6 +5,7 @@ import type { Props as MetadataProps } from 'astro-seo';
 import { Image } from 'astro:assets';
 import avatarImage from 'src/assets/images/avatar.webp';
 import Link from 'src/components/link.astro';
+import { imageDensities } from 'src/constants/image';
 import { siteName } from 'src/constants/site';
 import SiteLayout from 'src/layouts/site-layout.astro';
 
@@ -35,6 +36,7 @@ const metadataProps: MetadataProps = {
         alt="Avatar"
         width="120"
         height="120"
+        densities={imageDensities}
       />
       <div>
         <h1>Hi, I'm Ming-jun Lu.</h1>
