@@ -1,0 +1,10 @@
+<script>
+  import { injectSpeedInsights } from '@vercel/speed-insights';
+
+  // Still need to check the domain again. See: https://github.com/withastro/astro/issues/5283
+  if (!window.location.hostname.includes('.vercel.app')) {
+    injectSpeedInsights({
+      route: window.location.pathname,
+    });
+  }
+</script>

@@ -7,6 +7,7 @@ import { execSync } from 'node:child_process';
 import Analytics from 'src/components/analytics.astro';
 import Header from 'src/components/header.astro';
 import ProductionOnly from 'src/components/production-only.astro';
+import SpeedInsights from 'src/components/speed-insights.astro';
 import ThemeLoader from 'src/components/theme-loader.astro';
 
 function getCommitHash() {
@@ -33,6 +34,7 @@ const version = getCommitHash();
     <ThemeLoader />
     <ProductionOnly>
       <Analytics />
+      <SpeedInsights />
     </ProductionOnly>
   </head>
   <body>
@@ -62,16 +64,3 @@ const version = getCommitHash();
     }
   }
 </style>
-
-<script>
-  import { injectSpeedInsights } from '@vercel/speed-insights';
-
-  const isProduction = import.meta.env.PROD;
-  const isVercelDomain = window.location.hostname.includes('.vercel.app');
-
-  if (isProduction && !isVercelDomain) {
-    injectSpeedInsights({
-      route: window.location.pathname,
-    });
-  }
-</script>
