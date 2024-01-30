@@ -6,6 +6,7 @@ import inter from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff
 import { execSync } from 'node:child_process';
 import Analytics from 'src/components/analytics.astro';
 import Header from 'src/components/header.astro';
+import ProductionOnly from 'src/components/production-only.astro';
 import ThemeLoader from 'src/components/theme-loader.astro';
 
 function getCommitHash() {
@@ -30,7 +31,9 @@ const version = getCommitHash();
     <link rel="manifest" href={`/manifest.webmanifest?v=${version}`} />
     <link rel="preload" href={inter} as="font" type="font/woff2" crossorigin />
     <ThemeLoader />
-    <Analytics />
+    <ProductionOnly>
+      <Analytics />
+    </ProductionOnly>
   </head>
   <body>
     <div id="root">

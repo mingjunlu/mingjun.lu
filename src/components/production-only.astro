@@ -1,0 +1,7 @@
+---
+const isProduction = import.meta.env.PROD;
+const isVercelDomain = Astro.url.hostname.includes('.vercel.app');
+const shouldRender = isProduction && !isVercelDomain;
+---
+
+{shouldRender && <slot />}
