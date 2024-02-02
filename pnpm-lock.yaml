@@ -9,8 +9,8 @@ dependencies:
     specifier: ^5.0.16
     version: 5.0.16
   '@upstash/redis':
-    specifier: ^1.28.2
-    version: 1.28.2
+    specifier: ^1.28.3
+    version: 1.28.3
   '@vercel/speed-insights':
     specifier: ^1.0.9
     version: 1.0.9
@@ -1449,8 +1449,8 @@ packages:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
     dev: true
 
-  /@upstash/redis@1.28.2:
-    resolution: {integrity: sha512-e4HmmCji6kE6UnriU92sAVGLQcRYAB4fXSPXls08cjW7zdE/wFaDfhAGi1/T4/wUN50bAy/lpHwW4bMkI2EAcw==}
+  /@upstash/redis@1.28.3:
+    resolution: {integrity: sha512-IduU0zrxVKO0z4D+usJUP/VZRYkbbbSoAdj4WYwgijjhc1nxhRZEtktZ8ueTyXT4dAatJ+gDKIIbVSVIiB1xBw==}
     dependencies:
       crypto-js: 4.2.0
     dev: false
