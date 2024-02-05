@@ -1,0 +1,20 @@
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'daily'
+    groups:
+      typescript-eslint:
+        patterns:
+          - '@typescript-eslint/parser'
+          - '@typescript-eslint/eslint-plugin'
+    ignore:
+      - dependency-name: 'sharp'
+      - dependency-name: '*'
+        update-types: ['version-update:semver-major']
+    labels:
+      - 'dependencies'
+    open-pull-requests-limit: 1
+    reviewers:
+      - 'mingjunlu'
