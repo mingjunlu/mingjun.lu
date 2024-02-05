@@ -18,7 +18,7 @@
     "@fontsource-variable/inter": "^5.0.16",
     "@upstash/redis": "^1.28.3",
     "@vercel/speed-insights": "^1.0.9",
-    "astro-icon": "^1.0.4",
+    "astro-icon": "^1.1.0",
     "astro-seo": "^0.8.0",
     "js-cookie": "^3.0.5",
     "mdast-util-from-markdown": "^2.0.0",
