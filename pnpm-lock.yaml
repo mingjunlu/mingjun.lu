@@ -42,7 +42,7 @@ devDependencies:
     version: 0.4.1(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.3.3)
   '@astrojs/vercel':
     specifier: ^7.1.0
-    version: 7.1.0(astro@4.3.1)
+    version: 7.1.0(astro@4.3.2)
   '@iconify-json/fa6-brands':
     specifier: ^1.1.18
     version: 1.1.18
@@ -71,8 +71,8 @@ devDependencies:
     specifier: ^6.21.0
     version: 6.21.0(eslint@8.56.0)(typescript@5.3.3)
   astro:
-    specifier: ^4.3.1
-    version: 4.3.1(@types/node@20.11.16)(sass@1.70.0)(typescript@5.3.3)
+    specifier: ^4.3.2
+    version: 4.3.2(@types/node@20.11.16)(sass@1.70.0)(typescript@5.3.3)
   eslint:
     specifier: ^8.56.0
     version: 8.56.0
@@ -244,7 +244,7 @@ packages:
       - supports-color
     dev: true
 
-  /@astrojs/vercel@7.1.0(astro@4.3.1):
+  /@astrojs/vercel@7.1.0(astro@4.3.2):
     resolution: {integrity: sha512-J5iskScOm90X+XSwY9f87vPhFS0fPyTq2IXn1SZrU2gAqxvdEegiAwlpf1AhMnIwP87XsAQVIoJxzLeKzNo6DQ==}
     peerDependencies:
       astro: ^4.2.0
@@ -252,7 +252,7 @@ packages:
       '@astrojs/internal-helpers': 0.2.1
       '@vercel/analytics': 1.1.2
       '@vercel/nft': 0.24.4
-      astro: 4.3.1(@types/node@20.11.16)(sass@1.70.0)(typescript@5.3.3)
+      astro: 4.3.2(@types/node@20.11.16)(sass@1.70.0)(typescript@5.3.3)
       esbuild: 0.19.12
       fast-glob: 3.3.2
       minimatch: 9.0.3
@@ -1785,8 +1785,8 @@ packages:
     resolution: {integrity: sha512-7gq6lhibCM8FuzZIJlbLLWP5EJ9KL2/4XqeFrAg9O6ZK2xMFxJ5ubKf+a0VJwwTu8W8Xr421CmpiXu6Hq7n/7Q==}
     dev: false
 
-  /astro@4.3.1(@types/node@20.11.16)(sass@1.70.0)(typescript@5.3.3):
-    resolution: {integrity: sha512-LAY2zQHOuOXEhpguyw5X0AIz6Xq+TAkBNEqrgIxwj72R87mmRQqQWmjChMPPkK95nFHkYR/71M2BrKunpbsfyw==}
+  /astro@4.3.2(@types/node@20.11.16)(sass@1.70.0)(typescript@5.3.3):
+    resolution: {integrity: sha512-SJotHzKG/I32ruYWItMRJjtmNQh14mVS7kahu3XfYyxvo6nx08PGJBTSPbqPrW1sjeQPHwcpVDFx3yMMK2kaxQ==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
     dependencies:
