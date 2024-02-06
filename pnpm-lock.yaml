@@ -15,8 +15,8 @@ dependencies:
     specifier: ^1.0.9
     version: 1.0.9
   astro-icon:
-    specifier: ^1.0.4
-    version: 1.0.4
+    specifier: ^1.1.0
+    version: 1.1.0
   astro-seo:
     specifier: ^0.8.0
     version: 0.8.0
@@ -1771,8 +1771,8 @@ packages:
       - supports-color
     dev: true
 
-  /astro-icon@1.0.4:
-    resolution: {integrity: sha512-z/9lqZjMldbT4cSmgVQLAiUFq+8yJuxVfHmTMfHOZ1EYq54AMaot9cDxfczLOVo65kz3VwymAD6r2EC5Zp6XrA==}
+  /astro-icon@1.1.0:
+    resolution: {integrity: sha512-Nksc09p7UuHeMcPNS9w1pKqRw3+wEmmh0A3FJW+FNXvqaeWI4RLvD1MCWErpY3Z5Cvad317rvLdik/Hg8GEk8Q==}
     dependencies:
       '@iconify/tools': 3.0.7
       '@iconify/types': 2.0.0
