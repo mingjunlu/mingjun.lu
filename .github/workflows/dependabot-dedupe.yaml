@@ -31,8 +31,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "49699333+dependabot[bot]@users.noreply.github.com"
-      - name: Commit and push changes
+      - name: Commit and push if lockfile changed
         run: |
           git add pnpm-lock.yaml
-          git commit -m "➖ Deduplicate dependencies [dependabot skip]" || echo "No changes to commit"
+          git commit -m "➖ Deduplicate dependencies [dependabot skip]" || exit 0
           git push origin ${{ github.ref_name }}
