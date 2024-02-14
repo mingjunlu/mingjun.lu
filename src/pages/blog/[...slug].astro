@@ -129,6 +129,13 @@ const metadataProps: MetadataProps = {
     > :global(.post-info) {
       order: -1;
     }
+    :global(.post-tags) {
+      display: none;
+
+      @media (min-width: $tablet-min-width) {
+        display: flex;
+      }
+    }
 
     // Markdown styles
     :global(a) {

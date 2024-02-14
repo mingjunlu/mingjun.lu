@@ -36,13 +36,19 @@
           text-overflow: ellipsis;
         }
       }
-      &.post-tags {
-        display: none;
+      &.post-reading-time {
+        > :global(span) {
+          &::after {
+            content: ' min';
 
-        @media (min-width: $tablet-min-width) {
-          display: flex;
-          order: 1;
+            @media (min-width: $tablet-min-width) {
+              content: ' min read';
+            }
+          }
         }
+      }
+      &.post-tags {
+        order: 1;
       }
 
       @media (min-resolution: 2dppx) {

@@ -8,15 +8,10 @@ import PostInfo from 'src/components/post-info.astro';
 import PostPublicationDate from 'src/components/post-publication-date.astro';
 import PostReadingTime from 'src/components/post-reading-time.astro';
 import PostTags from 'src/components/post-tags.astro';
-import PostViewCount from 'src/components/post-view-count.astro';
 import VisuallyHidden from 'src/components/visually-hidden.astro';
 import { siteName } from 'src/constants/site';
 import SiteLayout from 'src/layouts/site-layout.astro';
-import {
-  getPostViews,
-  getReadingTime,
-  sortByPublicationTime,
-} from 'src/utils/post';
+import { getReadingTime, sortByPublicationTime } from 'src/utils/post';
 
 Astro.response.headers.set(
   'Cache-Control',
@@ -25,9 +20,6 @@ Astro.response.headers.set(
 
 const postEntries = await getCollection('posts');
 const sortedPostEntries = [...postEntries].sort(sortByPublicationTime);
-const viewCounts = await getPostViews(
-  sortedPostEntries.map((entry) => entry.slug),
-);
 const metadataProps: MetadataProps = {
   title: 'Blog',
   titleTemplate: `%s | ${siteName}`,
@@ -48,9 +40,8 @@ const metadataProps: MetadataProps = {
   <main>
     <VisuallyHidden as="h1">Blog Posts</VisuallyHidden>
     {
-      sortedPostEntries.map((entry, index) => {
+      sortedPostEntries.map((entry) => {
         const { image, publishedAt, summary, tags, title } = entry.data;
-        const viewCount = viewCounts.at(index) ?? 0;
         return (
           <article>
             <h2>
@@ -60,7 +51,6 @@ const metadataProps: MetadataProps = {
               <PostPublicationDate publishedAt={publishedAt} />
               <PostReadingTime readingTime={getReadingTime(entry.body)} />
               <PostTags tags={tags} />
-              <PostViewCount viewCount={viewCount} />
             </PostInfo>
             {!!image && (
               <picture>

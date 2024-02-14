@@ -8,9 +8,9 @@ type Props = {
 const { readingTime } = Astro.props;
 ---
 
-<div>
+<div class="post-reading-time">
   <Icon name="fa6-solid:clock" />
-  <span>{`${readingTime} min read`}</span>
+  <span>{readingTime}</span>
 </div>
 
 <style lang="scss">
