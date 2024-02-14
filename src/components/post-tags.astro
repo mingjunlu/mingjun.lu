@@ -1,0 +1,41 @@
+---
+import { Icon } from 'astro-icon/components';
+
+type Props = {
+  tags: string[];
+};
+
+const { tags } = Astro.props;
+const firstTag = tags.at(0);
+---
+
+{
+  !!firstTag && (
+    <div class="post-tags">
+      <Icon name="fa6-solid:tag" />
+      <span>{firstTag}</span>
+    </div>
+  )
+}
+
+<style lang="scss">
+  @import '../styles/variables.scss';
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  svg {
+    flex: 0 0 auto;
+    width: 15px;
+    height: 15px;
+    transform: translateY(0.5px);
+
+    @media (min-width: $tablet-min-width) {
+      width: 16px;
+      height: 16px;
+      transform: none;
+    }
+  }
+</style>

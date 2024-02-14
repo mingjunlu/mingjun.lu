@@ -1,0 +1,30 @@
+---
+import { Icon } from 'astro-icon/components';
+
+type Props = {
+  readingTime: number;
+};
+
+const { readingTime } = Astro.props;
+---
+
+<div>
+  <Icon name="fa6-solid:clock" />
+  <span>{`${readingTime} min read`}</span>
+</div>
+
+<style lang="scss">
+  @import '../styles/variables.scss';
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  svg {
+    flex: 0 0 auto;
+    width: 14px;
+    height: 14px;
+    transform: translateY(-0.5px);
+  }
+</style>

@@ -6,6 +6,10 @@ import { getEntry } from 'astro:content';
 import sanitizeHtml from 'sanitize-html';
 import AdjacentPosts from 'src/components/adjacent-posts.astro';
 import PostInfo from 'src/components/post-info.astro';
+import PostPublicationDate from 'src/components/post-publication-date.astro';
+import PostReadingTime from 'src/components/post-reading-time.astro';
+import PostTags from 'src/components/post-tags.astro';
+import PostViewCount from 'src/components/post-view-count.astro';
 import { siteName } from 'src/constants/site';
 import SiteLayout from 'src/layouts/site-layout.astro';
 import { getReadingTime } from 'src/utils/post';
@@ -56,11 +60,12 @@ const metadataProps: MetadataProps = {
       )
     }
     <Content />
-    <PostInfo
-      publishedAt={publishedAt}
-      readingTime={getReadingTime(postEntry.body)}
-      tags={tags}
-    />
+    <PostInfo>
+      <PostPublicationDate publishedAt={publishedAt} />
+      <PostReadingTime readingTime={getReadingTime(postEntry.body)} />
+      <PostTags tags={tags} />
+      <PostViewCount />
+    </PostInfo>
   </article>
   <AdjacentPosts slug={postEntry.slug} />
 </SiteLayout>

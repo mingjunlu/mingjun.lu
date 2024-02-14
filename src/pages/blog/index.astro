@@ -5,6 +5,10 @@ import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import Link from 'src/components/link.astro';
 import PostInfo from 'src/components/post-info.astro';
+import PostPublicationDate from 'src/components/post-publication-date.astro';
+import PostReadingTime from 'src/components/post-reading-time.astro';
+import PostTags from 'src/components/post-tags.astro';
+import PostViewCount from 'src/components/post-view-count.astro';
 import VisuallyHidden from 'src/components/visually-hidden.astro';
 import { siteName } from 'src/constants/site';
 import SiteLayout from 'src/layouts/site-layout.astro';
@@ -52,12 +56,12 @@ const metadataProps: MetadataProps = {
             <h2>
               <Link href={`/blog/${entry.slug}`}>{title}</Link>
             </h2>
-            <PostInfo
-              publishedAt={publishedAt}
-              readingTime={getReadingTime(entry.body)}
-              viewCount={viewCount}
-              tags={tags}
-            />
+            <PostInfo>
+              <PostPublicationDate publishedAt={publishedAt} />
+              <PostReadingTime readingTime={getReadingTime(entry.body)} />
+              <PostTags tags={tags} />
+              <PostViewCount viewCount={viewCount} />
+            </PostInfo>
             {!!image && (
               <picture>
                 <Image src={image.src} alt={image.alt} />

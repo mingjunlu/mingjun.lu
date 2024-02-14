@@ -1,0 +1,40 @@
+---
+import { Icon } from 'astro-icon/components';
+
+function formatDate(date: Date | string): string {
+  return new Date(date).toLocaleDateString('en-US', {
+    dateStyle: 'medium',
+  });
+}
+
+type Props = {
+  publishedAt: string;
+};
+
+const { publishedAt } = Astro.props;
+---
+
+<div>
+  <Icon name="fa6-solid:calendar" />
+  <time datetime={publishedAt}>{formatDate(publishedAt)}</time>
+</div>
+
+<style lang="scss">
+  @import '../styles/variables.scss';
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  svg {
+    flex: 0 0 auto;
+    width: 13px;
+    height: 13px;
+    transform: translateY(-0.5px);
+
+    @media (min-width: $tablet-min-width) {
+      transform: translateY(-1px);
+    }
+  }
+</style>
