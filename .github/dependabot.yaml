@@ -10,7 +10,6 @@ updates:
           - '@typescript-eslint/parser'
           - '@typescript-eslint/eslint-plugin'
     ignore:
-      - dependency-name: 'sharp'
       - dependency-name: '*'
         update-types: ['version-update:semver-major']
     labels:
