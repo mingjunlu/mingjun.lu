@@ -6,13 +6,14 @@
     "prepare": "husky",
     "dev": "astro dev",
     "start": "astro dev",
-    "prebuild": "curl https://beamanalytics.b-cdn.net/beam.min.js --output public/beam.min.js",
+    "prebuild": "pnpm run analytics:download",
     "build": "pnpm run prebuild && astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint \"src/**/*.{astro,cjs,js,jsx,ts,tsx}\"",
     "format": "prettier --write \"**/**.{astro,cjs,js,jsx,ts,tsx}\" --plugin=prettier-plugin-astro",
-    "test:e2e": "pnpm exec playwright test"
+    "test:e2e": "pnpm exec playwright test",
+    "analytics:download": "node bin/download-analytics-script.mjs"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.0.16",
