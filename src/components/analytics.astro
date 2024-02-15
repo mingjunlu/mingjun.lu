@@ -1,5 +1,9 @@
+---
+import { siteVersion } from 'src/constants/site';
+---
+
 <script
   is:inline
   async
-  src="/beam.min.js"
+  src={`/ba.${siteVersion}.min.js`}
   data-token={import.meta.env.PUBLIC_BEAM_ANALYTICS_TOKEN}></script>
