@@ -3,21 +3,12 @@ import 'src/styles/reset.scss';
 import 'src/styles/globals.scss';
 import '@fontsource-variable/inter';
 import inter from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2';
-import { execSync } from 'node:child_process';
 import Analytics from 'src/components/analytics.astro';
 import Header from 'src/components/header.astro';
 import ProductionOnly from 'src/components/production-only.astro';
 import SpeedInsights from 'src/components/speed-insights.astro';
 import ThemeLoader from 'src/components/theme-loader.astro';
-
-function getCommitHash() {
-  return (
-    process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 7) ??
-    execSync('git log -1 --pretty=format:%h').toString().trim()
-  );
-}
-
-const version = getCommitHash();
+import { siteVersion } from 'src/constants/site';
 ---
 
 <html lang="zh-Hant-TW">
@@ -26,10 +17,10 @@ const version = getCommitHash();
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="" />
     <slot name="head" />
-    <link rel="icon" href={`/favicon.ico?v=${version}`} sizes="32x32" />
-    <link rel="icon" href={`/icon.svg?v=${version}`} type="image/svg+xml" />
-    <link rel="apple-touch-icon" href={`/apple-touch-icon.png?v=${version}`} />
-    <link rel="manifest" href={`/manifest.webmanifest?v=${version}`} />
+    <link rel="icon" href={`/favicon.ico?v=${siteVersion}`} sizes="32x32" />
+    <link rel="icon" href={`/icon.svg?v=${siteVersion}`} type="image/svg+xml" />
+    <link rel="apple-touch-icon" href={`/apple-touch-icon.png?v=${siteVersion}`} />
+    <link rel="manifest" href={`/manifest.webmanifest?v=${siteVersion}`} />
     <link rel="preload" href={inter} as="font" type="font/woff2" crossorigin />
     <ThemeLoader />
     <ProductionOnly>
