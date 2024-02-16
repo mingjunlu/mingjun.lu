@@ -17,6 +17,10 @@ export const prerender = true;
 
 const postEntries = await getCollection('posts');
 const sortedPostEntries = [...postEntries].sort(sortByPublicationTime);
+const indexOfFirstImage = sortedPostEntries.findIndex(
+  (entry) => !!entry.data.image,
+);
+const indexOfLcp = Math.min(indexOfFirstImage, 2);
 const metadataProps: MetadataProps = {
   title: 'Blog',
   titleTemplate: `%s | ${siteName}`,
@@ -37,7 +41,7 @@ const metadataProps: MetadataProps = {
   <main>
     <VisuallyHidden as="h1">Blog Posts</VisuallyHidden>
     {
-      sortedPostEntries.map((entry) => {
+      sortedPostEntries.map((entry, index) => {
         const { image, publishedAt, summary, tags, title } = entry.data;
         return (
           <article>
@@ -51,7 +55,11 @@ const metadataProps: MetadataProps = {
             </PostInfo>
             {!!image && (
               <picture>
-                <Image src={image.src} alt={image.alt} />
+                <Image
+                  loading={index === indexOfLcp ? 'eager' : 'lazy'}
+                  src={image.src}
+                  alt={image.alt}
+                />
               </picture>
             )}
             {!!summary && <p>{summary}</p>}
