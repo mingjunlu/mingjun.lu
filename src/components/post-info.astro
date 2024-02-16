@@ -27,7 +27,7 @@
         padding-left: 0;
         border-left: none;
       }
-      &:last-child {
+      &:nth-last-child(-n + 2) {
         flex: 0 1 auto;
 
         > :global(span) {
@@ -35,20 +35,6 @@
           overflow: hidden;
           text-overflow: ellipsis;
         }
-      }
-      &.post-reading-time {
-        > :global(span) {
-          &::after {
-            content: ' min';
-
-            @media (min-width: $tablet-min-width) {
-              content: ' min read';
-            }
-          }
-        }
-      }
-      &.post-tags {
-        order: 1;
       }
 
       @media (min-resolution: 2dppx) {

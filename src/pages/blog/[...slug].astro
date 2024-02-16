@@ -9,7 +9,7 @@ import PostInfo from 'src/components/post-info.astro';
 import PostPublicationDate from 'src/components/post-publication-date.astro';
 import PostReadingTime from 'src/components/post-reading-time.astro';
 import PostTags from 'src/components/post-tags.astro';
-import PostViewCount from 'src/components/post-view-count.astro';
+import PostViewCounter from 'src/components/post-view-counter.astro';
 import { siteName } from 'src/constants/site';
 import SiteLayout from 'src/layouts/site-layout.astro';
 import { getReadingTime } from 'src/utils/post';
@@ -64,7 +64,7 @@ const metadataProps: MetadataProps = {
       <PostPublicationDate publishedAt={publishedAt} />
       <PostReadingTime readingTime={getReadingTime(postEntry.body)} />
       <PostTags tags={tags} />
-      <PostViewCount />
+      <PostViewCounter />
     </PostInfo>
   </article>
   <AdjacentPosts slug={postEntry.slug} />
@@ -129,7 +129,7 @@ const metadataProps: MetadataProps = {
     > :global(.post-info) {
       order: -1;
     }
-    :global(.post-tags) {
+    :global(.post-view-counter) {
       display: none;
 
       @media (min-width: $tablet-min-width) {

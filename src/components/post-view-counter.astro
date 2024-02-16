@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon/components';
 import { increasePostView } from 'src/utils/post';
 
 function formatViewCount(count: number): string {
@@ -16,6 +17,22 @@ const { slug } = Astro.params;
 const viewCount = Astro.props.viewCount ?? (await increasePostView(slug));
 ---
 
-<Fragment>
-  {formatViewCount(viewCount)}
-</Fragment>
+<div class="post-view-counter">
+  <Icon name="fa6-solid:eye" />
+  <span>{formatViewCount(viewCount)}</span>
+</div>
+
+<style lang="scss">
+  @import '../styles/variables.scss';
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  svg {
+    flex: 0 0 auto;
+    width: 16px;
+    height: 16px;
+  }
+</style>

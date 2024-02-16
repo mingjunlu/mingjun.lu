@@ -8,7 +8,7 @@ type Props = {
 const { readingTime } = Astro.props;
 ---
 
-<div class="post-reading-time">
+<div>
   <Icon name="fa6-solid:clock" />
   <span>{readingTime}</span>
 </div>
@@ -26,5 +26,14 @@ const { readingTime } = Astro.props;
     width: 14px;
     height: 14px;
     transform: translateY(-0.5px);
+  }
+  span {
+    &::after {
+      content: ' min';
+
+      @media (min-width: $tablet-min-width) {
+        content: ' min read';
+      }
+    }
   }
 </style>
