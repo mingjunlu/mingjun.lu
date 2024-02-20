@@ -18,8 +18,8 @@ dependencies:
     specifier: ^1.1.0
     version: 1.1.0
   astro-seo:
-    specifier: ^0.8.1
-    version: 0.8.1(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.3.3)
+    specifier: ^0.8.2
+    version: 0.8.2(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.3.3)
   js-cookie:
     specifier: ^3.0.5
     version: 3.0.5
@@ -1773,8 +1773,8 @@ packages:
       - supports-color
     dev: false
 
-  /astro-seo@0.8.1(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.3.3):
-    resolution: {integrity: sha512-BDGtIXxs6gPZXjRkPMo7YeLxcYedxxrAoU4U5+EKaKxJQJLk14b0Ok5UM+LL7LjWg3fo18MPTAxdYYCoj3qKDw==}
+  /astro-seo@0.8.2(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.3.3):
+    resolution: {integrity: sha512-9hu+2y0QboOShFly9r+LcasfEOsWFhV5GKzsfnPG4kbNm9mqXuEP7YrUt7XrEA7rJOzC1DInOV+cIT+7zBasBQ==}
     dependencies:
       '@astrojs/check': 0.5.4(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.3.3)
     transitivePeerDependencies:
