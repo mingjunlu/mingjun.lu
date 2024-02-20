@@ -1,9 +1,10 @@
 ---
-import { siteVersion } from 'src/constants/site';
+import { siteVersion, siteUrl } from 'src/constants/site';
 ---
 
 <script
   is:inline
   async
-  src={`/ba.${siteVersion}.min.js`}
-  data-token={import.meta.env.PUBLIC_BEAM_ANALYTICS_TOKEN}></script>
+  src={`/umm.${siteVersion}.min.js`}
+  data-website-id={import.meta.env.PUBLIC_ANALYTICS_ID}
+  data-domains={new URL(siteUrl).hostname}></script>

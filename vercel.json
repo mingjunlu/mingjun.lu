@@ -1,7 +1,7 @@
 {
   "routes": [
     {
-      "src": "/ba.*.min.js",
+      "src": "/umm.*.min.js",
       "headers": {
         "Cache-Control": "public, max-age=31536000, immutable"
       },

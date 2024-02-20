@@ -6,7 +6,9 @@ interface ImportMeta {
 }
 
 interface ImportMetaEnv {
-  readonly PUBLIC_BEAM_ANALYTICS_TOKEN: string;
+  readonly ANALYTICS_API_URL?: string;
+  readonly ANALYTICS_SCRIPT_URL?: string;
+  readonly PUBLIC_ANALYTICS_ID?: string;
   readonly PUBLIC_SITE_NAME: string;
   readonly PUBLIC_SITE_URL: string;
   readonly UPSTASH_REDIS_REST_TOKEN: string;

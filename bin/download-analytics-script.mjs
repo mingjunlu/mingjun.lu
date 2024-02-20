@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import { execSync } from 'node:child_process';
 import { writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
@@ -5,14 +6,21 @@ import { join, resolve } from 'node:path';
 /* eslint-env node */
 
 (async () => {
-  const scriptUrl = 'https://beamanalytics.b-cdn.net/beam.min.js';
+  const scriptUrl = process.env.ANALYTICS_SCRIPT_URL;
   const commitHash =
     process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 7) ??
     execSync('git log -1 --pretty=format:%h').toString().trim();
-  const fileName = `ba.${commitHash}.min.js`;
+  const fileName = `umm.${commitHash}.min.js`;
   const filePath = resolve(join(process.cwd(), `public/${fileName}`));
 
   try {
+    if (!scriptUrl) {
+      writeFileSync(filePath, '');
+      console.warn(
+        'Invalid analytics script URL. An empty file is created to avoid errors.\n',
+      );
+      process.exit(0);
+    }
     const response = await fetch(scriptUrl);
     if (!response.ok) {
       throw new Error(`${response.status} ${response.statusText}`);
