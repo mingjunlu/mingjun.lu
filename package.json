@@ -40,7 +40,7 @@
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
     "astro": "^4.4.1",
-    "dotenv": "^16.4.4",
+    "dotenv": "^16.4.5",
     "eslint": "^8.56.0",
     "eslint-plugin-astro": "^0.31.4",
     "eslint-plugin-jsx-a11y": "^6.8.0",
