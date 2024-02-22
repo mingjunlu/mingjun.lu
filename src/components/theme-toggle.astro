@@ -34,11 +34,41 @@ import { Icon } from 'astro-icon/components';
   .moon-icon {
     width: 18px;
     height: 18px;
-    transform: translateX(2px);
+    margin-left: 2px;
+    transform-origin: center;
+
+    &.animated {
+      animation: moonrise 500ms cubic-bezier(0.87, 0, 0.13, 1);
+    }
   }
   .sun-icon {
     width: 24px;
     height: 24px;
+    transform-origin: center;
+
+    &.animated {
+      animation: sunrise 500ms cubic-bezier(0.87, 0, 0.13, 1);
+    }
+  }
+  @keyframes moonrise {
+    from {
+      transform: rotate(-90deg);
+      opacity: 0;
+    }
+    to {
+      transform: rotate(0deg);
+      opacity: 1;
+    }
+  }
+  @keyframes sunrise {
+    from {
+      transform: rotate(90deg) scale(0.5);
+      opacity: 0;
+    }
+    to {
+      transform: rotate(0deg) scale(1);
+      opacity: 1;
+    }
   }
 </style>
 
@@ -67,6 +97,7 @@ import { Icon } from 'astro-icon/components';
     if (!isValidTheme(theme)) {
       return;
     }
+
     const themeColor = {
       light: window
         .getComputedStyle(documentElement)
@@ -81,6 +112,23 @@ import { Icon } from 'astro-icon/components';
       ?.setAttribute('content', themeColor[newTheme]);
     documentElement.setAttribute('data-theme', newTheme);
     switchButton?.setAttribute('aria-checked', isDarkMode(newTheme).toString());
+
+    const iconSelector = {
+      light: '.sun-icon',
+      dark: '.moon-icon',
+    };
+    const iconToAnimate = documentElement.querySelector(iconSelector[newTheme]);
+    if (iconToAnimate) {
+      iconToAnimate.addEventListener(
+        'animationend',
+        () => {
+          iconToAnimate.classList.remove('animated');
+        },
+        { once: true },
+      );
+      iconToAnimate.classList.add('animated');
+    }
+
     Cookies.set('theme', newTheme, {
       ...themeCookieOptions,
       expires: 180, // Days
