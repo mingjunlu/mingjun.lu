@@ -33,8 +33,8 @@ dependencies:
     specifier: ^1.5.0
     version: 1.5.0
   sanitize-html:
-    specifier: ^2.12.0
-    version: 2.12.0
+    specifier: ^2.12.1
+    version: 2.12.1
 
 devDependencies:
   '@astrojs/check':
@@ -5200,8 +5200,8 @@ packages:
       is-regex: 1.1.4
     dev: true
 
-  /sanitize-html@2.12.0:
-    resolution: {integrity: sha512-2pq2H0b4npSaMPrRuauYVml1Q3BzaL67Y8WDOk9gsqoS8gS+VFZcgwF1ITJbfOCHgw1sUQMG14KwXyVE+75tSg==}
+  /sanitize-html@2.12.1:
+    resolution: {integrity: sha512-Plh+JAn0UVDpBRP/xEjsk+xDCoOvMBwQUf/K+/cBAVuTbtX8bj2VB7S1sL1dssVpykqp0/KPSesHrqXtokVBpA==}
     dependencies:
       deepmerge: 4.3.1
       escape-string-regexp: 4.0.0
