@@ -36,6 +36,22 @@
     --color-quote-foreground: var(--color-light-gray);
     --color-quote-background: var(--color-dark-gray);
 
+    .astro-code {
+      color: var(--shiki-dark) !important;
+      background-color: var(--shiki-dark-bg) !important;
+      transition:
+        color var(--transition-ease-in-out-250),
+        background-color var(--transition-ease-in-out-250);
+
+      span {
+        color: var(--shiki-dark) !important;
+        background-color: transparent !important;
+        transition:
+          color var(--transition-ease-in-out-250),
+          background-color var(--transition-ease-in-out-250);
+      }
+    }
+
     .sun-icon,
     .cloud-icon {
       display: none;
@@ -45,6 +61,20 @@
     }
   }
   &[data-theme='light'] {
+    .astro-code {
+      background-color: var(--color-light-gray) !important;
+      transition:
+        color var(--transition-ease-in-out-250),
+        background-color var(--transition-ease-in-out-250);
+
+      span {
+        background-color: transparent !important;
+        transition:
+          color var(--transition-ease-in-out-250),
+          background-color var(--transition-ease-in-out-250);
+      }
+    }
+
     .moon-icon,
     .star-icon {
       display: none;
