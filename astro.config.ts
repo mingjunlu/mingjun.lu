@@ -36,4 +36,12 @@ export default defineConfig({
       exclude: ['fsevents'],
     },
   },
+  markdown: {
+    shikiConfig: {
+      experimentalThemes: {
+        light: 'github-light',
+        dark: 'github-dark',
+      },
+    },
+  },
 });
