@@ -41,8 +41,8 @@ devDependencies:
     specifier: ^0.5.5
     version: 0.5.5(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.3.3)
   '@astrojs/vercel':
-    specifier: ^7.3.1
-    version: 7.3.1(astro@4.4.2)
+    specifier: ^7.3.2
+    version: 7.3.2(astro@4.4.2)
   '@iconify-json/fa6-brands':
     specifier: ^1.1.18
     version: 1.1.18
@@ -241,8 +241,8 @@ packages:
       - supports-color
     dev: true
 
-  /@astrojs/vercel@7.3.1(astro@4.4.2):
-    resolution: {integrity: sha512-nzpvuRIJMbmLXd0nQpVrOGCPOEx792aAI25aFNK3uC0lD/yGyAlY4nHkCeaE/c+0vkiRdCbfGlHujz3emWpg2w==}
+  /@astrojs/vercel@7.3.2(astro@4.4.2):
+    resolution: {integrity: sha512-fFYatU4uCO41JDu+38Mg0K874fbXwAs4JPQ2BmYlUqx2C1IM+pum/4RgTl0zCuwIpDpwMnhV80izTStUSIwp0A==}
     peerDependencies:
       astro: ^4.2.0
     dependencies:
