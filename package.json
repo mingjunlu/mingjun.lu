@@ -52,6 +52,6 @@
     "sharp": "^0.32.6",
     "typescript": "^5.3.3",
     "vite": "^5.1.4",
-    "vite-plugin-mkcert": "^1.17.3"
+    "vite-plugin-mkcert": "^1.17.4"
   }
 }
