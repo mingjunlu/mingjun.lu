@@ -17,12 +17,12 @@ My personal website built with [Astro](https://astro.build).
 
 ## 🧞 Commands
 
-| Command             | Action                                             |
-| :------------------ | :------------------------------------------------- |
-| `pnpm install`      | Install dependencies                               |
-| `pnpm run dev`      | Start local dev server at `https://localhost:4321` |
-| `pnpm run build`    | Build the production site to `./dist/`             |
-| `pnpm run preview`  | Preview the build locally, before deploying        |
-| `pnpm run lint`     | Lint files with ESLint                             |
-| `pnpm run format`   | Format files with Prettier                         |
-| `pnpm run test:e2e` | Run end-to-end tests with Playwright               |
+| Command             | Action                    |
+| :------------------ | :------------------------ |
+| `pnpm install`      | Install dependencies      |
+| `pnpm run dev`      | Start local dev server    |
+| `pnpm run build`    | Build the production site |
+| `pnpm run preview`  | Preview the build locally |
+| `pnpm run lint`     | Lint files                |
+| `pnpm run format`   | Format files              |
+| `pnpm run test:e2e` | Run end-to-end tests      |
