@@ -2,7 +2,6 @@ import vercel from '@astrojs/vercel/serverless';
 import icon from 'astro-icon';
 import { defineConfig } from 'astro/config';
 import { loadEnv } from 'vite';
-import mkcert from 'vite-plugin-mkcert';
 
 // Can’t use `import.meta.env` here. See: https://docs.astro.build/en/guides/configuring-astro/#environment-variables
 const { PUBLIC_SITE_URL } = loadEnv(
@@ -31,7 +30,6 @@ export default defineConfig({
     }),
   ],
   vite: {
-    plugins: [mkcert()],
     optimizeDeps: {
       exclude: ['fsevents'],
     },

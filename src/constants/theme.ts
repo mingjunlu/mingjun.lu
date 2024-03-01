@@ -3,5 +3,5 @@ export const defaultTheme = 'dark';
 export const themeCookieOptions = {
   path: '/',
   sameSite: 'Strict' as const,
-  secure: true,
+  secure: import.meta.env.PROD,
 };

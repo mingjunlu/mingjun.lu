@@ -1,8 +1,12 @@
 import { expect, test as it } from '@playwright/test';
-import { themeCookieOptions } from 'src/constants/theme';
 import config from '../playwright.config';
 
-const cookieDomain = config.use?.baseURL?.split(':').at(1)?.replaceAll('/', '');
+const cookie = {
+  path: '/',
+  sameSite: 'Strict' as const,
+  secure: !!config.use?.baseURL?.startsWith('https://'),
+  domain: config.use?.baseURL?.split(':').at(1)?.replaceAll('/', ''),
+};
 
 it('should apply dark theme by default', async ({ page }) => {
   await page.goto('/blog');
@@ -17,10 +21,9 @@ it('should apply dark theme by default', async ({ page }) => {
 it('should apply light theme if preferred', async ({ context, page }) => {
   await context.addCookies([
     {
-      ...themeCookieOptions,
+      ...cookie,
       name: 'theme',
       value: 'light',
-      domain: cookieDomain,
     },
   ]);
   await page.goto('/blog');
@@ -35,10 +38,9 @@ it('should apply light theme if preferred', async ({ context, page }) => {
 it('should apply dark theme if preferred', async ({ context, page }) => {
   await context.addCookies([
     {
-      ...themeCookieOptions,
+      ...cookie,
       name: 'theme',
       value: 'dark',
-      domain: cookieDomain,
     },
   ]);
   await page.goto('/blog');
@@ -53,10 +55,9 @@ it('should apply dark theme if preferred', async ({ context, page }) => {
 it('should switch to light theme', async ({ context, page }) => {
   await context.addCookies([
     {
-      ...themeCookieOptions,
+      ...cookie,
       name: 'theme',
       value: 'dark',
-      domain: cookieDomain,
     },
   ]);
   await page.goto('/blog');
@@ -76,10 +77,9 @@ it('should switch to light theme', async ({ context, page }) => {
 it('should switch to dark theme', async ({ context, page }) => {
   await context.addCookies([
     {
-      ...themeCookieOptions,
+      ...cookie,
       name: 'theme',
       value: 'light',
-      domain: cookieDomain,
     },
   ]);
   await page.goto('/blog');
