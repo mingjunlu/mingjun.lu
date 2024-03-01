@@ -1,6 +1,6 @@
 import { expect, test as it } from '@playwright/test';
 import { themeCookieOptions } from 'src/constants/theme';
-import config from '../../playwright.config';
+import config from '../playwright.config';
 
 const cookieDomain = config.use?.baseURL?.split(':').at(1)?.replaceAll('/', '');
 
