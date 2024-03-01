@@ -4,14 +4,14 @@ import type { Props as MetadataProps } from 'astro-seo';
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import Link from 'src/components/link.astro';
-import PostInfo from 'src/components/post-info.astro';
-import PostPublicationDate from 'src/components/post-publication-date.astro';
-import PostReadingTime from 'src/components/post-reading-time.astro';
-import PostTags from 'src/components/post-tags.astro';
 import VisuallyHidden from 'src/components/visually-hidden.astro';
 import { siteName } from 'src/constants/site';
 import SiteLayout from 'src/layouts/site-layout.astro';
 import { getReadingTime, sortByPublicationTime } from 'src/utils/post';
+import PostInfo from './_post-info.astro';
+import PostPublicationDate from './_post-publication-date.astro';
+import PostReadingTime from './_post-reading-time.astro';
+import PostTags from './_post-tags.astro';
 
 export const prerender = true;
 
