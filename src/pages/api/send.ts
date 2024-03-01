@@ -16,6 +16,24 @@ const RequestBodySchema = z.object({
   }),
 });
 
+export async function GET(context: APIContext) {
+  const { url } = context;
+
+  try {
+    const upstreamResponse = await fetch(`${url.origin}/404`);
+    const html = await upstreamResponse.text();
+    return new Response(html, {
+      status: 404,
+      headers: {
+        'Content-Type': 'text/html; charset=utf-8',
+      },
+    });
+  } catch (error) {
+    console.error(error);
+    return new Response(null, { status: 404 });
+  }
+}
+
 export async function POST(context: APIContext) {
   const { request, url } = context;
 
