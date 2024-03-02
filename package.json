@@ -39,7 +39,7 @@
     "@types/sanitize-html": "^2.11.0",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
-    "astro": "^4.4.8",
+    "astro": "^4.4.9",
     "dotenv": "^16.4.5",
     "eslint": "^8.57.0",
     "eslint-plugin-astro": "^0.31.4",
