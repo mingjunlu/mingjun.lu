@@ -12,7 +12,6 @@ import PostInfo from './_post-info.astro';
 import PostPublicationDate from './_post-publication-date.astro';
 import PostReadingTime from './_post-reading-time.astro';
 import PostTags from './_post-tags.astro';
-import PostViewCounter from './_post-view-counter.astro';
 
 export const prerender = false;
 
@@ -27,7 +26,7 @@ Astro.response.headers.set(
   's-maxage=1, stale-while-revalidate=2591999',
 );
 
-const [{ Content }, viewCount] = await Promise.all([
+const [{ Content }] = await Promise.all([
   postEntry.render(),
   increasePostView(slug),
 ]);
@@ -69,7 +68,6 @@ const metadataProps: MetadataProps = {
       <PostPublicationDate publishedAt={publishedAt} />
       <PostReadingTime readingTime={getReadingTime(postEntry.body)} />
       <PostTags tags={tags} />
-      <PostViewCounter viewCount={viewCount} />
     </PostInfo>
   </article>
   <AdjacentPosts slug={postEntry.slug} />
@@ -133,13 +131,6 @@ const metadataProps: MetadataProps = {
     }
     > :global(.post-info) {
       order: -1;
-    }
-    :global(.post-view-counter) {
-      display: none;
-
-      @media (min-width: $tablet-min-width) {
-        display: flex;
-      }
     }
 
     // Markdown styles
