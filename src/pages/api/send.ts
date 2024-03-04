@@ -1,5 +1,7 @@
 import type { APIContext } from 'astro';
 import { z } from 'astro:content';
+import fs from 'node:fs/promises';
+import path from 'node:path';
 import { siteUrl } from 'src/constants/site';
 
 export const prerender = false;
@@ -21,10 +23,29 @@ const RequestBodySchema = z.object({
 export async function GET(context: APIContext) {
   const { url } = context;
 
+  const isDevelopment = import.meta.env.DEV;
+  if (isDevelopment) {
+    try {
+      const upstreamResponse = await fetch(`${url.origin}/404`);
+      const html = await upstreamResponse.text();
+      return new Response(html.trim(), {
+        status: 404,
+        headers: {
+          'Content-Type': 'text/html; charset=utf-8',
+        },
+      });
+    } catch (error) {
+      console.error(error);
+      return new Response(null, { status: 404 });
+    }
+  }
+
   try {
-    const upstreamResponse = await fetch(`${url.origin}/404`);
-    const html = await upstreamResponse.text();
-    return new Response(html, {
+    const html = await fs.readFile(
+      path.join(process.cwd(), './vercel/path0/.vercel/output/static/404.html'),
+      { encoding: 'utf8' },
+    );
+    return new Response(html.trim(), {
       status: 404,
       headers: {
         'Content-Type': 'text/html; charset=utf-8',
