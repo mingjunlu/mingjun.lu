@@ -2,35 +2,30 @@
 import { SEO as Metadata } from 'astro-seo';
 import type { Props as MetadataProps } from 'astro-seo';
 import { Image, getImage } from 'astro:assets';
-import { getEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 import sanitizeHtml from 'sanitize-html';
 import { siteName } from 'src/constants/site';
 import SiteLayout from 'src/layouts/site-layout.astro';
-import { getReadingTime, increasePostView } from 'src/utils/post';
+import { getReadingTime, sortByPublicationTime } from 'src/utils/post';
 import AdjacentPosts from './_adjacent-posts.astro';
 import PostInfo from './_post-info.astro';
 import PostPublicationDate from './_post-publication-date.astro';
 import PostReadingTime from './_post-reading-time.astro';
 import PostTags from './_post-tags.astro';
 
-export const prerender = false;
-
-const { slug = '' } = Astro.params;
-const postEntry = await getEntry('posts', slug);
-if (!postEntry) {
-  return Astro.redirect('/404');
+export async function getStaticPaths() {
+  const postEntries = await getCollection('posts');
+  const sortedPostEntries = [...postEntries].sort(sortByPublicationTime);
+  return sortedPostEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
 }
 
-Astro.response.headers.set(
-  'Cache-Control',
-  's-maxage=1, stale-while-revalidate=2591999',
-);
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const { image, publishedAt, summary, tags, title } = entry.data;
 
-const [{ Content }] = await Promise.all([
-  postEntry.render(),
-  increasePostView(slug),
-]);
-const { image, publishedAt, summary, tags, title } = postEntry.data;
 const metadataProps: MetadataProps = {
   title,
   titleTemplate: `%s | ${siteName}`,
@@ -66,11 +61,11 @@ const metadataProps: MetadataProps = {
     <Content />
     <PostInfo>
       <PostPublicationDate publishedAt={publishedAt} />
-      <PostReadingTime readingTime={getReadingTime(postEntry.body)} />
+      <PostReadingTime readingTime={getReadingTime(entry.body)} />
       <PostTags tags={tags} />
     </PostInfo>
   </article>
-  <AdjacentPosts slug={postEntry.slug} />
+  <AdjacentPosts slug={entry.slug} />
 </SiteLayout>
 
 <style lang="scss">

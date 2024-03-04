@@ -33,3 +33,12 @@ export async function increasePostView(slug?: string): Promise<number> {
     return 0;
   }
 }
+
+export function getSlug(text: string | undefined | null): string {
+  return (
+    text
+      ?.split('/')
+      .filter((segment) => !!segment.trim())
+      .at(-1) ?? ''
+  );
+}
