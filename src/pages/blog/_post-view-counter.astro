@@ -1,6 +1,5 @@
 ---
 import { Icon } from 'astro-icon/components';
-import { increasePostView } from 'src/utils/post';
 
 function formatViewCount(count: number): string {
   const formatter = new Intl.NumberFormat('en-US', {
@@ -10,11 +9,10 @@ function formatViewCount(count: number): string {
 }
 
 type Props = {
-  viewCount?: number;
+  viewCount: number;
 };
 
-const { slug } = Astro.params;
-const viewCount = Astro.props.viewCount ?? (await increasePostView(slug));
+const { viewCount } = Astro.props;
 ---
 
 <div class="post-view-counter">

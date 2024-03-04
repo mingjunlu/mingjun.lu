@@ -6,7 +6,7 @@ import { getEntry } from 'astro:content';
 import sanitizeHtml from 'sanitize-html';
 import { siteName } from 'src/constants/site';
 import SiteLayout from 'src/layouts/site-layout.astro';
-import { getReadingTime } from 'src/utils/post';
+import { getReadingTime, increasePostView } from 'src/utils/post';
 import AdjacentPosts from './_adjacent-posts.astro';
 import PostInfo from './_post-info.astro';
 import PostPublicationDate from './_post-publication-date.astro';
@@ -27,7 +27,10 @@ Astro.response.headers.set(
   's-maxage=1, stale-while-revalidate=2591999',
 );
 
-const { Content } = await postEntry.render();
+const [{ Content }, viewCount] = await Promise.all([
+  postEntry.render(),
+  increasePostView(slug),
+]);
 const { image, publishedAt, summary, tags, title } = postEntry.data;
 const metadataProps: MetadataProps = {
   title,
@@ -66,7 +69,7 @@ const metadataProps: MetadataProps = {
       <PostPublicationDate publishedAt={publishedAt} />
       <PostReadingTime readingTime={getReadingTime(postEntry.body)} />
       <PostTags tags={tags} />
-      <PostViewCounter />
+      <PostViewCounter viewCount={viewCount} />
     </PostInfo>
   </article>
   <AdjacentPosts slug={postEntry.slug} />
