@@ -18,7 +18,7 @@ export default defineConfig({
     },
   },
   site: PUBLIC_SITE_URL,
-  output: 'server',
+  output: 'hybrid',
   adapter: vercel(),
   integrations: [
     icon({

@@ -1,7 +1,5 @@
 import { siteName, siteVersion } from 'src/constants/site';
 
-export const prerender = true;
-
 export function GET() {
   return new Response(
     JSON.stringify({

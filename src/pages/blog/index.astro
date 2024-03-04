@@ -13,8 +13,6 @@ import PostPublicationDate from './_post-publication-date.astro';
 import PostReadingTime from './_post-reading-time.astro';
 import PostTags from './_post-tags.astro';
 
-export const prerender = true;
-
 const postEntries = await getCollection('posts');
 const sortedPostEntries = [...postEntries].sort(sortByPublicationTime);
 const indexOfFirstImage = sortedPostEntries.findIndex(

@@ -2,6 +2,8 @@ import type { APIContext } from 'astro';
 import { z } from 'astro:content';
 import { siteUrl } from 'src/constants/site';
 
+export const prerender = false;
+
 // See: https://github.com/umami-software/umami/blob/master/src/tracker/index.d.ts
 const RequestBodySchema = z.object({
   type: z.string(),
