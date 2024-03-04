@@ -1,4 +1,4 @@
-name: Deduplicate Dependencies for Dependabot PRs
+name: Dependency Deduplication
 on:
   push:
     branches:
