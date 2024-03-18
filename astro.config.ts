@@ -34,6 +34,10 @@ export default defineConfig({
       exclude: ['fsevents'],
     },
   },
+  prefetch: {
+    defaultStrategy: 'viewport',
+    prefetchAll: true,
+  },
   markdown: {
     shikiConfig: {
       themes: {
