@@ -28,6 +28,7 @@ function minifyJavaScript(snippet: string): string {
 ---
 
 <script
+  is:inline
   set:html={minifyJavaScript(
     `document.documentElement.setAttribute("data-theme",(${getInitialTheme.toString()})(window))`,
   )}
