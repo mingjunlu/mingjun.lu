@@ -1,5 +1,7 @@
 # Build output
 dist/
+.vercel/
+public/umm.*.min.js
 
 # Generated types
 .astro/
