@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.5.9",
-    "@astrojs/vercel": "^7.3.6",
+    "@astrojs/vercel": "^7.4.0",
     "@iconify-json/fa6-brands": "^1.1.18",
     "@iconify-json/fa6-solid": "^1.1.20",
     "@playwright/test": "^1.42.1",
