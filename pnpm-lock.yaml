@@ -41,8 +41,8 @@ devDependencies:
     specifier: ^0.5.10
     version: 0.5.10(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.4.3)
   '@astrojs/vercel':
-    specifier: ^7.4.0
-    version: 7.4.0(astro@4.5.12)
+    specifier: ^7.5.0
+    version: 7.5.0(astro@4.5.12)
   '@iconify-json/fa6-brands':
     specifier: ^1.1.18
     version: 1.1.18
@@ -158,10 +158,6 @@ packages:
   /@astrojs/compiler@2.7.0:
     resolution: {integrity: sha512-XpC8MAaWjD1ff6/IfkRq/5k1EFj6zhCNqXRd5J43SVJEBj/Bsmizkm8N0xOYscGcDFQkRgEw6/eKnI5x/1l6aA==}
 
-  /@astrojs/internal-helpers@0.3.0:
-    resolution: {integrity: sha512-tGmHvrhpzuz0JBHaJX8GywN9g4rldVNHtkoVDC3m/DdzBO70jGoVuc0uuNVglRYnsdwkbG0K02Iw3nOOR3/Y4g==}
-    dev: true
-
   /@astrojs/internal-helpers@0.4.0:
     resolution: {integrity: sha512-6B13lz5n6BrbTqCTwhXjJXuR1sqiX/H6rTxzlXx+lN1NnV4jgnq/KJldCQaUWJzPL5SiWahQyinxAbxQtwgPHA==}
     dev: true
@@ -246,12 +242,12 @@ packages:
       - supports-color
     dev: true
 
-  /@astrojs/vercel@7.4.0(astro@4.5.12):
-    resolution: {integrity: sha512-KMCDCOV+UwsJnDX4Q/FE18S0+XwOlu3e6UA/Jr/v2vh0v24aDpkbA0L9DmV4c1ETHLY/vxfjey40gk30iSXNKw==}
+  /@astrojs/vercel@7.5.0(astro@4.5.12):
+    resolution: {integrity: sha512-RYFZNHkfNgFNb41nblG26ubw5924hAjLYs+Bpp4kttcsYJAX/wavIfDbfZQ/XesDTKwIH+Gi/+3c5bldZePFDA==}
     peerDependencies:
       astro: ^4.2.0
     dependencies:
-      '@astrojs/internal-helpers': 0.3.0
+      '@astrojs/internal-helpers': 0.4.0
       '@vercel/analytics': 1.1.2
       '@vercel/edge': 1.1.1
       '@vercel/nft': 0.26.4
