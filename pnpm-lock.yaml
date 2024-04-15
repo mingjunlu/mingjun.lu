@@ -59,8 +59,8 @@ devDependencies:
     specifier: ^3.0.6
     version: 3.0.6
   '@types/node':
-    specifier: ^20.12.5
-    version: 20.12.5
+    specifier: ^20.12.7
+    version: 20.12.7
   '@types/sanitize-html':
     specifier: ^2.11.0
     version: 2.11.0
@@ -72,7 +72,7 @@ devDependencies:
     version: 6.21.0(eslint@8.57.0)(typescript@5.4.4)
   astro:
     specifier: ^4.5.16
-    version: 4.5.16(@types/node@20.12.5)(sass@1.74.1)(typescript@5.4.4)
+    version: 4.5.16(@types/node@20.12.7)(sass@1.74.1)(typescript@5.4.4)
   dotenv:
     specifier: ^16.4.5
     version: 16.4.5
@@ -108,7 +108,7 @@ devDependencies:
     version: 5.4.4
   vite:
     specifier: ^5.2.8
-    version: 5.2.8(@types/node@20.12.5)(sass@1.74.1)
+    version: 5.2.8(@types/node@20.12.7)(sass@1.74.1)
 
 packages:
 
@@ -251,7 +251,7 @@ packages:
       '@vercel/analytics': 1.1.2
       '@vercel/edge': 1.1.1
       '@vercel/nft': 0.26.4
-      astro: 4.5.16(@types/node@20.12.5)(sass@1.74.1)(typescript@5.4.4)
+      astro: 4.5.16(@types/node@20.12.7)(sass@1.74.1)(typescript@5.4.4)
       esbuild: 0.19.12
       fast-glob: 3.3.2
       set-cookie-parser: 2.6.0
@@ -1315,7 +1315,7 @@ packages:
   /@types/cheerio@0.22.35:
     resolution: {integrity: sha512-yD57BchKRvTV+JD53UZ6PD8KWY5g5rvvMLRnZR3EQBCZXiDT/HR+pKpMzFGlWNhFrXlo7VPZXtKvIEwZkAWOIA==}
     dependencies:
-      '@types/node': 20.12.5
+      '@types/node': 20.12.7
     dev: false
 
   /@types/debug@4.1.12:
@@ -1355,8 +1355,8 @@ packages:
       '@types/unist': 2.0.10
     dev: true
 
-  /@types/node@20.12.5:
-    resolution: {integrity: sha512-BD+BjQ9LS/D8ST9p5uqBxghlN+S42iuNxjsUGjeZobe/ciXzk2qb1B6IXc6AnRLS+yFJRpN2IPEHMzwspfDJNw==}
+  /@types/node@20.12.7:
+    resolution: {integrity: sha512-wq0cICSkRLVaf3UGLMGItu/PtdY7oaXaI/RVU+xliKVOtRna3PRY57ZDfztpDL0n11vfymMUnXv8QwYCO7L1wg==}
     dependencies:
       undici-types: 5.26.5
 
@@ -1373,7 +1373,7 @@ packages:
   /@types/tar@6.1.11:
     resolution: {integrity: sha512-ThA1WD8aDdVU4VLuyq5NEqriwXErF5gEIJeyT6gHBWU7JtSmW2a5qjNv3/vR82O20mW+1vhmeZJfBQPT3HCugg==}
     dependencies:
-      '@types/node': 20.12.5
+      '@types/node': 20.12.7
       minipass: 4.2.8
     dev: false
 
@@ -1388,7 +1388,7 @@ packages:
     resolution: {integrity: sha512-oJoftv0LSuaDZE3Le4DbKX+KS9G36NzOeSap90UIK0yMA/NhKJhqlSGtNDORNRaIbQfzjXDrQa0ytJ6mNRGz/Q==}
     requiresBuild: true
     dependencies:
-      '@types/node': 20.12.5
+      '@types/node': 20.12.7
     dev: false
     optional: true
 
@@ -1928,7 +1928,7 @@ packages:
       - typescript
     dev: false
 
-  /astro@4.5.16(@types/node@20.12.5)(sass@1.74.1)(typescript@5.4.4):
+  /astro@4.5.16(@types/node@20.12.7)(sass@1.74.1)(typescript@5.4.4):
     resolution: {integrity: sha512-1nOVsMq2OJiXnG6gO0Y77vTAboGN9nLQSy/8SGazq4h6x+alzbsMbQbArBgvaLzOSUXD0m91XLs3D8bOSuavrQ==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
@@ -1989,7 +1989,7 @@ packages:
       tsconfck: 3.0.1(typescript@5.4.4)
       unist-util-visit: 5.0.0
       vfile: 6.0.1
-      vite: 5.2.8(@types/node@20.12.5)(sass@1.74.1)
+      vite: 5.2.8(@types/node@20.12.7)(sass@1.74.1)
       vitefu: 0.2.5(vite@5.2.8)
       which-pm: 2.1.1
       yargs-parser: 21.1.1
@@ -6067,7 +6067,7 @@ packages:
       vfile-message: 4.0.2
     dev: true
 
-  /vite@5.2.8(@types/node@20.12.5)(sass@1.74.1):
+  /vite@5.2.8(@types/node@20.12.7)(sass@1.74.1):
     resolution: {integrity: sha512-OyZR+c1CE8yeHw5V5t59aXsUPPVTHMDjEZz8MgguLL/Q7NblxhZUlTu9xSPqlsUO/y+X7dlU05jdhvyycD55DA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -6095,7 +6095,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 20.12.5
+      '@types/node': 20.12.7
       esbuild: 0.20.2
       postcss: 8.4.38
       rollup: 4.13.0
@@ -6112,7 +6112,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 5.2.8(@types/node@20.12.5)(sass@1.74.1)
+      vite: 5.2.8(@types/node@20.12.7)(sass@1.74.1)
     dev: true
 
   /volar-service-css@0.0.34(@volar/language-service@2.1.5):
