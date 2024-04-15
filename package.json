@@ -52,5 +52,10 @@
     "sharp": "^0.32.6",
     "typescript": "^5.4.5",
     "vite": "^5.2.8"
+  },
+  "pnpm": {
+    "overrides": {
+      "tar": "^6.2.1"
+    }
   }
 }
