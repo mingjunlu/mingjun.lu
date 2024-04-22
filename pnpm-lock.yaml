@@ -45,7 +45,7 @@ devDependencies:
     version: 0.5.10(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.4.5)
   '@astrojs/vercel':
     specifier: ^7.5.3
-    version: 7.5.3(astro@4.6.1)
+    version: 7.5.3(astro@4.6.3)
   '@iconify-json/fa6-brands':
     specifier: ^1.1.19
     version: 1.1.19
@@ -74,8 +74,8 @@ devDependencies:
     specifier: ^6.21.0
     version: 6.21.0(eslint@8.57.0)(typescript@5.4.5)
   astro:
-    specifier: ^4.6.1
-    version: 4.6.1(@types/node@20.12.7)(sass@1.75.0)(typescript@5.4.5)
+    specifier: ^4.6.3
+    version: 4.6.3(@types/node@20.12.7)(sass@1.75.0)(typescript@5.4.5)
   dotenv:
     specifier: ^16.4.5
     version: 16.4.5
@@ -245,7 +245,7 @@ packages:
       - supports-color
     dev: true
 
-  /@astrojs/vercel@7.5.3(astro@4.6.1):
+  /@astrojs/vercel@7.5.3(astro@4.6.3):
     resolution: {integrity: sha512-rIqcoGoW+SJv+rOjMjMq5ICdBZP+zbuenXyNhTa6UIUZldm4pZLLImuBDvTxB/A3JvJZRoTwZtsEgORXav1bbg==}
     peerDependencies:
       astro: ^4.2.0
@@ -254,7 +254,7 @@ packages:
       '@vercel/analytics': 1.1.2
       '@vercel/edge': 1.1.1
       '@vercel/nft': 0.26.4
-      astro: 4.6.1(@types/node@20.12.7)(sass@1.75.0)(typescript@5.4.5)
+      astro: 4.6.3(@types/node@20.12.7)(sass@1.75.0)(typescript@5.4.5)
       esbuild: 0.19.12
       fast-glob: 3.3.2
       set-cookie-parser: 2.6.0
@@ -1321,6 +1321,10 @@ packages:
       '@types/node': 20.12.7
     dev: false
 
+  /@types/cookie@0.5.4:
+    resolution: {integrity: sha512-7z/eR6O859gyWIAjuvBWFzNURmf2oPBmJlfVWkwehU5nzIyjwBsTh7WMmEEV4JFnHuQ3ex4oyTvfKzcyJVDBNA==}
+    dev: true
+
   /@types/debug@4.1.12:
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
     dependencies:
@@ -1931,8 +1935,8 @@ packages:
       - typescript
     dev: false
 
-  /astro@4.6.1(@types/node@20.12.7)(sass@1.75.0)(typescript@5.4.5):
-    resolution: {integrity: sha512-gcL22NEhuRi4wu9/x5Kn2eJf7nT6GeU5BxdN6AHbUnX6UzEDIWtpgHs5lBIZYExKbHKN9PjEGXWQzQtFwLU+5g==}
+  /astro@4.6.3(@types/node@20.12.7)(sass@1.75.0)(typescript@5.4.5):
+    resolution: {integrity: sha512-p2zs1Gac+ysdc/yFCoc8pOXTZE5L9foAtmqUzUVL22WX68bYTRovd03GRs7J1MDpwzsl9kJtlK20ROpjyIFpNw==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
     dependencies:
@@ -1947,6 +1951,7 @@ packages:
       '@babel/traverse': 7.24.1
       '@babel/types': 7.24.0
       '@types/babel__core': 7.20.5
+      '@types/cookie': 0.5.4
       acorn: 8.11.3
       aria-query: 5.3.0
       axobject-query: 4.0.0
