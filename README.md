@@ -11,7 +11,7 @@ My personal website built with [Astro](https://astro.build).
 
 ## ☑️ Prerequisites
 
-- Node.js v18.14.1 or higher
+- Node.js v18.17.1 or higher
 - pnpm v8
 - An [Upstash Redis database](https://upstash.com/docs/redis/overall/getstarted)
 
