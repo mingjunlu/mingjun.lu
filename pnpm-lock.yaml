@@ -14,9 +14,6 @@ dependencies:
   '@upstash/redis':
     specifier: ^1.30.0
     version: 1.30.0
-  '@vercel/speed-insights':
-    specifier: ^1.0.10
-    version: 1.0.10
   astro-icon:
     specifier: ^1.1.0
     version: 1.1.0
@@ -1613,31 +1610,6 @@ packages:
       - encoding
       - supports-color
     dev: true
-
-  /@vercel/speed-insights@1.0.10:
-    resolution: {integrity: sha512-4uzdKB0RW6Ff2FkzshzjZ+RlJfLPxgm/00i0XXgxfMPhwnnsk92YgtqsxT9OcPLdJUyVU1DqFlSWWjIQMPkh0g==}
-    requiresBuild: true
-    peerDependencies:
-      '@sveltejs/kit': ^1 || ^2
-      next: '>= 13'
-      react: ^18 || ^19
-      svelte: ^4
-      vue: ^3
-      vue-router: ^4
-    peerDependenciesMeta:
-      '@sveltejs/kit':
-        optional: true
-      next:
-        optional: true
-      react:
-        optional: true
-      svelte:
-        optional: true
-      vue:
-        optional: true
-      vue-router:
-        optional: true
-    dev: false
 
   /@volar/kit@2.1.5(typescript@5.4.5):
     resolution: {integrity: sha512-L4bHJ1TsKNjsmxSGBuzkUvii4EQoQAT9JoHy8aL4Y17qU/z0JWI1BzUDGpMl4oDlsc+WpWIVGo6KZAnclrUx/w==}
