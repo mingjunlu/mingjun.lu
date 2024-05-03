@@ -7,7 +7,6 @@ import Header from 'src/components/header.astro';
 import ProductionOnly from 'src/components/production-only.astro';
 import { siteVersion } from 'src/constants/site';
 import Analytics from 'src/scripts/analytics.astro';
-import SpeedInsights from 'src/scripts/speed-insights.astro';
 import ThemeLoader from 'src/scripts/theme-loader.astro';
 ---
 
@@ -25,7 +24,6 @@ import ThemeLoader from 'src/scripts/theme-loader.astro';
     <ThemeLoader />
     <ProductionOnly>
       <Analytics />
-      <SpeedInsights />
     </ProductionOnly>
   </head>
   <body>
