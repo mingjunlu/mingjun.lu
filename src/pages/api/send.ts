@@ -19,7 +19,7 @@ const RequestBodySchema = z.object({
     language: z.string(),
     title: z.string(),
     url: z.string(),
-    referrer: z.string(),
+    referrer: z.string().optional(),
   }),
 });
 

@@ -7,4 +7,5 @@ import { siteVersion, siteUrl } from 'src/constants/site';
   async
   src={`/umm.${siteVersion}.min.js`}
   data-website-id={import.meta.env.PUBLIC_ANALYTICS_ID}
+  data-host-url={siteUrl}
   data-domains={new URL(siteUrl).hostname}></script>
