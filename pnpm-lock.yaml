@@ -42,7 +42,7 @@ devDependencies:
     version: 0.6.0(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.4.5)
   '@astrojs/vercel':
     specifier: ^7.6.0
-    version: 7.6.0(astro@4.7.1)
+    version: 7.6.0(astro@4.8.3)
   '@iconify-json/fa6-brands':
     specifier: ^1.1.19
     version: 1.1.19
@@ -71,8 +71,8 @@ devDependencies:
     specifier: ^6.21.0
     version: 6.21.0(eslint@8.57.0)(typescript@5.4.5)
   astro:
-    specifier: ^4.7.1
-    version: 4.7.1(@types/node@20.12.11)(sass@1.77.1)(typescript@5.4.5)
+    specifier: ^4.8.3
+    version: 4.8.3(@types/node@20.12.11)(sass@1.77.1)(typescript@5.4.5)
   dotenv:
     specifier: ^16.4.5
     version: 16.4.5
@@ -176,6 +176,10 @@ packages:
   /@astrojs/compiler@2.7.1:
     resolution: {integrity: sha512-/POejAYuj8WEw7ZI0J8JBvevjfp9jQ9Wmu/Bg52RiNwGXkMV7JnYpsenVfHvvf1G7R5sXHGKlTcxlQWhoUTiGQ==}
 
+  /@astrojs/compiler@2.8.0:
+    resolution: {integrity: sha512-yrpD1WRGqsJwANaDIdtHo+YVjvIOFAjC83lu5qENIgrafwZcJgSXDuwVMXOgok4tFzpeKLsFQ6c3FoUdloLWBQ==}
+    dev: true
+
   /@astrojs/internal-helpers@0.4.0:
     resolution: {integrity: sha512-6B13lz5n6BrbTqCTwhXjJXuR1sqiX/H6rTxzlXx+lN1NnV4jgnq/KJldCQaUWJzPL5SiWahQyinxAbxQtwgPHA==}
     dev: true
@@ -228,7 +232,7 @@ packages:
       remark-parse: 11.0.0
       remark-rehype: 11.1.0
       remark-smartypants: 2.1.0
-      shiki: 1.3.0
+      shiki: 1.5.2
       unified: 11.0.4
       unist-util-remove-position: 5.0.0
       unist-util-visit: 5.0.0
@@ -260,7 +264,7 @@ packages:
       - supports-color
     dev: true
 
-  /@astrojs/vercel@7.6.0(astro@4.7.1):
+  /@astrojs/vercel@7.6.0(astro@4.8.3):
     resolution: {integrity: sha512-LLOpXWYwTlYgZJCC+ulCpSUnUzOzLrlna2T0WCkhkH1UeavBY5NI0Agpq3rcQd012I7Vr2io+ZKUgKGW+EFvhg==}
     peerDependencies:
       astro: ^4.2.0
@@ -269,7 +273,7 @@ packages:
       '@vercel/analytics': 1.2.2
       '@vercel/edge': 1.1.1
       '@vercel/nft': 0.26.5
-      astro: 4.7.1(@types/node@20.12.11)(sass@1.77.1)(typescript@5.4.5)
+      astro: 4.8.3(@types/node@20.12.11)(sass@1.77.1)(typescript@5.4.5)
       esbuild: 0.21.2
       fast-glob: 3.3.2
       set-cookie-parser: 2.6.0
@@ -1478,8 +1482,8 @@ packages:
     dev: true
     optional: true
 
-  /@shikijs/core@1.3.0:
-    resolution: {integrity: sha512-7fedsBfuILDTBmrYZNFI8B6ATTxhQAasUHllHmjvSZPnoq4bULWoTpHwmuQvZ8Aq03/tAa2IGo6RXqWtHdWaCA==}
+  /@shikijs/core@1.5.2:
+    resolution: {integrity: sha512-wSAOgaz48GmhILFElMCeQypSZmj6Ru6DttOOtl3KNkdJ17ApQuGNCfzpk4cClasVrnIu45++2DBwG4LNMQAfaA==}
     dev: true
 
   /@trivago/prettier-plugin-sort-imports@4.3.0(prettier@3.2.5):
@@ -2139,12 +2143,12 @@ packages:
       - typescript
     dev: false
 
-  /astro@4.7.1(@types/node@20.12.11)(sass@1.77.1)(typescript@5.4.5):
-    resolution: {integrity: sha512-3o+VmnIPBiCm0QVyyTC/F8humNXny5YpI+MKvBTksviRtKxhnztEA3+GAR2XWLUSOx1+/GVjz7mExq3hJGOeqQ==}
+  /astro@4.8.3(@types/node@20.12.11)(sass@1.77.1)(typescript@5.4.5):
+    resolution: {integrity: sha512-pgIKopkmAUXY3EJHdG7zQpudtBzYAsd94A1R7jmLpH2LFZvzHEkAdHnunmSVmgikJCNqtEo3bUCHgLnCPQaN1g==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
     dependencies:
-      '@astrojs/compiler': 2.7.1
+      '@astrojs/compiler': 2.8.0
       '@astrojs/internal-helpers': 0.4.0
       '@astrojs/markdown-remark': 5.1.0
       '@astrojs/telemetry': 3.1.0
@@ -2173,7 +2177,7 @@ packages:
       dlv: 1.1.3
       dset: 3.1.3
       es-module-lexer: 1.5.2
-      esbuild: 0.20.2
+      esbuild: 0.21.2
       estree-walker: 3.0.3
       execa: 8.0.1
       fast-glob: 3.3.2
@@ -2194,8 +2198,8 @@ packages:
       prompts: 2.4.2
       rehype: 13.0.1
       resolve: 1.22.8
-      semver: 7.6.0
-      shiki: 1.3.0
+      semver: 7.6.2
+      shiki: 1.5.2
       string-width: 7.1.0
       strip-ansi: 7.1.0
       tsconfck: 3.0.3(typescript@5.4.5)
@@ -2205,8 +2209,8 @@ packages:
       vitefu: 0.2.5(vite@5.2.11)
       which-pm: 2.1.1
       yargs-parser: 21.1.1
-      zod: 3.23.6
-      zod-to-json-schema: 3.23.0(zod@3.23.6)
+      zod: 3.23.8
+      zod-to-json-schema: 3.23.0(zod@3.23.8)
     optionalDependencies:
       sharp: 0.33.3
     transitivePeerDependencies:
@@ -5418,6 +5422,12 @@ packages:
     dependencies:
       lru-cache: 6.0.0
 
+  /semver@7.6.2:
+    resolution: {integrity: sha512-FNAIBWCx9qcRhoHcgcJ0gvU7SN1lYU2ZXuSfl04bSC5OpvDHFyJCjdNHomPXxjQlCBU67YW64PzY7/VIEH7F2w==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dev: true
+
   /server-only@0.0.1:
     resolution: {integrity: sha512-qepMx2JxAa5jjfzxG79yPPq+8BuFToHd1hm7kI+Z4zAq1ftQiP7HcxMhDDItrbtwVeLg/cY2JnKnrcFkmiswNA==}
     dev: true
@@ -5479,10 +5489,10 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
 
-  /shiki@1.3.0:
-    resolution: {integrity: sha512-9aNdQy/etMXctnPzsje1h1XIGm9YfRcSksKOGqZWXA/qP9G18/8fpz5Bjpma8bOgz3tqIpjERAd6/lLjFyzoww==}
+  /shiki@1.5.2:
+    resolution: {integrity: sha512-fpPbuSaatinmdGijE7VYUD3hxLozR3ZZ+iAx8Iy2X6REmJGyF5hQl94SgmiUNTospq346nXUVZx0035dyGvIVw==}
     dependencies:
-      '@shikijs/core': 1.3.0
+      '@shikijs/core': 1.5.2
     dev: true
 
   /side-channel@1.0.4:
@@ -6406,16 +6416,16 @@ packages:
     engines: {node: '>=12.20'}
     dev: true
 
-  /zod-to-json-schema@3.23.0(zod@3.23.6):
+  /zod-to-json-schema@3.23.0(zod@3.23.8):
     resolution: {integrity: sha512-az0uJ243PxsRIa2x1WmNE/pnuA05gUq/JB8Lwe1EDCCL/Fz9MgjYQ0fPlyc2Tcv6aF2ZA7WM5TWaRZVEFaAIag==}
     peerDependencies:
       zod: ^3.23.3
     dependencies:
-      zod: 3.23.6
+      zod: 3.23.8
     dev: true
 
-  /zod@3.23.6:
-    resolution: {integrity: sha512-RTHJlZhsRbuA8Hmp/iNL7jnfc4nZishjsanDAfEY1QpDQZCahUp3xDzl+zfweE9BklxMUcgBgS1b7Lvie/ZVwA==}
+  /zod@3.23.8:
+    resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
     dev: true
 
   /zwitch@2.0.4:
