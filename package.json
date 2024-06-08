@@ -50,7 +50,7 @@
     "sass": "^1.77.4",
     "sharp": "^0.33.4",
     "typescript": "^5.4.5",
-    "vite": "^5.2.12"
+    "vite": "^5.2.13"
   },
   "pnpm": {
     "overrides": {
