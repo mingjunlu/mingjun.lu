@@ -41,8 +41,8 @@ devDependencies:
     specifier: ^0.7.0
     version: 0.7.0(prettier-plugin-astro@0.14.0)(prettier@3.3.2)(typescript@5.4.5)
   '@astrojs/vercel':
-    specifier: ^7.6.0
-    version: 7.6.0(astro@4.10.2)
+    specifier: ^7.7.0
+    version: 7.7.0(astro@4.10.2)
   '@iconify-json/fa6-brands':
     specifier: ^1.1.19
     version: 1.1.19
@@ -260,15 +260,15 @@ packages:
       - supports-color
     dev: true
 
-  /@astrojs/vercel@7.6.0(astro@4.10.2):
-    resolution: {integrity: sha512-LLOpXWYwTlYgZJCC+ulCpSUnUzOzLrlna2T0WCkhkH1UeavBY5NI0Agpq3rcQd012I7Vr2io+ZKUgKGW+EFvhg==}
+  /@astrojs/vercel@7.7.0(astro@4.10.2):
+    resolution: {integrity: sha512-VX74OqFDDKH2uYpnbN4FZ5BrJZRzLcbGz2H6JOAIdqm+Q/ZcfFn9WC41QxHVtp1JcwX5QKHeEgbqiCNYnnUt9A==}
     peerDependencies:
       astro: ^4.2.0
     dependencies:
       '@astrojs/internal-helpers': 0.4.0
-      '@vercel/analytics': 1.2.2
+      '@vercel/analytics': 1.3.1
       '@vercel/edge': 1.1.1
-      '@vercel/nft': 0.26.5
+      '@vercel/nft': 0.27.2
       astro: 4.10.2(@types/node@20.14.2)(sass@1.77.5)(typescript@5.4.5)
       esbuild: 0.21.5
       fast-glob: 3.3.2
@@ -1832,8 +1832,8 @@ packages:
       crypto-js: 4.2.0
     dev: false
 
-  /@vercel/analytics@1.2.2:
-    resolution: {integrity: sha512-X0rctVWkQV1e5Y300ehVNqpOfSOufo7ieA5PIdna8yX/U7Vjz0GFsGf4qvAhxV02uQ2CVt7GYcrFfddXXK2Y4A==}
+  /@vercel/analytics@1.3.1:
+    resolution: {integrity: sha512-xhSlYgAuJ6Q4WQGkzYTLmXwhYl39sWjoMA3nHxfkvG+WdBT25c563a7QhwwKivEOZtPJXifYHR1m2ihoisbWyA==}
     peerDependencies:
       next: '>= 13'
       react: ^18 || ^19
@@ -1850,15 +1850,15 @@ packages:
     resolution: {integrity: sha512-NtKiIbn9Cq6HWGy+qRudz28mz5nxfOJWls5Pnckjw1yCfSX8rhXdvY/il3Sy3Zd5n/sKCM2h7VSCCpJF/oaDrQ==}
     dev: true
 
-  /@vercel/nft@0.26.5:
-    resolution: {integrity: sha512-NHxohEqad6Ra/r4lGknO52uc/GrWILXAMs1BB4401GTqww0fw1bAqzpG1XHuDO+dprg4GvsD9ZLLSsdo78p9hQ==}
+  /@vercel/nft@0.27.2:
+    resolution: {integrity: sha512-7LeioS1yE5hwPpQfD3DdH04tuugKjo5KrJk3yK5kAI3Lh76iSsK/ezoFQfzuT08X3ZASQOd1y9ePjLNI9+TxTQ==}
     engines: {node: '>=16'}
     hasBin: true
     dependencies:
       '@mapbox/node-pre-gyp': 1.0.11
       '@rollup/pluginutils': 4.2.1
       acorn: 8.11.3
-      acorn-import-attributes: 1.9.2(acorn@8.11.3)
+      acorn-import-attributes: 1.9.5(acorn@8.11.3)
       async-sema: 3.1.1
       bindings: 1.5.0
       estree-walker: 2.0.2
@@ -1948,8 +1948,8 @@ packages:
     resolution: {integrity: sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==}
     dev: true
 
-  /acorn-import-attributes@1.9.2(acorn@8.11.3):
-    resolution: {integrity: sha512-O+nfJwNolEA771IYJaiLWK1UAwjNsQmZbTRqqwBYxCgVQTmpFEMvBw6LOIQV0Me339L5UMVYFyRohGnGlQDdIQ==}
+  /acorn-import-attributes@1.9.5(acorn@8.11.3):
+    resolution: {integrity: sha512-n02Vykv5uA3eHGM/Z2dQrcD56kL8TyDb2p1+0P83PClMnC/nc+anbQRhIOWnSq4Ke/KvDPrY3C9hDtC/A3eHnQ==}
     peerDependencies:
       acorn: ^8
     dependencies:
