@@ -12,8 +12,8 @@ dependencies:
     specifier: ^5.0.18
     version: 5.0.18
   '@upstash/redis':
-    specifier: ^1.31.5
-    version: 1.31.5
+    specifier: ^1.31.6
+    version: 1.31.6
   astro-icon:
     specifier: ^1.1.0
     version: 1.1.0
@@ -1619,8 +1619,8 @@ packages:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
     dev: true
 
-  /@upstash/redis@1.31.5:
-    resolution: {integrity: sha512-2MatqeqftroSJ9Q+pqbyGAIwXX6KEPtUTUna2c/fq09h12ffwvltDTgfppeF+NzJo/SyZfHY8e1RoflduMbz1A==}
+  /@upstash/redis@1.31.6:
+    resolution: {integrity: sha512-7sDQQqvVnnV+2PUVGjocITa34CULGLoWhmfSY/LtpxNYv24EsgOk9VXhmGXIyzJBcXxB614wOF6ccEN0Lr7fqQ==}
     dependencies:
       crypto-js: 4.2.0
     dev: false
