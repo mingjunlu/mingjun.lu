@@ -4,9 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  tar: ^6.2.1
-
 dependencies:
   '@fontsource-variable/inter':
     specifier: ^5.0.18
