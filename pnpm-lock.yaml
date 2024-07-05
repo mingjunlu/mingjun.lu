@@ -41,7 +41,7 @@ importers:
         version: 0.7.0(prettier-plugin-astro@0.14.0)(prettier@3.3.2)(typescript@5.5.2)
       '@astrojs/vercel':
         specifier: ^7.7.2
-        version: 7.7.2(astro@4.11.3(@types/node@20.14.9)(sass@1.77.6)(typescript@5.5.2))
+        version: 7.7.2(astro@4.11.5(@types/node@20.14.9)(sass@1.77.6)(typescript@5.5.2))
       '@iconify-json/fa6-brands':
         specifier: ^1.1.20
         version: 1.1.20
@@ -70,8 +70,8 @@ importers:
         specifier: ^6.21.0
         version: 6.21.0(eslint@8.57.0)(typescript@5.5.2)
       astro:
-        specifier: ^4.11.3
-        version: 4.11.3(@types/node@20.14.9)(sass@1.77.6)(typescript@5.5.2)
+        specifier: ^4.11.5
+        version: 4.11.5(@types/node@20.14.9)(sass@1.77.6)(typescript@5.5.2)
       dotenv:
         specifier: ^16.4.5
         version: 16.4.5
@@ -732,8 +732,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@shikijs/core@1.9.0':
-    resolution: {integrity: sha512-cbSoY8P/jgGByG8UOl3jnP/CWg/Qk+1q+eAKWtcrU3pNoILF8wTsLB0jT44qUBV8Ce1SvA9uqcM9Xf+u3fJFBw==}
+  '@shikijs/core@1.10.1':
+    resolution: {integrity: sha512-qdiJS5a/QGCff7VUFIqd0hDdWly9rDp8lhVmXVrS11aazX8LOTRLHAXkkEeONNsS43EcCd7gax9LLoOz4vlFQA==}
 
   '@trivago/prettier-plugin-sort-imports@4.3.0':
     resolution: {integrity: sha512-r3n0onD3BTOVUNPhR4lhVK4/pABGpbA7bW3eumZnYdKaHkf1qEC+Mag6DPbGNuuh0eG8AaYj+YqmVHSiGslaTQ==}
@@ -1060,8 +1060,8 @@ packages:
   astro-seo@0.8.4:
     resolution: {integrity: sha512-Ou1vzQSXAxa0K8rtNtXNvSpYqOGEgMhh0immMxJeXmbVZac3UKCNWAoXWyOQDFYsZvBugCRSg0N1phBqPMVgCw==}
 
-  astro@4.11.3:
-    resolution: {integrity: sha512-SuZbB/71XVn+WqWNCe7XOfHuqhS+k4gj8+A3wluTZQrORGaHUFRn/f8F9Tu5yESQZB1q8UKhahvHwkTV3AdVsg==}
+  astro@4.11.5:
+    resolution: {integrity: sha512-TCRhuaLwrxwMhS8S1GG+ZTdrAXigX9C8E/YUTs/r2t+owHxDgwl86IV9xH1IHrCPoqhK6civyAQNOT+GKmkb0A==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -2780,8 +2780,8 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
 
-  shiki@1.9.0:
-    resolution: {integrity: sha512-i6//Lqgn7+7nZA0qVjoYH0085YdNk4MC+tJV4bo+HgjgRMJ0JmkLZzFAuvVioJqLkcGDK5GAMpghZEZkCnwxpQ==}
+  shiki@1.10.1:
+    resolution: {integrity: sha512-uafV7WCgN4YYrccH6yxpnps6k38sSTlFRrwc4jycWmhWxJIm9dPrk+XkY1hZ2t0I7jmacMNb15Lf2fspa/Y3lg==}
 
   side-channel@1.0.4:
     resolution: {integrity: sha512-q5XPytqFEIKHkGdiMIrY10mvLRvnQh42/+GoBlFW3b2LXLE2xxJpZFdm94we0BaoV3RwJyGqg5wS7epxTv0Zvw==}
@@ -2845,8 +2845,8 @@ packages:
     resolution: {integrity: sha512-HnLOCR3vjcY8beoNLtcjZ5/nxn2afmME6lhrDrebokqMap+XbeW8n9TXpPDOqdGK5qcI3oT0GKTW6wC7EMiVqA==}
     engines: {node: '>=12'}
 
-  string-width@7.1.0:
-    resolution: {integrity: sha512-SEIJCWiX7Kg4c129n48aDRwLbFb2LJmXXFrWBG4NGaRtMQ3myKPKbwrD1BKqQn74oCoNMBVrfDEr5M9YxCsrkw==}
+  string-width@7.2.0:
+    resolution: {integrity: sha512-tsaTIkKW9b4N+AEj+SVA+WhJzV7/zMhcSu78mLKWSk7cXMOSHsBKFWUs0fWwq8QyK3MgJBQRX6Gbi4kYbdvGkQ==}
     engines: {node: '>=18'}
 
   string.prototype.includes@2.0.0:
@@ -2947,8 +2947,8 @@ packages:
     peerDependencies:
       typescript: '>=4.2.0'
 
-  tsconfck@3.1.0:
-    resolution: {integrity: sha512-CMjc5zMnyAjcS9sPLytrbFmj89st2g+JYtY/c02ug4Q+CZaAtCgbyviI0n1YvjZE/pzoc6FbNsINS13DOL1B9w==}
+  tsconfck@3.1.1:
+    resolution: {integrity: sha512-00eoI6WY57SvZEVjm13stEVE90VkEdJAFGgpFLTsZbJyW/LwFQ7uQxJHWpZ2hzSWgCPKc9AnBnNP+0X7o3hAmQ==}
     engines: {node: ^18 || >=20}
     hasBin: true
     peerDependencies:
@@ -3385,7 +3385,7 @@ snapshots:
       remark-parse: 11.0.0
       remark-rehype: 11.1.0
       remark-smartypants: 3.0.1
-      shiki: 1.9.0
+      shiki: 1.10.1
       unified: 11.0.5
       unist-util-remove-position: 5.0.0
       unist-util-visit: 5.0.0
@@ -3410,13 +3410,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/vercel@7.7.2(astro@4.11.3(@types/node@20.14.9)(sass@1.77.6)(typescript@5.5.2))':
+  '@astrojs/vercel@7.7.2(astro@4.11.5(@types/node@20.14.9)(sass@1.77.6)(typescript@5.5.2))':
     dependencies:
       '@astrojs/internal-helpers': 0.4.1
       '@vercel/analytics': 1.3.1
       '@vercel/edge': 1.1.1
       '@vercel/nft': 0.27.2
-      astro: 4.11.3(@types/node@20.14.9)(sass@1.77.6)(typescript@5.5.2)
+      astro: 4.11.5(@types/node@20.14.9)(sass@1.77.6)(typescript@5.5.2)
       esbuild: 0.21.5
       fast-glob: 3.3.2
       set-cookie-parser: 2.6.0
@@ -3954,7 +3954,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.13.0':
     optional: true
 
-  '@shikijs/core@1.9.0': {}
+  '@shikijs/core@1.10.1': {}
 
   '@trivago/prettier-plugin-sort-imports@4.3.0(prettier@3.3.2)':
     dependencies:
@@ -4397,7 +4397,7 @@ snapshots:
       - prettier-plugin-astro
       - typescript
 
-  astro@4.11.3(@types/node@20.14.9)(sass@1.77.6)(typescript@5.5.2):
+  astro@4.11.5(@types/node@20.14.9)(sass@1.77.6)(typescript@5.5.2):
     dependencies:
       '@astrojs/compiler': 2.8.1
       '@astrojs/internal-helpers': 0.4.1
@@ -4449,10 +4449,10 @@ snapshots:
       prompts: 2.4.2
       rehype: 13.0.1
       semver: 7.6.2
-      shiki: 1.9.0
-      string-width: 7.1.0
+      shiki: 1.10.1
+      string-width: 7.2.0
       strip-ansi: 7.1.0
-      tsconfck: 3.1.0(typescript@5.5.2)
+      tsconfck: 3.1.1(typescript@5.5.2)
       unist-util-visit: 5.0.0
       vfile: 6.0.1
       vite: 5.3.2(@types/node@20.14.9)(sass@1.77.6)
@@ -4623,7 +4623,7 @@ snapshots:
   cli-truncate@4.0.0:
     dependencies:
       slice-ansi: 5.0.0
-      string-width: 7.1.0
+      string-width: 7.2.0
 
   cliui@8.0.1:
     dependencies:
@@ -6235,7 +6235,7 @@ snapshots:
       is-unicode-supported: 2.0.0
       log-symbols: 6.0.0
       stdin-discarder: 0.2.2
-      string-width: 7.1.0
+      string-width: 7.2.0
       strip-ansi: 7.1.0
 
   p-limit@2.3.0:
@@ -6644,9 +6644,9 @@ snapshots:
 
   shebang-regex@3.0.0: {}
 
-  shiki@1.9.0:
+  shiki@1.10.1:
     dependencies:
-      '@shikijs/core': 1.9.0
+      '@shikijs/core': 1.10.1
 
   side-channel@1.0.4:
     dependencies:
@@ -6704,7 +6704,7 @@ snapshots:
       emoji-regex: 9.2.2
       strip-ansi: 7.1.0
 
-  string-width@7.1.0:
+  string-width@7.2.0:
     dependencies:
       emoji-regex: 10.3.0
       get-east-asian-width: 1.2.0
@@ -6814,7 +6814,7 @@ snapshots:
     dependencies:
       typescript: 5.5.2
 
-  tsconfck@3.1.0(typescript@5.5.2):
+  tsconfck@3.1.1(typescript@5.5.2):
     optionalDependencies:
       typescript: 5.5.2
 
@@ -7150,7 +7150,7 @@ snapshots:
   wrap-ansi@9.0.0:
     dependencies:
       ansi-styles: 6.2.1
-      string-width: 7.1.0
+      string-width: 7.2.0
       strip-ansi: 7.1.0
 
   wrappy@1.0.2: {}
