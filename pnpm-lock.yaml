@@ -43,8 +43,8 @@ importers:
         specifier: ^7.7.2
         version: 7.7.2(astro@4.11.3(@types/node@20.14.9)(sass@1.77.6)(typescript@5.5.2))
       '@iconify-json/fa6-brands':
-        specifier: ^1.1.19
-        version: 1.1.19
+        specifier: ^1.1.20
+        version: 1.1.20
       '@iconify-json/fa6-solid':
         specifier: ^1.1.21
         version: 1.1.21
@@ -489,8 +489,8 @@ packages:
     resolution: {integrity: sha512-6EwiSjwWYP7pTckG6I5eyFANjPhmPjUX9JRLUSfNPC7FX7zK9gyZAfUEaECL6ALTpGX5AjnBq3C9XmVWPitNpw==}
     deprecated: Use @eslint/object-schema instead
 
-  '@iconify-json/fa6-brands@1.1.19':
-    resolution: {integrity: sha512-3Dl0D1gtFwIj7/GT2xJbkM9D/LjuozsgfLrqRWP6B5xuajtsyEvR1wD0Z06y3iaNtASpgWPWyYbml+AHQ3Hw0g==}
+  '@iconify-json/fa6-brands@1.1.20':
+    resolution: {integrity: sha512-YwEyaLDkOVLcZO/gI8uf3IIqy2s7abHHgljjCMpdWDyfZr98tQ6GbdHxeBk7Pq9OoWJ3KJU0wDHmgrEGYt3Z1Q==}
 
   '@iconify-json/fa6-solid@1.1.21':
     resolution: {integrity: sha512-+C6F3dFjNdqj8S83ggIXZFsX2CwecFErJKk9dVEZNd0XpNx2iNCNS+K/fl1HLFhYRhS4lb2Rgfi8yVV4MQU7yA==}
@@ -3742,7 +3742,7 @@ snapshots:
 
   '@humanwhocodes/object-schema@2.0.2': {}
 
-  '@iconify-json/fa6-brands@1.1.19':
+  '@iconify-json/fa6-brands@1.1.20':
     dependencies:
       '@iconify/types': 2.0.0
 
