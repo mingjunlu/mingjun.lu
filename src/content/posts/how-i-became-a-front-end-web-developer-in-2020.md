@@ -7,7 +7,7 @@ tags:
 summary: '先介紹我的背景。我 1993 年出生，大學唸心理諮商。大學畢業、役畢之後，第一份工作是在公共衛生研究所擔任研究助理，可以說是完全與工程師無關的經歷。2018 年 8 月我開始接觸網頁前端開發，學習時長約一年半，中途一度個人因素沈澱了半年，最終在 2020 年 6 月順利轉職成為網頁前端工程師。'
 image:
   src: 'src/assets/images/how-i-became-a-front-end-web-developer-in-2020/featured-image.webp'
-  alt: 'Person using laptop computer photo'
+  alt: 'Person using laptop computer'
   credit: 'Photo by <a href="https://unsplash.com/@christinhumephoto?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Christin Hume</a> on <a href="https://unsplash.com/photos/person-using-laptop-computer-Hcfwew744z4?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>'
 ---
 

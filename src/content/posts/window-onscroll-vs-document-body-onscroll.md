@@ -7,7 +7,7 @@ tags:
 summary: '前陣子同事處理滾動事件時，發現了 window.onscroll 跟 document.body.onscroll 的奇妙關係。我覺得很有趣，便嘗試釐清背後的原因，整理後跟大家分享。'
 image:
   src: 'src/assets/images/window-onscroll-vs-document-body-onscroll/featured-image.webp'
-  alt: 'Selective focus photography of person holding gray phone photo'
+  alt: 'Selective focus photography of person holding gray phone'
   credit: 'Photo by <a target="_blank" rel="noopener noreferrer" href="https://unsplash.com/@lishakov?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Andrej Lišakov</a> on <a target="_blank" rel="noopener noreferrer" href="https://unsplash.com/photos/selective-focus-photography-of-person-holding-gray-phone-XL-hPDNeZvs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>'
 ---
 
