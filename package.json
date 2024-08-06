@@ -33,7 +33,7 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.1",
     "@astrojs/vercel": "^7.7.2",
-    "@iconify-json/fa6-brands": "^1.1.21",
+    "@iconify-json/fa6-brands": "^1.1.22",
     "@iconify-json/fa6-solid": "^1.1.23",
     "@playwright/test": "^1.45.3",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
