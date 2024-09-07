@@ -46,8 +46,8 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0
       '@iconify-json/fa6-solid':
-        specifier: ^1.1.24
-        version: 1.1.24
+        specifier: ^1.2.0
+        version: 1.2.0
       '@playwright/test':
         specifier: ^1.46.1
         version: 1.46.1
@@ -492,8 +492,8 @@ packages:
   '@iconify-json/fa6-brands@1.2.0':
     resolution: {integrity: sha512-2f5AeUbufKeU/JY+cbX6dOsPaQO1WwfShfoxwRd5VRF3Lr1jGM8CfXLFhb8bonAqbue1oBPwmjHUfaCafAfo2A==}
 
-  '@iconify-json/fa6-solid@1.1.24':
-    resolution: {integrity: sha512-ovO4kIW3CjoY36/QUTORg+7ZVlVpJqGSck+FUsqrvVJAr9MPeh3QN2UBnc9zyny41znxs7Kdc0Oz6aun4UUsyw==}
+  '@iconify-json/fa6-solid@1.2.0':
+    resolution: {integrity: sha512-hywmSkhPqay1lBtEltuGhawtUpq18Yyko8H2e3/artvTv5Eey1hz7OdBA2cXRwiES17KrkmXGoLDwNtkcpN4cw==}
 
   '@iconify/tools@3.0.7':
     resolution: {integrity: sha512-DxfhFLMnooS34dHelpGUnnYrxLZHs0czC1CgrBhAbuL8ddVzBb2VEQm8kh9qGh7A34qeXAB5iSHH3A72rAaFrg==}
@@ -3847,7 +3847,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/fa6-solid@1.1.24':
+  '@iconify-json/fa6-solid@1.2.0':
     dependencies:
       '@iconify/types': 2.0.0
 
