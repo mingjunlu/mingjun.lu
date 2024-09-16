@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@fontsource-variable/inter':
-        specifier: ^5.0.21
-        version: 5.0.21
+        specifier: ^5.1.0
+        version: 5.1.0
       '@upstash/redis':
         specifier: ^1.34.0
         version: 1.34.0
@@ -473,8 +473,8 @@ packages:
     resolution: {integrity: sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  '@fontsource-variable/inter@5.0.21':
-    resolution: {integrity: sha512-1spQ5vjooBWzUSdug8njhxi0lDpIDGVV4q9Piv32X5wIati/5OvESsIxOM0kDZVWzl0uSR8kHOmsqoP8A6WqVA==}
+  '@fontsource-variable/inter@5.1.0':
+    resolution: {integrity: sha512-Wj2dUGP0vUpxRGQTXQTCNJO+aLcFcQm+gUPXfj/aS877bQkEPBPv9JvZJpwdm2vzelt8NTZ+ausKlBCJjh2XIg==}
 
   '@humanwhocodes/config-array@0.11.14':
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
@@ -3847,7 +3847,7 @@ snapshots:
 
   '@eslint/js@8.57.0': {}
 
-  '@fontsource-variable/inter@5.0.21': {}
+  '@fontsource-variable/inter@5.1.0': {}
 
   '@humanwhocodes/config-array@0.11.14':
     dependencies:
