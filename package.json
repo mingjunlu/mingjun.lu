@@ -20,7 +20,7 @@
     "analytics:download": "node bin/download-analytics-script.mjs"
   },
   "dependencies": {
-    "@fontsource-variable/inter": "^5.0.21",
+    "@fontsource-variable/inter": "^5.1.0",
     "@upstash/redis": "^1.34.0",
     "astro-icon": "^1.1.0",
     "astro-seo": "^0.8.4",
