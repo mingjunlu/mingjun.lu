@@ -33,8 +33,8 @@ importers:
         specifier: ^1.5.0
         version: 1.5.0
       sanitize-html:
-        specifier: ^2.13.0
-        version: 2.13.0
+        specifier: ^2.13.1
+        version: 2.13.1
     devDependencies:
       '@astrojs/check':
         specifier: ^0.9.4
@@ -1548,6 +1548,7 @@ packages:
   eslint@8.57.1:
     resolution: {integrity: sha512-ypowyDxpVSYpkXr9WPv2PAZCtNip1Mv5KTW0SCurXv/9iOpcrH9PaqUElksqEB6pChqHGDRCFTyrZlGhnLNGiA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@9.6.1:
@@ -2808,8 +2809,8 @@ packages:
     resolution: {integrity: sha512-CdASjNJPvRa7roO6Ra/gLYBTzYzzPyyBXxIMdGW3USQLyjWEls2RgW5UBTXaQVp+OrpeCK3bLem8smtmheoRuw==}
     engines: {node: '>= 0.4'}
 
-  sanitize-html@2.13.0:
-    resolution: {integrity: sha512-Xff91Z+4Mz5QiNSLdLWwjgBDm5b1RU6xBT0+12rapjiaR7SwfRdjw8f+6Rir2MXKLrDicRFHdb51hGOAxmsUIA==}
+  sanitize-html@2.13.1:
+    resolution: {integrity: sha512-ZXtKq89oue4RP7abL9wp/9URJcqQNABB5GGJ2acW1sdO8JTVl92f4ygD7Yc9Ze09VAZhnt2zegeU0tbNsdcLYg==}
 
   sass-formatter@0.7.8:
     resolution: {integrity: sha512-7fI2a8THglflhhYis7k06eUf92VQuJoXzEs2KRP0r1bluFxKFvLx0Ns7c478oYGM0fPfrr846ZRWVi2MAgHt9Q==}
@@ -6741,7 +6742,7 @@ snapshots:
       es-errors: 1.3.0
       is-regex: 1.1.4
 
-  sanitize-html@2.13.0:
+  sanitize-html@2.13.1:
     dependencies:
       deepmerge: 4.3.1
       escape-string-regexp: 4.0.0
