@@ -69,7 +69,7 @@ const metadataProps: MetadataProps = {
 </SiteLayout>
 
 <style lang="scss">
-  @import '../../styles/variables.scss';
+  @use '../../styles/variables.scss' as *;
 
   figure {
     picture {
@@ -154,8 +154,8 @@ const metadataProps: MetadataProps = {
     :global(code) {
       border-radius: 6px;
       font-size: 0.8em;
-      font-family: ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', 'Ubuntu Mono',
-        'Roboto Mono', Menlo, Monaco, Consolas, monospace;
+      font-family: ui-monospace, 'Cascadia Mono', 'Segoe UI Mono',
+        'Ubuntu Mono', 'Roboto Mono', Menlo, Monaco, Consolas, monospace;
     }
     :global(:is(a, li, p)) {
       > :global(code) {
