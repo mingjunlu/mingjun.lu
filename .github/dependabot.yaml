@@ -9,9 +9,6 @@ updates:
         patterns:
           - '@typescript-eslint/parser'
           - '@typescript-eslint/eslint-plugin'
-      iconify-json:
-        patterns:
-          - '@iconify-json/*'
     ignore:
       - dependency-name: '*'
         update-types: ['version-update:semver-major']
