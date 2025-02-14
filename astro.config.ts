@@ -29,6 +29,9 @@ export default defineConfig({
       },
     }),
   ],
+  security: {
+    checkOrigin: true,
+  },
   vite: {
     css: {
       preprocessorOptions: {

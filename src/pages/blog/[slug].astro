@@ -219,6 +219,12 @@ const metadataProps: MetadataProps = {
 </style>
 
 <script>
+  navigator.sendBeacon(
+    location.pathname.split('/').at(-1) + '/views',
+    new Blob(undefined, { type: 'text/plain' }),
+  );
+</script>
+<script>
   document.querySelectorAll('table').forEach(preventOverflow);
 
   function preventOverflow(table: HTMLTableElement) {
