@@ -51,7 +51,21 @@ export async function POST(context: APIContext) {
   }
 
   try {
-    const upstreamResponse = await fetch(apiUrl, request.clone());
+    const newRequest = request.clone();
+    const country = request.headers.get('x-vercel-ip-country');
+    const region = request.headers.get('x-vercel-ip-country-region');
+    const city = request.headers.get('x-vercel-ip-city');
+    if (country) {
+      newRequest.headers.set('cf-ipcountry', country);
+    }
+    if (region) {
+      newRequest.headers.set('cf-region-code', region);
+    }
+    if (city) {
+      newRequest.headers.set('cf-ipcity', city);
+    }
+    console.log(Object.fromEntries(newRequest.headers.entries()));
+    const upstreamResponse = await fetch(apiUrl, newRequest);
     if (!upstreamResponse.ok) {
       throw new Error(
         `${upstreamResponse.status} ${upstreamResponse.statusText}`,
