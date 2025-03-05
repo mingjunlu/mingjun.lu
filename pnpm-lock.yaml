@@ -6,7 +6,6 @@ settings:
 
 overrides:
   nanoid: ^3.3.8
-  undici: ^6.21.1
 
 importers:
 
