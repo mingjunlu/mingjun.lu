@@ -25,7 +25,7 @@ importers:
         version: 1.34.4
       astro:
         specifier: ^4.16.18
-        version: 4.16.18(@types/node@20.17.22)(rollup@4.32.0)(sass@1.85.0)(typescript@5.7.3)
+        version: 4.16.18(@types/node@20.17.22)(rollup@4.32.0)(sass@1.85.1)(typescript@5.7.3)
       astro-icon:
         specifier: ^1.1.5
         version: 1.1.5
@@ -56,7 +56,7 @@ importers:
         version: 0.9.4(prettier-plugin-astro@0.14.1)(prettier@3.5.2)(typescript@5.7.3)
       '@astrojs/vercel':
         specifier: ^7.8.2
-        version: 7.8.2(astro@4.16.18(@types/node@20.17.22)(rollup@4.32.0)(sass@1.85.0)(typescript@5.7.3))
+        version: 7.8.2(astro@4.16.18(@types/node@20.17.22)(rollup@4.32.0)(sass@1.85.1)(typescript@5.7.3))
       '@playwright/test':
         specifier: ^1.50.1
         version: 1.50.1
@@ -100,8 +100,8 @@ importers:
         specifier: ^0.14.1
         version: 0.14.1
       sass:
-        specifier: ^1.85.0
-        version: 1.85.0
+        specifier: ^1.85.1
+        version: 1.85.1
       sharp:
         specifier: ^0.33.5
         version: 0.33.5
@@ -110,7 +110,7 @@ importers:
         version: 5.7.3
       vite:
         specifier: ^5.4.14
-        version: 5.4.14(@types/node@20.17.22)(sass@1.85.0)
+        version: 5.4.14(@types/node@20.17.22)(sass@1.85.1)
 
 packages:
 
@@ -2888,8 +2888,8 @@ packages:
   sass-formatter@0.7.8:
     resolution: {integrity: sha512-7fI2a8THglflhhYis7k06eUf92VQuJoXzEs2KRP0r1bluFxKFvLx0Ns7c478oYGM0fPfrr846ZRWVi2MAgHt9Q==}
 
-  sass@1.85.0:
-    resolution: {integrity: sha512-3ToiC1xZ1Y8aU7+CkgCI/tqyuPXEmYGJXO7H4uqp0xkLXUqp88rQQ4j1HmP37xSJLbCJPaIiv+cT1y+grssrww==}
+  sass@1.85.1:
+    resolution: {integrity: sha512-Uk8WpxM5v+0cMR0XjX9KfRIacmSG86RH4DCCZjLU2rFh5tyutt9siAXJ7G+YfxQ99Q6wrRMbMlVl6KqUms71ag==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -3588,13 +3588,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/vercel@7.8.2(astro@4.16.18(@types/node@20.17.22)(rollup@4.32.0)(sass@1.85.0)(typescript@5.7.3))':
+  '@astrojs/vercel@7.8.2(astro@4.16.18(@types/node@20.17.22)(rollup@4.32.0)(sass@1.85.1)(typescript@5.7.3))':
     dependencies:
       '@astrojs/internal-helpers': 0.4.1
       '@vercel/analytics': 1.3.1
       '@vercel/edge': 1.1.2
       '@vercel/nft': 0.27.4
-      astro: 4.16.18(@types/node@20.17.22)(rollup@4.32.0)(sass@1.85.0)(typescript@5.7.3)
+      astro: 4.16.18(@types/node@20.17.22)(rollup@4.32.0)(sass@1.85.1)(typescript@5.7.3)
       esbuild: 0.25.0
       fast-glob: 3.3.2
       web-vitals: 3.5.2
@@ -4660,7 +4660,7 @@ snapshots:
       - prettier-plugin-astro
       - typescript
 
-  astro@4.16.18(@types/node@20.17.22)(rollup@4.32.0)(sass@1.85.0)(typescript@5.7.3):
+  astro@4.16.18(@types/node@20.17.22)(rollup@4.32.0)(sass@1.85.1)(typescript@5.7.3):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.4.1
@@ -4716,8 +4716,8 @@ snapshots:
       tsconfck: 3.1.4(typescript@5.7.3)
       unist-util-visit: 5.0.0
       vfile: 6.0.3
-      vite: 5.4.14(@types/node@20.17.22)(sass@1.85.0)
-      vitefu: 1.0.4(vite@5.4.14(@types/node@20.17.22)(sass@1.85.0))
+      vite: 5.4.14(@types/node@20.17.22)(sass@1.85.1)
+      vitefu: 1.0.4(vite@5.4.14(@types/node@20.17.22)(sass@1.85.1))
       which-pm: 3.0.0
       xxhash-wasm: 1.1.0
       yargs-parser: 21.1.1
@@ -6816,7 +6816,7 @@ snapshots:
     dependencies:
       suf-log: 2.5.3
 
-  sass@1.85.0:
+  sass@1.85.1:
     dependencies:
       chokidar: 4.0.3
       immutable: 5.0.3
@@ -7200,7 +7200,7 @@ snapshots:
       '@types/unist': 3.0.2
       vfile-message: 4.0.2
 
-  vite@5.4.14(@types/node@20.17.22)(sass@1.85.0):
+  vite@5.4.14(@types/node@20.17.22)(sass@1.85.1):
     dependencies:
       esbuild: 0.25.0
       postcss: 8.5.1
@@ -7208,11 +7208,11 @@ snapshots:
     optionalDependencies:
       '@types/node': 20.17.22
       fsevents: 2.3.3
-      sass: 1.85.0
+      sass: 1.85.1
 
-  vitefu@1.0.4(vite@5.4.14(@types/node@20.17.22)(sass@1.85.0)):
+  vitefu@1.0.4(vite@5.4.14(@types/node@20.17.22)(sass@1.85.1)):
     optionalDependencies:
-      vite: 5.4.14(@types/node@20.17.22)(sass@1.85.0)
+      vite: 5.4.14(@types/node@20.17.22)(sass@1.85.1)
 
   volar-service-css@0.0.61(@volar/language-service@2.4.5):
     dependencies:
