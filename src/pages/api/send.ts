@@ -1,13 +1,9 @@
 import type { APIContext } from 'astro';
-import { getCollection, z } from 'astro:content';
+import { z } from 'astro:content';
 import { siteUrl } from 'src/constants/site';
 import { getErrorPage } from 'src/utils/page';
-import { getSlug, increasePostView } from 'src/utils/post';
 
 export const prerender = false;
-
-const postEntries = await getCollection('posts');
-const slugSet = new Set<string>(postEntries.map((entry) => entry.slug));
 
 // See: https://github.com/umami-software/umami/blob/master/src/tracker/index.d.ts
 const RequestBodySchema = z.object({
@@ -60,17 +56,6 @@ export async function POST(context: APIContext) {
   } catch (error) {
     console.error(error);
     return new Response(null, { status: 502 });
-  }
-
-  const requestBody: z.infer<typeof RequestBodySchema> = await request
-    .clone()
-    .json();
-  const slug = getSlug(requestBody.payload.url);
-  const isValidSlug =
-    slugSet.has(slug) &&
-    slug === getSlug(request.clone().headers.get('referer'));
-  if (isValidSlug) {
-    await increasePostView(slug);
   }
 
   return new Response(null, { status: 200 });

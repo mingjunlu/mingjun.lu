@@ -1,11 +1,37 @@
 ---
-import { siteVersion, siteUrl } from 'src/constants/site';
+import { minify_sync as minifySync } from 'terser';
+import { siteUrl } from 'src/constants/site';
+
+// eslint-disable-next-line no-undef
+function track(window: Window) {
+  const { document, location, navigator, origin, screen } = window;
+  const ummScript = document.querySelector('.umm');
+  ummScript?.addEventListener('error', () => {
+    const body = {
+      type: 'event',
+      payload: {
+        website: ummScript.getAttribute('data-website-id'),
+        screen: `${screen.width}x${screen.height}`,
+        language: navigator.language,
+        title: document.title,
+        hostname: location.hostname,
+        url: location.href,
+        referrer: document.referrer.startsWith(origin) ? '' : document.referrer,
+      },
+    };
+    navigator.sendBeacon(
+      '/api/send',
+      new Blob([JSON.stringify(body)], { type: 'application/json' }),
+    );
+  });
+}
 ---
 
 <script
   is:inline
-  async
-  src={`/umm.${siteVersion}.min.js`}
+  defer
+  src={import.meta.env.ANALYTICS_SCRIPT_URL}
   data-website-id={import.meta.env.PUBLIC_ANALYTICS_ID}
-  data-host-url={siteUrl}
-  data-domains={new URL(siteUrl).hostname}></script>
+  data-domains={new URL(siteUrl).hostname}
+  class="umm"></script>
+<script is:inline set:html={minifySync(`(${track.toString()})(window)`).code} />
