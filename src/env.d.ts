@@ -11,6 +11,4 @@ interface ImportMetaEnv {
   readonly PUBLIC_ANALYTICS_ID?: string;
   readonly PUBLIC_SITE_NAME: string;
   readonly PUBLIC_SITE_URL: string;
-  readonly UPSTASH_REDIS_REST_TOKEN: string;
-  readonly UPSTASH_REDIS_REST_URL: string;
 }
