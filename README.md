@@ -13,7 +13,6 @@ My personal website built with [Astro](https://astro.build).
 
 - Node.js v20.3.0 or higher
 - pnpm v9
-- An [Upstash Redis database](https://upstash.com/docs/redis/overall/getstarted)
 
 ## 🧞 Commands
 
