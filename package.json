@@ -56,7 +56,6 @@
   },
   "pnpm": {
     "overrides": {
-      "@babel/helpers": "^7.26.10",
       "axios": "^1.8.2",
       "esbuild": "^0.25.0",
       "prismjs": "^1.30.0"
