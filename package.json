@@ -58,7 +58,8 @@
     "overrides": {
       "axios": "^1.8.2",
       "esbuild": "^0.25.0",
-      "prismjs": "^1.30.0"
+      "prismjs": "^1.30.0",
+      "undici": "^6.21.2"
     }
   }
 }

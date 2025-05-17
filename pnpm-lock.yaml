@@ -8,6 +8,7 @@ overrides:
   axios: ^1.8.2
   esbuild: ^0.25.0
   prismjs: ^1.30.0
+  undici: ^6.21.2
 
 importers:
 
@@ -3179,8 +3180,8 @@ packages:
   undici-types@6.19.8:
     resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
 
-  undici@6.21.1:
-    resolution: {integrity: sha512-q/1rj5D0/zayJB2FraXdaWxbhWiNKDvu8naDT2dl1yTlvJp4BLtOcp2a5BvgGNQpYYJzau7tf1WgKv3b+7mqpQ==}
+  undici@6.21.3:
+    resolution: {integrity: sha512-gBLkYIlEnSp8pFbT64yFgGE6UIB9tAkhukC23PmMDCe5Nd+cRqKxSjw5y54MK2AZMgZfJWMaNE4nYUHgi1XEOw==}
     engines: {node: '>=18.17'}
 
   unified@11.0.5:
@@ -4888,7 +4889,7 @@ snapshots:
       parse5: 7.1.2
       parse5-htmlparser2-tree-adapter: 7.0.0
       parse5-parser-stream: 7.1.2
-      undici: 6.21.1
+      undici: 6.21.3
       whatwg-mimetype: 4.0.0
 
   chokidar@3.6.0:
@@ -7162,7 +7163,7 @@ snapshots:
 
   undici-types@6.19.8: {}
 
-  undici@6.21.1: {}
+  undici@6.21.3: {}
 
   unified@11.0.5:
     dependencies:
