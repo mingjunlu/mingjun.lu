@@ -12,7 +12,7 @@ My personal website built with [Astro](https://astro.build).
 ## ☑️ Prerequisites
 
 - Node.js v20.3.0 or higher
-- pnpm v9
+- pnpm v10
 
 ## 🧞 Commands
 
