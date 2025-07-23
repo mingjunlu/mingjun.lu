@@ -20,7 +20,7 @@
     "astro": "^4.16.18",
     "astro-icon": "^1.1.5",
     "astro-seo": "^0.8.4",
-    "dotenv": "^16.5.0",
+    "dotenv": "^16.6.1",
     "js-cookie": "^3.0.5",
     "mdast-util-from-markdown": "^2.0.2",
     "mdast-util-to-string": "^4.0.0",
