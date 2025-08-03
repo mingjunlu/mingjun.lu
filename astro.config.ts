@@ -1,4 +1,4 @@
-import vercel from '@astrojs/vercel/serverless';
+import vercel from '@astrojs/vercel';
 import icon from 'astro-icon';
 import { defineConfig } from 'astro/config';
 import { loadEnv } from 'vite';
@@ -18,7 +18,6 @@ export default defineConfig({
     },
   },
   site: PUBLIC_SITE_URL,
-  output: 'hybrid',
   adapter: vercel(),
   integrations: [
     icon({
@@ -30,13 +29,6 @@ export default defineConfig({
     }),
   ],
   vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          api: 'modern-compiler',
-        },
-      },
-    },
     optimizeDeps: {
       exclude: ['fsevents'],
     },

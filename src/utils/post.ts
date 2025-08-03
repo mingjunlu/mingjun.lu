@@ -10,7 +10,10 @@ export function sortByPublicationTime<
   return timestampB - timestampA;
 }
 
-export function getReadingTime(markdown: string): number {
+export function getReadingTime(markdown?: string): number {
+  if (!markdown) {
+    return 0;
+  }
   const stats = readingTime(toString(fromMarkdown(markdown)), {
     wordsPerMinute: 250,
   });

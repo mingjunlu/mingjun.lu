@@ -44,7 +44,7 @@ const metadataProps: MetadataProps = {
         return (
           <article>
             <h2>
-              <Link href={`/blog/${entry.slug}`}>{title}</Link>
+              <Link href={`/blog/${entry.id}`}>{title}</Link>
             </h2>
             <PostInfo>
               <PostPublicationDate publishedAt={publishedAt} />
@@ -61,10 +61,7 @@ const metadataProps: MetadataProps = {
               </picture>
             )}
             {!!summary && <p>{summary}</p>}
-            <Link
-              href={`/blog/${entry.slug}`}
-              aria-label={`閱讀全文：${title}`}
-            >
+            <Link href={`/blog/${entry.id}`} aria-label={`閱讀全文：${title}`}>
               閱讀全文
             </Link>
           </article>

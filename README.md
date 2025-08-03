@@ -11,7 +11,7 @@ My personal website built with [Astro](https://astro.build).
 
 ## ☑️ Prerequisites
 
-- Node.js v20.3.0 or higher
+- Node.js v20.19 or higher
 - pnpm v10
 
 ## 🧞 Commands

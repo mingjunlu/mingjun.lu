@@ -2,7 +2,7 @@
 import { SEO as Metadata } from 'astro-seo';
 import type { Props as MetadataProps } from 'astro-seo';
 import { Image, getImage } from 'astro:assets';
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import sanitizeHtml from 'sanitize-html';
 import { siteName } from 'src/constants/site';
 import SiteLayout from 'src/layouts/site-layout.astro';
@@ -17,13 +17,13 @@ export async function getStaticPaths() {
   const postEntries = await getCollection('posts');
   const sortedPostEntries = [...postEntries].sort(sortByPublicationTime);
   return sortedPostEntries.map((entry) => ({
-    params: { slug: entry.slug },
+    params: { slug: entry.id },
     props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 const { image, publishedAt, summary, tags, title } = entry.data;
 
 const metadataProps: MetadataProps = {
@@ -65,7 +65,7 @@ const metadataProps: MetadataProps = {
       <PostTags tags={tags} />
     </PostInfo>
   </article>
-  <AdjacentPosts slug={entry.slug} />
+  <AdjacentPosts slug={entry.id} />
 </SiteLayout>
 
 <style lang="scss">
