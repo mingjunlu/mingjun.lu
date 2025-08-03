@@ -32,7 +32,7 @@
     "@astrojs/check": "^0.9.4",
     "@astrojs/vercel": "^8.2.5",
     "@playwright/test": "^1.54.1",
-    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/js-cookie": "^3.0.6",
     "@types/node": "^20.19.9",
     "@types/sanitize-html": "^2.16.0",
