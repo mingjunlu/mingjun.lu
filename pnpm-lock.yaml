@@ -22,7 +22,7 @@ importers:
         version: 1.2.4
       astro:
         specifier: ^5.14.7
-        version: 5.14.7(@types/node@20.19.23)(@vercel/functions@2.2.13)(rollup@4.52.5)(sass@1.93.2)(terser@5.44.0)(typescript@5.9.3)(yaml@2.8.1)
+        version: 5.14.7(@types/node@20.19.24)(@vercel/functions@2.2.13)(rollup@4.52.5)(sass@1.93.2)(terser@5.44.0)(typescript@5.9.3)(yaml@2.8.1)
       astro-icon:
         specifier: ^1.1.5
         version: 1.1.5
@@ -56,7 +56,7 @@ importers:
         version: 0.9.5(prettier-plugin-astro@0.14.1)(prettier@3.6.2)(typescript@5.9.3)
       '@astrojs/vercel':
         specifier: ^8.2.11
-        version: 8.2.11(astro@5.14.7(@types/node@20.19.23)(@vercel/functions@2.2.13)(rollup@4.52.5)(sass@1.93.2)(terser@5.44.0)(typescript@5.9.3)(yaml@2.8.1))(rollup@4.52.5)
+        version: 8.2.11(astro@5.14.7(@types/node@20.19.24)(@vercel/functions@2.2.13)(rollup@4.52.5)(sass@1.93.2)(terser@5.44.0)(typescript@5.9.3)(yaml@2.8.1))(rollup@4.52.5)
       '@playwright/test':
         specifier: ^1.56.1
         version: 1.56.1
@@ -67,8 +67,8 @@ importers:
         specifier: ^3.0.6
         version: 3.0.6
       '@types/node':
-        specifier: ^20.19.23
-        version: 20.19.23
+        specifier: ^20.19.24
+        version: 20.19.24
       '@types/sanitize-html':
         specifier: ^2.16.0
         version: 2.16.0
@@ -110,7 +110,7 @@ importers:
         version: 5.9.3
       vite:
         specifier: ^6.4.1
-        version: 6.4.1(@types/node@20.19.23)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1)
+        version: 6.4.1(@types/node@20.19.24)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1)
 
 packages:
 
@@ -899,8 +899,8 @@ packages:
   '@types/nlcst@2.0.3':
     resolution: {integrity: sha512-vSYNSDe6Ix3q+6Z7ri9lyWqgGhJTmzRjZRqyq15N0Z/1/UnVsno9G/N40NBijoYx2seFDIl0+B2mgAb9mezUCA==}
 
-  '@types/node@20.19.23':
-    resolution: {integrity: sha512-yIdlVVVHXpmqRhtyovZAcSy0MiPcYWGkoO4CGe/+jpP0hmNuihm4XhHbADpK++MsiLHP5MVlv+bcgdF99kSiFQ==}
+  '@types/node@20.19.24':
+    resolution: {integrity: sha512-FE5u0ezmi6y9OZEzlJfg37mqqf6ZDSF2V/NLjUyGrR9uTZ7Sb9F7bLNZ03S4XVUNRWGA7Ck4c1kK+YnuWjl+DA==}
 
   '@types/sanitize-html@2.16.0':
     resolution: {integrity: sha512-l6rX1MUXje5ztPT0cAFtUayXF06DqPhRyfVXareEN5gGCFaP/iwsxIyKODr9XDhfxPpN6vXUFNfo5kZMXCxBtw==}
@@ -3583,14 +3583,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/vercel@8.2.11(astro@5.14.7(@types/node@20.19.23)(@vercel/functions@2.2.13)(rollup@4.52.5)(sass@1.93.2)(terser@5.44.0)(typescript@5.9.3)(yaml@2.8.1))(rollup@4.52.5)':
+  '@astrojs/vercel@8.2.11(astro@5.14.7(@types/node@20.19.24)(@vercel/functions@2.2.13)(rollup@4.52.5)(sass@1.93.2)(terser@5.44.0)(typescript@5.9.3)(yaml@2.8.1))(rollup@4.52.5)':
     dependencies:
       '@astrojs/internal-helpers': 0.7.4
       '@vercel/analytics': 1.5.0
       '@vercel/functions': 2.2.13
       '@vercel/nft': 0.30.3(rollup@4.52.5)
       '@vercel/routing-utils': 5.2.0
-      astro: 5.14.7(@types/node@20.19.23)(@vercel/functions@2.2.13)(rollup@4.52.5)(sass@1.93.2)(terser@5.44.0)(typescript@5.9.3)(yaml@2.8.1)
+      astro: 5.14.7(@types/node@20.19.24)(@vercel/functions@2.2.13)(rollup@4.52.5)(sass@1.93.2)(terser@5.44.0)(typescript@5.9.3)(yaml@2.8.1)
       esbuild: 0.25.11
       tinyglobby: 0.2.15
     transitivePeerDependencies:
@@ -4193,7 +4193,7 @@ snapshots:
 
   '@types/fontkit@2.0.8':
     dependencies:
-      '@types/node': 20.19.23
+      '@types/node': 20.19.24
 
   '@types/hast@3.0.4':
     dependencies:
@@ -4213,7 +4213,7 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.3
 
-  '@types/node@20.19.23':
+  '@types/node@20.19.24':
     dependencies:
       undici-types: 6.21.0
 
@@ -4225,14 +4225,14 @@ snapshots:
 
   '@types/tar@6.1.13':
     dependencies:
-      '@types/node': 20.19.23
+      '@types/node': 20.19.24
       minipass: 4.2.8
 
   '@types/unist@3.0.3': {}
 
   '@types/yauzl@2.10.3':
     dependencies:
-      '@types/node': 20.19.23
+      '@types/node': 20.19.24
     optional: true
 
   '@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.9.3))(eslint@8.57.1)(typescript@5.9.3)':
@@ -4571,7 +4571,7 @@ snapshots:
       - prettier-plugin-astro
       - typescript
 
-  astro@5.14.7(@types/node@20.19.23)(@vercel/functions@2.2.13)(rollup@4.52.5)(sass@1.93.2)(terser@5.44.0)(typescript@5.9.3)(yaml@2.8.1):
+  astro@5.14.7(@types/node@20.19.24)(@vercel/functions@2.2.13)(rollup@4.52.5)(sass@1.93.2)(terser@5.44.0)(typescript@5.9.3)(yaml@2.8.1):
     dependencies:
       '@astrojs/compiler': 2.13.0
       '@astrojs/internal-helpers': 0.7.4
@@ -4627,8 +4627,8 @@ snapshots:
       unist-util-visit: 5.0.0
       unstorage: 1.17.1(@vercel/functions@2.2.13)
       vfile: 6.0.3
-      vite: 6.4.1(@types/node@20.19.23)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1)
-      vitefu: 1.1.1(vite@6.4.1(@types/node@20.19.23)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1))
+      vite: 6.4.1(@types/node@20.19.24)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1)
+      vitefu: 1.1.1(vite@6.4.1(@types/node@20.19.24)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1))
       xxhash-wasm: 1.1.0
       yargs-parser: 21.1.1
       yocto-spinner: 0.2.3
@@ -7125,7 +7125,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
 
-  vite@6.4.1(@types/node@20.19.23)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1):
+  vite@6.4.1(@types/node@20.19.24)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1):
     dependencies:
       esbuild: 0.25.11
       fdir: 6.5.0(picomatch@4.0.3)
@@ -7134,15 +7134,15 @@ snapshots:
       rollup: 4.52.5
       tinyglobby: 0.2.15
     optionalDependencies:
-      '@types/node': 20.19.23
+      '@types/node': 20.19.24
       fsevents: 2.3.3
       sass: 1.93.2
       terser: 5.44.0
       yaml: 2.8.1
 
-  vitefu@1.1.1(vite@6.4.1(@types/node@20.19.23)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1)):
+  vitefu@1.1.1(vite@6.4.1(@types/node@20.19.24)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1)):
     optionalDependencies:
-      vite: 6.4.1(@types/node@20.19.23)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1)
+      vite: 6.4.1(@types/node@20.19.24)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1)
 
   volar-service-css@0.0.65(@volar/language-service@2.4.23):
     dependencies:
