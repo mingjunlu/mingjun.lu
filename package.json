@@ -45,7 +45,7 @@
     "lint-staged": "^16.2.7",
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",
-    "sass": "^1.93.3",
+    "sass": "^1.94.2",
     "sharp": "^0.34.5",
     "typescript": "^5.9.3",
     "vite": "^6.4.1"
