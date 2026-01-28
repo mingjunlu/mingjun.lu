@@ -43,7 +43,7 @@
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
-    "prettier": "^3.7.4",
+    "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
     "sass": "^1.97.3",
     "sharp": "^0.34.5",
