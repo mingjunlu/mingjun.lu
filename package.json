@@ -31,7 +31,7 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.6",
     "@astrojs/vercel": "^8.2.11",
-    "@playwright/test": "^1.58.1",
+    "@playwright/test": "^1.58.2",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/js-cookie": "^3.0.6",
     "@types/node": "^20.19.33",
