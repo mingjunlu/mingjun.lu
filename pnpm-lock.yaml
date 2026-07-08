@@ -27,7 +27,7 @@ importers:
         version: 1.2.4
       astro:
         specifier: ^5.18.2
-        version: 5.18.2(@types/node@20.19.43)(@vercel/functions@2.2.13)(rollup@4.59.0)(sass@1.98.0)(terser@5.46.1)(typescript@5.9.3)(yaml@2.9.0)
+        version: 5.18.2(@types/node@20.19.43)(@vercel/functions@2.2.13)(rollup@4.59.0)(sass@1.98.0)(terser@5.48.0)(typescript@5.9.3)(yaml@2.9.0)
       astro-icon:
         specifier: ^1.1.5
         version: 1.1.5
@@ -53,15 +53,15 @@ importers:
         specifier: ^2.17.0
         version: 2.17.0
       terser:
-        specifier: ^5.46.1
-        version: 5.46.1
+        specifier: ^5.48.0
+        version: 5.48.0
     devDependencies:
       '@astrojs/check':
         specifier: ^0.9.9
         version: 0.9.9(prettier-plugin-astro@0.14.1)(prettier@3.8.1)(typescript@5.9.3)
       '@astrojs/vercel':
         specifier: ^8.2.11
-        version: 8.2.11(astro@5.18.2(@types/node@20.19.43)(@vercel/functions@2.2.13)(rollup@4.59.0)(sass@1.98.0)(terser@5.46.1)(typescript@5.9.3)(yaml@2.9.0))(rollup@4.59.0)
+        version: 8.2.11(astro@5.18.2(@types/node@20.19.43)(@vercel/functions@2.2.13)(rollup@4.59.0)(sass@1.98.0)(terser@5.48.0)(typescript@5.9.3)(yaml@2.9.0))(rollup@4.59.0)
       '@playwright/test':
         specifier: ^1.59.1
         version: 1.59.1
@@ -115,7 +115,7 @@ importers:
         version: 5.9.3
       vite:
         specifier: ^6.4.3
-        version: 6.4.3(@types/node@20.19.43)(sass@1.98.0)(terser@5.46.1)(yaml@2.9.0)
+        version: 6.4.3(@types/node@20.19.43)(sass@1.98.0)(terser@5.48.0)(yaml@2.9.0)
 
 packages:
 
@@ -3167,8 +3167,8 @@ packages:
     resolution: {integrity: sha512-4LeEWl96twnS2Q7Bz4MGqgazLqO+hJN63GZxXoIqh1T3VweYD997gbU1ItNsQafqqXTXd5WFyFdReLtwvRBNiw==}
     engines: {node: '>=18'}
 
-  terser@5.46.1:
-    resolution: {integrity: sha512-vzCjQO/rgUuK9sf8VJZvjqiqiHFaZLnOiimmUuOKODxWL8mm/xua7viT7aqX7dgPY60otQjUotzFMmCB4VdmqQ==}
+  terser@5.48.0:
+    resolution: {integrity: sha512-J/9An6vs9Us6wKRriSFXBWdRZapREHqFzdNUKk0pmu804EMR6dr6winwo7e5JDxN4xahxQsuysyYFwlwj4XN/Q==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -3774,14 +3774,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/vercel@8.2.11(astro@5.18.2(@types/node@20.19.43)(@vercel/functions@2.2.13)(rollup@4.59.0)(sass@1.98.0)(terser@5.46.1)(typescript@5.9.3)(yaml@2.9.0))(rollup@4.59.0)':
+  '@astrojs/vercel@8.2.11(astro@5.18.2(@types/node@20.19.43)(@vercel/functions@2.2.13)(rollup@4.59.0)(sass@1.98.0)(terser@5.48.0)(typescript@5.9.3)(yaml@2.9.0))(rollup@4.59.0)':
     dependencies:
       '@astrojs/internal-helpers': 0.7.4
       '@vercel/analytics': 1.5.0
       '@vercel/functions': 2.2.13
       '@vercel/nft': 0.30.3(rollup@4.59.0)
       '@vercel/routing-utils': 5.2.0
-      astro: 5.18.2(@types/node@20.19.43)(@vercel/functions@2.2.13)(rollup@4.59.0)(sass@1.98.0)(terser@5.46.1)(typescript@5.9.3)(yaml@2.9.0)
+      astro: 5.18.2(@types/node@20.19.43)(@vercel/functions@2.2.13)(rollup@4.59.0)(sass@1.98.0)(terser@5.48.0)(typescript@5.9.3)(yaml@2.9.0)
       esbuild: 0.25.12
       tinyglobby: 0.2.17
     transitivePeerDependencies:
@@ -4863,7 +4863,7 @@ snapshots:
       - prettier-plugin-astro
       - typescript
 
-  astro@5.18.2(@types/node@20.19.43)(@vercel/functions@2.2.13)(rollup@4.59.0)(sass@1.98.0)(terser@5.46.1)(typescript@5.9.3)(yaml@2.9.0):
+  astro@5.18.2(@types/node@20.19.43)(@vercel/functions@2.2.13)(rollup@4.59.0)(sass@1.98.0)(terser@5.48.0)(typescript@5.9.3)(yaml@2.9.0):
     dependencies:
       '@astrojs/compiler': 2.13.1
       '@astrojs/internal-helpers': 0.7.6
@@ -4920,8 +4920,8 @@ snapshots:
       unist-util-visit: 5.1.0
       unstorage: 1.17.5(@vercel/functions@2.2.13)
       vfile: 6.0.3
-      vite: 6.4.3(@types/node@20.19.43)(sass@1.98.0)(terser@5.46.1)(yaml@2.9.0)
-      vitefu: 1.1.3(vite@6.4.3(@types/node@20.19.43)(sass@1.98.0)(terser@5.46.1)(yaml@2.9.0))
+      vite: 6.4.3(@types/node@20.19.43)(sass@1.98.0)(terser@5.48.0)(yaml@2.9.0)
+      vitefu: 1.1.3(vite@6.4.3(@types/node@20.19.43)(sass@1.98.0)(terser@5.48.0)(yaml@2.9.0))
       xxhash-wasm: 1.1.0
       yargs-parser: 21.1.1
       yocto-spinner: 0.2.3
@@ -7208,7 +7208,7 @@ snapshots:
       minizlib: 3.1.0
       yallist: 5.0.0
 
-  terser@5.46.1:
+  terser@5.48.0:
     dependencies:
       '@jridgewell/source-map': 0.3.11
       acorn: 8.17.0
@@ -7412,7 +7412,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
 
-  vite@6.4.3(@types/node@20.19.43)(sass@1.98.0)(terser@5.46.1)(yaml@2.9.0):
+  vite@6.4.3(@types/node@20.19.43)(sass@1.98.0)(terser@5.48.0)(yaml@2.9.0):
     dependencies:
       esbuild: 0.25.12
       fdir: 6.5.0(picomatch@4.0.5)
@@ -7424,12 +7424,12 @@ snapshots:
       '@types/node': 20.19.43
       fsevents: 2.3.3
       sass: 1.98.0
-      terser: 5.46.1
+      terser: 5.48.0
       yaml: 2.9.0
 
-  vitefu@1.1.3(vite@6.4.3(@types/node@20.19.43)(sass@1.98.0)(terser@5.46.1)(yaml@2.9.0)):
+  vitefu@1.1.3(vite@6.4.3(@types/node@20.19.43)(sass@1.98.0)(terser@5.48.0)(yaml@2.9.0)):
     optionalDependencies:
-      vite: 6.4.3(@types/node@20.19.43)(sass@1.98.0)(terser@5.46.1)(yaml@2.9.0)
+      vite: 6.4.3(@types/node@20.19.43)(sass@1.98.0)(terser@5.48.0)(yaml@2.9.0)
 
   volar-service-css@0.0.71(@volar/language-service@2.4.28):
     dependencies:
