@@ -29,7 +29,7 @@
     "terser": "^5.49.0"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.9",
+    "@astrojs/check": "^0.9.10",
     "@astrojs/vercel": "^8.2.11",
     "@playwright/test": "^1.62.1",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
