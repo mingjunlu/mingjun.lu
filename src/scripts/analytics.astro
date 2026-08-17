@@ -33,5 +33,6 @@ function track(window: Window) {
   src={import.meta.env.ANALYTICS_SCRIPT_URL}
   data-website-id={import.meta.env.PUBLIC_ANALYTICS_ID}
   data-domains={new URL(siteUrl).hostname}
+  data-performance="true"
   class="umm"></script>
 <script is:inline set:html={minifySync(`(${track.toString()})(window)`).code} />
