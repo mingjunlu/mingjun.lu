@@ -1,5 +1,5 @@
 import type { APIContext } from 'astro';
-import { z } from 'astro:content';
+import { z } from 'astro/zod';
 import { siteUrl } from 'src/constants/site';
 import { getErrorPage } from 'src/utils/page';
 
