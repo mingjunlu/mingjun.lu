@@ -10,7 +10,7 @@ const postCollection = defineCollection({
   schema(context) {
     return z.object({
       title: z.string(),
-      publishedAt: z.string().datetime(),
+      publishedAt: z.iso.datetime(),
       tags: z.array(z.string()),
       summary: z.string(),
       image: z
