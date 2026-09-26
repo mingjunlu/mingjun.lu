@@ -4,7 +4,6 @@ import 'src/styles/globals.scss';
 import '@fontsource-variable/inter';
 import inter from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2';
 import Header from 'src/components/header.astro';
-import ProductionOnly from 'src/components/production-only.astro';
 import { siteVersion } from 'src/constants/site';
 import Analytics from 'src/scripts/analytics.astro';
 import ThemeLoader from 'src/scripts/theme-loader.astro';
@@ -22,9 +21,7 @@ import ThemeLoader from 'src/scripts/theme-loader.astro';
     <link rel="manifest" href={`/manifest.webmanifest?v=${siteVersion}`} />
     <link rel="preload" href={inter} as="font" type="font/woff2" crossorigin />
     <ThemeLoader />
-    <ProductionOnly>
-      <Analytics />
-    </ProductionOnly>
+    {import.meta.env.PROD && <Analytics />}
   </head>
   <body>
     <div id="root">
