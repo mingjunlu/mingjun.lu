@@ -7,7 +7,7 @@ My personal website built with [Astro](https://astro.build).
 - Framework: [Astro](https://astro.build)
 - Styling: [Sass / SCSS](https://sass-lang.com)
 - Package manager: [pnpm](https://pnpm.io)
-- Deployment: [Vercel](https://vercel.com)
+- Deployment: [Cloudflare Workers](https://workers.cloudflare.com)
 
 ## ☑️ Prerequisites
 
