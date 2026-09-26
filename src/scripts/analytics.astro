@@ -1,11 +1,17 @@
 ---
 import { minify_sync as minifySync } from 'terser';
-import { siteUrl } from 'src/constants/site';
+import { isPreviewBuild, siteUrl } from 'src/constants/site';
 
 // eslint-disable-next-line no-undef
 function track(window: Window) {
   const { document, location, navigator, origin, screen } = window;
   const ummScript = document.querySelector('.umm');
+  const domains = ummScript?.getAttribute('data-domains')?.split(',') ?? [];
+
+  if (!domains.includes(location.hostname)) {
+    return;
+  }
+
   ummScript?.addEventListener('error', () => {
     const body = {
       type: 'event',
@@ -25,14 +31,26 @@ function track(window: Window) {
     );
   });
 }
+
+const shouldRender = import.meta.env.PROD && !isPreviewBuild;
 ---
 
-<script
-  is:inline
-  defer
-  src={import.meta.env.ANALYTICS_SCRIPT_URL}
-  data-website-id={import.meta.env.PUBLIC_ANALYTICS_ID}
-  data-domains={new URL(siteUrl).hostname}
-  data-performance="true"
-  class="umm"></script>
-<script is:inline set:html={minifySync(`(${track.toString()})(window)`).code} />
+{
+  shouldRender && (
+    <>
+      <script
+        is:inline
+        defer
+        src={import.meta.env.ANALYTICS_SCRIPT_URL}
+        data-website-id={import.meta.env.PUBLIC_ANALYTICS_ID}
+        data-domains={new URL(siteUrl).hostname}
+        data-performance="true"
+        class="umm"
+      />
+      <script
+        is:inline
+        set:html={minifySync(`(${track.toString()})(window)`).code}
+      />
+    </>
+  )
+}

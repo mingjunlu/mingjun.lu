@@ -21,7 +21,7 @@ import ThemeLoader from 'src/scripts/theme-loader.astro';
     <link rel="manifest" href={`/manifest.webmanifest?v=${siteVersion}`} />
     <link rel="preload" href={inter} as="font" type="font/woff2" crossorigin />
     <ThemeLoader />
-    {import.meta.env.PROD && <Analytics />}
+    <Analytics />
   </head>
   <body>
     <div id="root">

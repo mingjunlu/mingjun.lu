@@ -13,4 +13,5 @@ interface ImportMetaEnv {
   readonly PUBLIC_SITE_URL: string;
 }
 
+declare const __IS_PREVIEW_BUILD__: boolean;
 declare const __SITE_VERSION__: string;

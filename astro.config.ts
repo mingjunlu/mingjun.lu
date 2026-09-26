@@ -15,6 +15,10 @@ const siteVersion =
   process.env.WORKERS_CI_COMMIT_SHA?.slice(0, 7) ??
   execSync('git log -1 --pretty=format:%h').toString().trim();
 
+const isPreviewBuild =
+  process.env.WORKERS_CI_BRANCH !== undefined &&
+  process.env.WORKERS_CI_BRANCH !== 'main';
+
 export default defineConfig({
   site: PUBLIC_SITE_URL,
   redirects: {
@@ -38,6 +42,7 @@ export default defineConfig({
   vite: {
     define: {
       __SITE_VERSION__: JSON.stringify(siteVersion),
+      __IS_PREVIEW_BUILD__: JSON.stringify(isPreviewBuild),
     },
     optimizeDeps: {
       exclude: ['fsevents'],
