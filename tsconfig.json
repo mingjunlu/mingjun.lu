@@ -8,6 +8,6 @@
     },
     "noUncheckedIndexedAccess": true
   },
-  "include": [".astro/types.d.ts", "**/*"],
+  "include": [".astro/types.d.ts", "./worker-configuration.d.ts", "**/*"],
   "exclude": ["dist"]
 }

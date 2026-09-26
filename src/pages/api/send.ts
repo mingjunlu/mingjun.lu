@@ -1,7 +1,6 @@
 import type { APIContext } from 'astro';
 import { z } from 'astro/zod';
 import { siteUrl } from 'src/constants/site';
-import { getErrorPage } from 'src/utils/page';
 
 export const prerender = false;
 
@@ -18,17 +17,6 @@ const RequestBodySchema = z.object({
     referrer: z.string().optional(),
   }),
 });
-
-export async function GET() {
-  const status = 404;
-  const html = await getErrorPage(status);
-  return new Response(html, {
-    status,
-    headers: {
-      'Content-Type': 'text/html; charset=utf-8',
-    },
-  });
-}
 
 export async function POST(context: APIContext) {
   const { request, url } = context;
@@ -47,7 +35,11 @@ export async function POST(context: APIContext) {
   }
 
   try {
-    const upstreamResponse = await fetch(apiUrl, request.clone());
+    const upstreamResponse = await fetch(apiUrl, {
+      method: request.method,
+      headers: request.headers,
+      body: request.body,
+    });
     if (!upstreamResponse.ok) {
       throw new Error(
         `${upstreamResponse.status} ${upstreamResponse.statusText}`,
