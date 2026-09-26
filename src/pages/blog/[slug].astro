@@ -1,9 +1,9 @@
 ---
-import { SEO as Metadata } from 'astro-seo';
 import type { Props as MetadataProps } from 'astro-seo';
 import { Image, getImage } from 'astro:assets';
 import { getCollection, render } from 'astro:content';
 import sanitizeHtml from 'sanitize-html';
+import Metadata from 'src/components/metadata.astro';
 import { siteName } from 'src/constants/site';
 import SiteLayout from 'src/layouts/site-layout.astro';
 import { getReadingTime, sortByPublicationTime } from 'src/utils/post';
@@ -37,7 +37,6 @@ const metadataProps: MetadataProps = {
       image: image
         ? new URL((await getImage(image)).src, Astro.url).toString()
         : new URL('/opengraph-image.png', Astro.url).toString(),
-      url: Astro.url.href,
     },
   },
 };

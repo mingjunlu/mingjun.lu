@@ -1,9 +1,9 @@
 ---
-import { SEO as Metadata } from 'astro-seo';
 import type { Props as MetadataProps } from 'astro-seo';
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import Link from 'src/components/link.astro';
+import Metadata from 'src/components/metadata.astro';
 import VisuallyHidden from 'src/components/visually-hidden.astro';
 import { siteName } from 'src/constants/site';
 import SiteLayout from 'src/layouts/site-layout.astro';
@@ -28,7 +28,6 @@ const metadataProps: MetadataProps = {
       title: `Blog | ${siteName}`,
       type: 'website',
       image: new URL('/opengraph-image.png', Astro.url).toString(),
-      url: Astro.url.href,
     },
   },
 };

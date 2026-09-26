@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
-import { SEO as Metadata } from 'astro-seo';
 import type { Props as MetadataProps } from 'astro-seo';
+import Metadata from 'src/components/metadata.astro';
 import VisuallyHidden from 'src/components/visually-hidden.astro';
 import { siteName } from 'src/constants/site';
 import ErrorLayout from 'src/layouts/error-layout.astro';
@@ -15,7 +15,6 @@ const metadataProps: MetadataProps = {
       title: `Page Not Found | ${siteName}`,
       type: 'website',
       image: new URL('/opengraph-image.png', Astro.url).toString(),
-      url: Astro.url.href,
     },
   },
 };

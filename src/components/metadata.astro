@@ -1,0 +1,21 @@
+---
+import { SEO } from 'astro-seo';
+import type { Props as SEOProps } from 'astro-seo';
+
+type Props = SEOProps;
+
+const { canonical, openGraph, ...rest } = Astro.props;
+const pageUrl = new URL(
+  Astro.url.pathname.replace(/\.html$/, '') + Astro.url.search,
+  Astro.site ?? Astro.url,
+).href;
+---
+
+<SEO
+  canonical={canonical ?? pageUrl}
+  openGraph={openGraph && {
+    ...openGraph,
+    basic: { ...openGraph.basic, url: openGraph.basic.url ?? pageUrl },
+  }}
+  {...rest}
+/>
