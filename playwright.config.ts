@@ -11,6 +11,14 @@ export default defineConfig({
     baseURL: process.env.PLAYWRIGHT_TEST_BASE_URL ?? 'http://localhost:4321',
     trace: 'on-first-retry',
   },
+  webServer: process.env.PLAYWRIGHT_TEST_BASE_URL
+    ? undefined
+    : {
+        command: 'pnpm run build && ./node_modules/.bin/astro preview',
+        url: 'http://localhost:4321',
+        reuseExistingServer: !process.env.CI,
+        timeout: 180_000,
+      },
   projects: [
     { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
     { name: 'firefox', use: { ...devices['Desktop Firefox'] } },

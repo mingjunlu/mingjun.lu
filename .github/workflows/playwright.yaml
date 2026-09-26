@@ -1,11 +1,11 @@
 name: Playwright Tests
 on:
-  deployment_status:
+  push:
+    branches: ['**']
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
-    if: github.event.deployment_status.state == 'success'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -22,7 +22,8 @@ jobs:
       - name: Run end-to-end tests
         run: pnpm run test:e2e
         env:
-          PLAYWRIGHT_TEST_BASE_URL: ${{ github.event.deployment_status.target_url }}
+          PUBLIC_SITE_NAME: ${{ vars.PUBLIC_SITE_NAME }}
+          PUBLIC_SITE_URL: ${{ vars.PUBLIC_SITE_URL }}
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
