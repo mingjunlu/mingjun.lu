@@ -172,7 +172,7 @@ importers:
     dependencies:
       '@astrojs/cloudflare':
         specifier: ^14.3.3
-        version: 14.3.3(@types/node@20.19.43)(astro@7.3.5(@types/node@20.19.43)(@vercel/functions@3.9.9(ws@8.21.0))(sass@1.102.0)(terser@5.50.0)(yaml@2.9.0))(esbuild@0.28.2)(sass@1.102.0)(terser@5.50.0)(wrangler@4.141.0(@types/node@20.19.43))(yaml@2.9.0)
+        version: 14.3.3(@types/node@20.19.43)(astro@7.3.5(@types/node@20.19.43)(@vercel/functions@3.9.9(ws@8.21.0))(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0))(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(wrangler@4.141.0(@types/node@20.19.43))(yaml@2.9.0)
       '@fontsource-variable/inter':
         specifier: ^5.3.0
         version: 5.3.0
@@ -184,7 +184,7 @@ importers:
         version: 1.2.4
       astro:
         specifier: ^7.3.5
-        version: 7.3.5(@types/node@20.19.43)(@vercel/functions@3.9.9(ws@8.21.0))(sass@1.102.0)(terser@5.50.0)(yaml@2.9.0)
+        version: 7.3.5(@types/node@20.19.43)(@vercel/functions@3.9.9(ws@8.21.0))(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0)
       astro-icon:
         specifier: ^1.2.0
         version: 1.2.0
@@ -259,8 +259,8 @@ importers:
         specifier: ^0.14.1
         version: 0.14.1
       sass:
-        specifier: ^1.102.0
-        version: 1.102.0
+        specifier: ^1.105.1
+        version: 1.105.1
       sharp:
         specifier: ^0.35.4
         version: 0.35.4(@types/node@20.19.43)
@@ -269,7 +269,7 @@ importers:
         version: 5.9.3
       vite:
         specifier: ^7.3.6
-        version: 7.3.6(@types/node@20.19.43)(lightningcss@1.33.0)(sass@1.102.0)(terser@5.50.0)(yaml@2.9.0)
+        version: 7.3.6(@types/node@20.19.43)(lightningcss@1.33.0)(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0)
       wrangler:
         specifier: ^4.141.0
         version: 4.141.0(@types/node@20.19.43)
@@ -3313,8 +3313,8 @@ packages:
   sass-formatter@0.7.8:
     resolution: {integrity: sha512-7fI2a8THglflhhYis7k06eUf92VQuJoXzEs2KRP0r1bluFxKFvLx0Ns7c478oYGM0fPfrr846ZRWVi2MAgHt9Q==}
 
-  sass@1.102.0:
-    resolution: {integrity: sha512-NSOyTnaQF7rTAEOtI2fwb386vL+akyiQLBZu8Na7hXCb+umJy0GAqlcMIaqACZ6Z1VgTBS4K9PG6B3IdjHGJsw==}
+  sass@1.105.1:
+    resolution: {integrity: sha512-1CnAWPyrrnVQzXGB/DUep1vYCKCm1CIBr+YxjjiW6wk9qtzemnGP4qicH56T2F9S4Hjtv/Ne3jDz8JqfdDU4oA==}
     engines: {node: '>=20.19.0'}
     hasBin: true
 
@@ -4037,14 +4037,14 @@ snapshots:
       - prettier
       - prettier-plugin-astro
 
-  '@astrojs/cloudflare@14.3.3(@types/node@20.19.43)(astro@7.3.5(@types/node@20.19.43)(@vercel/functions@3.9.9(ws@8.21.0))(sass@1.102.0)(terser@5.50.0)(yaml@2.9.0))(esbuild@0.28.2)(sass@1.102.0)(terser@5.50.0)(wrangler@4.141.0(@types/node@20.19.43))(yaml@2.9.0)':
+  '@astrojs/cloudflare@14.3.3(@types/node@20.19.43)(astro@7.3.5(@types/node@20.19.43)(@vercel/functions@3.9.9(ws@8.21.0))(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0))(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(wrangler@4.141.0(@types/node@20.19.43))(yaml@2.9.0)':
     dependencies:
       '@astrojs/internal-helpers': 0.11.0
       '@astrojs/underscore-redirects': 1.0.4
-      '@cloudflare/vite-plugin': 1.60.1(@types/node@20.19.43)(vite@8.3.1(@types/node@20.19.43)(esbuild@0.28.2)(sass@1.102.0)(terser@5.50.0)(yaml@2.9.0))(wrangler@4.141.0(@types/node@20.19.43))
-      astro: 7.3.5(@types/node@20.19.43)(@vercel/functions@3.9.9(ws@8.21.0))(sass@1.102.0)(terser@5.50.0)(yaml@2.9.0)
+      '@cloudflare/vite-plugin': 1.60.1(@types/node@20.19.43)(vite@8.3.1(@types/node@20.19.43)(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0))(wrangler@4.141.0(@types/node@20.19.43))
+      astro: 7.3.5(@types/node@20.19.43)(@vercel/functions@3.9.9(ws@8.21.0))(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0)
       piccolore: 0.1.3
-      vite: 8.3.1(@types/node@20.19.43)(esbuild@0.28.2)(sass@1.102.0)(terser@5.50.0)(yaml@2.9.0)
+      vite: 8.3.1(@types/node@20.19.43)(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0)
       wrangler: 4.141.0(@types/node@20.19.43)
     transitivePeerDependencies:
       - '@types/node'
@@ -4284,12 +4284,12 @@ snapshots:
     optionalDependencies:
       workerd: 1.20260925.1
 
-  '@cloudflare/vite-plugin@1.60.1(@types/node@20.19.43)(vite@8.3.1(@types/node@20.19.43)(esbuild@0.28.2)(sass@1.102.0)(terser@5.50.0)(yaml@2.9.0))(wrangler@4.141.0(@types/node@20.19.43))':
+  '@cloudflare/vite-plugin@1.60.1(@types/node@20.19.43)(vite@8.3.1(@types/node@20.19.43)(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0))(wrangler@4.141.0(@types/node@20.19.43))':
     dependencies:
       '@cloudflare/unenv-preset': 2.16.2(unenv@2.0.0-rc.24)(workerd@1.20260923.1)
       miniflare: 5.20260923.0-alpha(@types/node@20.19.43)
       unenv: 2.0.0-rc.24
-      vite: 8.3.1(@types/node@20.19.43)(esbuild@0.28.2)(sass@1.102.0)(terser@5.50.0)(yaml@2.9.0)
+      vite: 8.3.1(@types/node@20.19.43)(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0)
       workerd: 1.20260923.1
       wrangler: 4.141.0(@types/node@20.19.43)
       ws: 8.21.0
@@ -5395,7 +5395,7 @@ snapshots:
       - prettier-plugin-astro
       - typescript
 
-  astro@7.3.5(@types/node@20.19.43)(@vercel/functions@3.9.9(ws@8.21.0))(sass@1.102.0)(terser@5.50.0)(yaml@2.9.0):
+  astro@7.3.5(@types/node@20.19.43)(@vercel/functions@3.9.9(ws@8.21.0))(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0):
     dependencies:
       '@astrojs/compiler-rs': 0.5.0
       '@astrojs/internal-helpers': 0.11.0
@@ -5445,8 +5445,8 @@ snapshots:
       unifont: 0.7.5
       unstorage: 1.17.5(@vercel/functions@3.9.9(ws@8.21.0))
       verkit: 0.4.1
-      vite: 8.3.1(@types/node@20.19.43)(esbuild@0.28.2)(sass@1.102.0)(terser@5.50.0)(yaml@2.9.0)
-      vitefu: 1.1.3(vite@8.3.1(@types/node@20.19.43)(esbuild@0.28.2)(sass@1.102.0)(terser@5.50.0)(yaml@2.9.0))
+      vite: 8.3.1(@types/node@20.19.43)(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0)
+      vitefu: 1.1.3(vite@8.3.1(@types/node@20.19.43)(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0))
       xxhash-wasm: 1.1.0
       yargs-parser: 22.0.0
       zod: 4.5.4
@@ -7128,7 +7128,7 @@ snapshots:
     dependencies:
       suf-log: 2.5.3
 
-  sass@1.102.0:
+  sass@1.105.1:
     dependencies:
       chokidar: 5.0.0
       immutable: 5.1.9
@@ -7527,7 +7527,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
 
-  vite@7.3.6(@types/node@20.19.43)(lightningcss@1.33.0)(sass@1.102.0)(terser@5.50.0)(yaml@2.9.0):
+  vite@7.3.6(@types/node@20.19.43)(lightningcss@1.33.0)(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0):
     dependencies:
       esbuild: 0.28.2
       fdir: 6.5.0(picomatch@4.0.7)
@@ -7539,11 +7539,11 @@ snapshots:
       '@types/node': 20.19.43
       fsevents: 2.3.3
       lightningcss: 1.33.0
-      sass: 1.102.0
+      sass: 1.105.1
       terser: 5.50.0
       yaml: 2.9.0
 
-  vite@8.3.1(@types/node@20.19.43)(esbuild@0.28.2)(sass@1.102.0)(terser@5.50.0)(yaml@2.9.0):
+  vite@8.3.1(@types/node@20.19.43)(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0):
     dependencies:
       lightningcss: 1.33.0
       picomatch: 4.0.7
@@ -7554,13 +7554,13 @@ snapshots:
       '@types/node': 20.19.43
       esbuild: 0.28.2
       fsevents: 2.3.3
-      sass: 1.102.0
+      sass: 1.105.1
       terser: 5.50.0
       yaml: 2.9.0
 
-  vitefu@1.1.3(vite@8.3.1(@types/node@20.19.43)(esbuild@0.28.2)(sass@1.102.0)(terser@5.50.0)(yaml@2.9.0)):
+  vitefu@1.1.3(vite@8.3.1(@types/node@20.19.43)(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0)):
     optionalDependencies:
-      vite: 8.3.1(@types/node@20.19.43)(esbuild@0.28.2)(sass@1.102.0)(terser@5.50.0)(yaml@2.9.0)
+      vite: 8.3.1(@types/node@20.19.43)(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0)
 
   volar-service-css@0.0.71(@volar/language-service@2.4.28(typescript@5.9.3)):
     dependencies:
