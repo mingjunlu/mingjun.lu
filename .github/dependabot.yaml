@@ -5,6 +5,8 @@ updates:
     schedule:
       interval: 'weekly'
     target-branch: 'develop'
+    cooldown:
+      default-days: 3
     groups:
       typescript-eslint:
         patterns:
