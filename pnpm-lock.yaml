@@ -269,8 +269,8 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
       vite:
-        specifier: ^8.3.1
-        version: 8.3.1(@types/node@26.6.3)(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0)
+        specifier: ^8.3.2
+        version: 8.3.2(@types/node@26.6.3)(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0)
       wrangler:
         specifier: ^4.144.0
         version: 4.144.0(@types/node@26.6.3)
@@ -3531,8 +3531,8 @@ packages:
   vfile@6.0.3:
     resolution: {integrity: sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q==}
 
-  vite@8.3.1:
-    resolution: {integrity: sha512-/bvH9E9tmCXRGp2uXY3WbOldqpTwFkbha/8ANaEQ6VkxhH60KyqLwgZq6lG2y+4uT55x9+9eUHMpQ7uGnOCKjA==}
+  vite@8.3.2:
+    resolution: {integrity: sha512-SQr1x6W5vVSbROg7vsyXIaxK9b0G7zsT68acdWWRmnBUsgDieLCRG+Rep9WdZgcposvv/GSnr4GUUBqB3vXq6w==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
     peerDependencies:
@@ -3849,10 +3849,10 @@ snapshots:
     dependencies:
       '@astrojs/internal-helpers': 0.11.0
       '@astrojs/underscore-redirects': 1.0.4
-      '@cloudflare/vite-plugin': 1.60.1(@types/node@26.6.3)(vite@8.3.1(@types/node@26.6.3)(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0))(wrangler@4.144.0(@types/node@26.6.3))
+      '@cloudflare/vite-plugin': 1.60.1(@types/node@26.6.3)(vite@8.3.2(@types/node@26.6.3)(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0))(wrangler@4.144.0(@types/node@26.6.3))
       astro: 7.3.5(@types/node@26.6.3)(@vercel/functions@3.9.9(ws@8.21.0))(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0)
       piccolore: 0.1.3
-      vite: 8.3.1(@types/node@26.6.3)(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0)
+      vite: 8.3.2(@types/node@26.6.3)(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0)
       wrangler: 4.144.0(@types/node@26.6.3)
     transitivePeerDependencies:
       - '@types/node'
@@ -4092,12 +4092,12 @@ snapshots:
     optionalDependencies:
       workerd: 1.20260926.1
 
-  '@cloudflare/vite-plugin@1.60.1(@types/node@26.6.3)(vite@8.3.1(@types/node@26.6.3)(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0))(wrangler@4.144.0(@types/node@26.6.3))':
+  '@cloudflare/vite-plugin@1.60.1(@types/node@26.6.3)(vite@8.3.2(@types/node@26.6.3)(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0))(wrangler@4.144.0(@types/node@26.6.3))':
     dependencies:
       '@cloudflare/unenv-preset': 2.16.2(unenv@2.0.0-rc.24)(workerd@1.20260923.1)
       miniflare: 5.20260923.0-alpha(@types/node@26.6.3)
       unenv: 2.0.0-rc.24
-      vite: 8.3.1(@types/node@26.6.3)(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0)
+      vite: 8.3.2(@types/node@26.6.3)(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0)
       workerd: 1.20260923.1
       wrangler: 4.144.0(@types/node@26.6.3)
       ws: 8.21.0
@@ -5176,8 +5176,8 @@ snapshots:
       unifont: 0.7.5
       unstorage: 1.17.5(@vercel/functions@3.9.9(ws@8.21.0))
       verkit: 0.4.1
-      vite: 8.3.1(@types/node@26.6.3)(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0)
-      vitefu: 1.1.3(vite@8.3.1(@types/node@26.6.3)(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0))
+      vite: 8.3.2(@types/node@26.6.3)(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0)
+      vitefu: 1.1.3(vite@8.3.2(@types/node@26.6.3)(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0))
       xxhash-wasm: 1.1.0
       yargs-parser: 22.0.0
       zod: 4.5.4
@@ -7218,7 +7218,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
 
-  vite@8.3.1(@types/node@26.6.3)(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0):
+  vite@8.3.2(@types/node@26.6.3)(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0):
     dependencies:
       lightningcss: 1.33.0
       picomatch: 4.0.7
@@ -7233,9 +7233,9 @@ snapshots:
       terser: 5.50.0
       yaml: 2.9.0
 
-  vitefu@1.1.3(vite@8.3.1(@types/node@26.6.3)(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0)):
+  vitefu@1.1.3(vite@8.3.2(@types/node@26.6.3)(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0)):
     optionalDependencies:
-      vite: 8.3.1(@types/node@26.6.3)(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0)
+      vite: 8.3.2(@types/node@26.6.3)(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0)
 
   volar-service-css@0.0.71(@volar/language-service@2.4.28(typescript@5.9.3)):
     dependencies:
