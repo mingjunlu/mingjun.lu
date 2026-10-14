@@ -264,7 +264,7 @@ importers:
         version: 1.105.1
       sharp:
         specifier: ^0.35.4
-        version: 0.35.4(@types/node@26.6.4)
+        version: 0.35.5(@types/node@26.6.4)
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -5214,7 +5214,7 @@ snapshots:
       yargs-parser: 22.0.0
       zod: 4.5.4
     optionalDependencies:
-      sharp: 0.35.4(@types/node@26.6.4)
+      sharp: 0.35.5(@types/node@26.6.4)
     transitivePeerDependencies:
       - '@azure/app-configuration'
       - '@azure/cosmos'
