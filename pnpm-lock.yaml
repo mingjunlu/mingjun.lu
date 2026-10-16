@@ -172,8 +172,8 @@ importers:
   .:
     dependencies:
       '@astrojs/cloudflare':
-        specifier: ^14.3.3
-        version: 14.3.3(@types/node@26.6.4)(astro@7.3.5(@types/node@26.6.4)(@vercel/functions@3.9.9(ws@8.21.0))(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0))(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(wrangler@4.149.0(@types/node@26.6.4))(yaml@2.9.0)
+        specifier: ^14.3.4
+        version: 14.3.4(@types/node@26.6.4)(astro@7.3.5(@types/node@26.6.4)(@vercel/functions@3.9.9(ws@8.21.0))(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0))(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(wrangler@4.149.0(@types/node@26.6.4))(yaml@2.9.0)
       '@fontsource-variable/inter':
         specifier: ^5.3.0
         version: 5.3.0
@@ -296,8 +296,8 @@ packages:
     peerDependencies:
       typescript: ^5.0.0 || ^6.0.0
 
-  '@astrojs/cloudflare@14.3.3':
-    resolution: {integrity: sha512-kYb1xf+BBa8oAIMSZPfXxZWVWSEDhA+AgBN6ClDDDZspIN1M2XsIC6/fozyuCApNuiyqa3eUQbai62WohqJUgQ==}
+  '@astrojs/cloudflare@14.3.4':
+    resolution: {integrity: sha512-i79WZrMANUuDCHBrUHFqVPNkZ4whEIgqx6y3kPX4byl1VEc57/ueh2+DJ7qaubL9zkjZ/yh8515eBgLQpe2B8g==}
     peerDependencies:
       astro: ^7.2.0
       wrangler: ^4.125.0
@@ -378,6 +378,9 @@ packages:
 
   '@astrojs/internal-helpers@0.11.0':
     resolution: {integrity: sha512-3rzxJ+xbo0+8YyqOzLziIN32wmsHdCjEVz2sGOpRxJ+Ben/KiLph4ItxBy1abEL+E8fkRzqjg0rfXmaHJGw9JA==}
+
+  '@astrojs/internal-helpers@0.12.0':
+    resolution: {integrity: sha512-pKPuwCDtO0L7zgmt1JGd9X4Aes1+0SX3IEBSqBNPHsScYdPMlfmed3Y7DTbXyF7E+8ylnb563o/0OzGQPOFehw==}
 
   '@astrojs/language-server@2.16.13':
     resolution: {integrity: sha512-ekOa+CYprEq5n4EJC1qTIAhLk49HZIUQuFwrEuF+3JK/pdMaYnWoREFUI2A0KEPOJiFA2kamBzKzbYljDvUxLg==}
@@ -3780,6 +3783,11 @@ packages:
     engines: {node: '>= 14.6'}
     hasBin: true
 
+  yaml@2.9.1:
+    resolution: {integrity: sha512-3NxN8+78OdzbT7C/WjGsyfPAtJaN3FNDsWxv7Y7mcDsT/oOmgW8BpyQQFFBnvZE3j9Y2Sdz1ULFLezL7Eb2yFw==}
+    engines: {node: '>= 14.6'}
+    hasBin: true
+
   yargs-parser@21.1.1:
     resolution: {integrity: sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw==}
     engines: {node: '>=12'}
@@ -3851,9 +3859,9 @@ snapshots:
       - prettier
       - prettier-plugin-astro
 
-  '@astrojs/cloudflare@14.3.3(@types/node@26.6.4)(astro@7.3.5(@types/node@26.6.4)(@vercel/functions@3.9.9(ws@8.21.0))(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0))(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(wrangler@4.149.0(@types/node@26.6.4))(yaml@2.9.0)':
+  '@astrojs/cloudflare@14.3.4(@types/node@26.6.4)(astro@7.3.5(@types/node@26.6.4)(@vercel/functions@3.9.9(ws@8.21.0))(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0))(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(wrangler@4.149.0(@types/node@26.6.4))(yaml@2.9.0)':
     dependencies:
-      '@astrojs/internal-helpers': 0.11.0
+      '@astrojs/internal-helpers': 0.12.0
       '@astrojs/underscore-redirects': 1.0.4
       '@cloudflare/vite-plugin': 1.60.1(@types/node@26.6.4)(vite@8.3.2(@types/node@26.6.4)(esbuild@0.28.2)(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0))(wrangler@4.149.0(@types/node@26.6.4))
       astro: 7.3.5(@types/node@26.6.4)(@vercel/functions@3.9.9(ws@8.21.0))(sass@1.105.1)(terser@5.50.0)(yaml@2.9.0)
@@ -3939,6 +3947,17 @@ snapshots:
       shiki: 4.4.3
       smol-toml: 1.9.0
       unified: 11.0.5
+
+  '@astrojs/internal-helpers@0.12.0':
+    dependencies:
+      '@types/hast': 3.0.5
+      '@types/mdast': 4.0.4
+      picomatch: 4.0.7
+      retext-smartypants: 6.2.0
+      shiki: 4.4.3
+      smol-toml: 1.9.0
+      unified: 11.0.5
+      yaml: 2.9.1
 
   '@astrojs/language-server@2.16.13(prettier-plugin-astro@0.14.1)(prettier@3.9.10)(typescript@5.9.3)':
     dependencies:
@@ -7483,6 +7502,8 @@ snapshots:
   yaml@2.8.3: {}
 
   yaml@2.9.0: {}
+
+  yaml@2.9.1: {}
 
   yargs-parser@21.1.1: {}
 
