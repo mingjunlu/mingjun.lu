@@ -48,7 +48,7 @@
     "sass": "^1.105.2",
     "sharp": "^0.35.4",
     "typescript": "^5.9.3",
-    "vite": "^8.3.4",
+    "vite": "^8.3.5",
     "wrangler": "^4.151.2"
   },
   "devEngines": {
